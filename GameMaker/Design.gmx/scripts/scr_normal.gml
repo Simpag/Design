@@ -1,5 +1,6 @@
 ///scr_normal
 scr_inputs();
+scr_graphics();
 
 
 if (key_right) || (key_left) || (key_down) || (key_up) {
