@@ -23,6 +23,7 @@
     </sprites>
     <sprites name="Static Objects">
       <sprite>sprites\spr_collider</sprite>
+      <sprite>sprites\spr_spawnPoint</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_testenemy1</sprite>
@@ -48,12 +49,17 @@
     </scripts>
     <scripts name="Enemies">
       <script>scripts\scr_enemy_pathfindning.gml</script>
+    </scripts>
+    <scripts name="Spawner">
+      <script>scripts\scr_spawnPoints.gml</script>
       <script>scripts\scr_wavespawner.gml</script>
+      <script>scripts\scr_spawnPointsArray.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Spawner">
-      <object>objects\obj_spawner</object>
+      <object>objects\cont_spawner</object>
+      <object>objects\cont_spawnPoint</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>

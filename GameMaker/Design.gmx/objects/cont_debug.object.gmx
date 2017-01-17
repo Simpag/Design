@@ -41,7 +41,9 @@
     draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
     draw_text(view_xview[0]+10, view_yview[0]+165, "Score: " + string(score));
     draw_text(view_xview[0]+10, view_yview[0]+180, "Wave: " + string(global.wave));
-    draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(obj_spawner.toSpawn));
+    draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner.toSpawn));
+    draw_text(view_xview[0]+10, view_yview[0]+210, "Enemies Left: " + string(global.enemiesLeft));
+    draw_text(view_xview[0]+10, view_yview[0]+225, "Spawnpoints: " + string(array_length_1d(global.spawnPointsToChoose)));
     
 }
 </string>
@@ -89,7 +91,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_spawner.toSpawn = 0;
+            <string>global.enemiesLeft = 0;
 </string>
           </argument>
         </arguments>

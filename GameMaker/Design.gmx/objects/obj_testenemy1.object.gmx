@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 100;
+            <string>//Enemy variables
+hp = 100;
 moveSpeed = 2.5;
 worth = 20;
 </string>
@@ -54,34 +55,9 @@ worth = 20;
 if (hp &lt;= 0) {
     instance_destroy();
     score += worth;
+    global.enemiesLeft--;
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_testenemy1">
-      <action>
-        <libid>1</libid>
-        <id>115</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_bounce</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>
