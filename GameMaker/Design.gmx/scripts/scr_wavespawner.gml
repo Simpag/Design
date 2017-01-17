@@ -9,5 +9,17 @@ for (i = 0; i < toSpawn; i++) {
     var s = irandom(array_length_1d(global.spawnPointsToChoose)-1);
     var _x = global.spawnPointsToChoose[s].x
     var _y = global.spawnPointsToChoose[s].y
-    instance_create(_x, _y, obj_testenemy1);
+    
+    //Make sure the enemy is not ontop of another
+    var spawn_id = instance_create(_x, _y, obj_testenemy1);
+    do {
+        spawn_id.x += irandom_range(-10, 10);
+        spawn_id.y += irandom_range(-10, 10);
+    
+        with (spawn_id) {
+            collision = place_meeting(x,y,obj_collider);
+            collision = place_meeting(x,y,obj_testenemy1);
+        }
+    }
+    until spawn_id.collision == 0;
 }
