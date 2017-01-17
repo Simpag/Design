@@ -48,9 +48,13 @@
     </scripts>
     <scripts name="Enemies">
       <script>scripts\scr_enemy_pathfindning.gml</script>
+      <script>scripts\scr_wavespawner.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="Spawner">
+      <object>objects\obj_spawner</object>
+    </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
       <objects name="Gun">

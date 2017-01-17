@@ -11,7 +11,8 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(-10, -10, cont_grid);
-instance_create(-10, -10, cont_debug);</code>
+instance_create(-10, -10, cont_debug);
+instance_create(-10, -10, obj_spawner);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
