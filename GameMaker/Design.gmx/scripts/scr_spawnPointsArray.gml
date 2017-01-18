@@ -27,3 +27,5 @@ global.spawnPointArray[0,2] = 544; //x cord
 global.spawnPointArray[0,3] = 352; //y cord 
 global.spawnPointArray[0,4] = 416; //#2 x cord
 global.spawnPointArray[0,5] = 576; //#2 y cord
+global.spawnPointArray[0,6] = 700; //#3 x cord
+global.spawnPointArray[0,7] = 200; //#3 y cord
