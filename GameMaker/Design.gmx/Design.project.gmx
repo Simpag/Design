@@ -6,20 +6,22 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="Gun">
+      <sprites name="Test gun 1">
+        <sprite>sprites\spr_testgun1</sprite>
+        <sprite>sprites\spr_testgun1_bullet</sprite>
+      </sprites>
+      <sprites name="Test gun 2">
+        <sprite>sprites\spr_testgun2</sprite>
+        <sprite>sprites\spr_testgun2_bullet</sprite>
+      </sprites>
+      <sprite>sprites\spr_testgun3</sprite>
+      <sprite>sprites\spr_testgun4</sprite>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_testcharacter1</sprite>
       <sprite>sprites\spr_testcharacter2</sprite>
       <sprite>sprites\spr_player_collider</sprite>
-      <sprites name="Gun">
-        <sprites name="Test gun 1">
-          <sprite>sprites\spr_testgun1</sprite>
-          <sprite>sprites\spr_testgun1_bullet</sprite>
-        </sprites>
-        <sprites name="Test gun 2">
-          <sprite>sprites\spr_testgun2</sprite>
-          <sprite>sprites\spr_testgun2_bullet</sprite>
-        </sprites>
-      </sprites>
     </sprites>
     <sprites name="Static Objects">
       <sprite>sprites\spr_collider</sprite>
@@ -62,8 +64,9 @@
       <script>scripts\scr_distance_to_object.gml</script>
     </scripts>
     <scripts name="Mysterybox">
-      <script>scripts\scr_randomweapon.gml</script>
-      <script>scripts\scr_weapontier_array.gml</script>
+      <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
+      <script>scripts\scr_weapontier_array_testing.gml</script>
+      <script>scripts\scr_random_weapon_ticket.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -90,13 +93,17 @@
       <object>objects\obj_testenemy1</object>
     </objects>
     <objects name="Interactive Objects">
-      <object>objects\obj_mysterybox_tier_one</object>
+      <object>objects\obj_mysterybox</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_test</room>
   </rooms>
+  <constants number="2">
+    <constant name="Test_Gun_1">0</constant>
+    <constant name="Test_Gun_2">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

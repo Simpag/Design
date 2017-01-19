@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>if (global.debug == true) {
+    draw_set_alpha(0.3);
+    mp_grid_draw(global.grid);
+    draw_set_alpha(1);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-    draw_set_color(c_red);
+    draw_set_color(c_black);
     draw_text(view_xview[0] + 10, view_yview[0] + 15, "State: " + string(obj_player.state));
     draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_gun.weapon,0]);
     draw_text(view_xview[0]+10, view_yview[0]+45, "Character: " + global.characterArray[obj_player.character,0]);
@@ -39,14 +42,36 @@
     draw_text(view_xview[0]+10, view_yview[0]+120, "b: " + string(obj_player.b));
     draw_text(view_xview[0]+10, view_yview[0]+135, "c: " + string(obj_player.c));
     draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
-    draw_text(view_xview[0]+10, view_yview[0]+165, "Score: " + string(score));
+    draw_text(view_xview[0]+10, view_yview[0]+165, "Money Player One: " + string(global.moneyPlayerOne));
     draw_text(view_xview[0]+10, view_yview[0]+180, "Wave: " + string(global.wave));
     draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner.toSpawn));
     draw_text(view_xview[0]+10, view_yview[0]+210, "Enemies Left: " + string(global.enemiesLeft));
     draw_text(view_xview[0]+10, view_yview[0]+225, "Spawnpoints: " + string(array_length_1d(global.spawnPointsToChoose)));
-    draw_text(view_xview[0]+10, view_yview[0]+240, "canBuy: " + string(obj_mysterybox_tier_one.canBuy));
-    //draw_text(view_xview[0]+10, view_yview[0]+255, "Weapons in tier: " + string(obj_mysterybox_tier_one.));
+    draw_text(view_xview[0]+10, view_yview[0]+240, "Weapon: " + string(obj_gun.weapon));
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.debug = !global.debug;
 </string>
           </argument>
         </arguments>

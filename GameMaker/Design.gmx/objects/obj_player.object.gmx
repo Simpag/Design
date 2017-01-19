@@ -33,8 +33,8 @@ character = 0;                      //Set active character
 hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
 moveSpeed = 4;                      //Move speed
-facing = "Down";                    //Variable to know which dir player is facing  
-idle = false;                       //To enter idel mode        
+goIdle = 10;                        //Go into idle after secounds
+facing = "Down";                    //Variable to know which dir player is facing        
 move_x = 0;                         //Move var in x dir, used in movement script
 move_y = 0;                         //Move var in y dir, used in movement script    
 
@@ -88,7 +88,8 @@ instance_create(x, y, obj_gun);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (state) {
+            <string>///States
+switch (state) {
     case playerStates.idle:
         scr_idle();
     break;

@@ -23,7 +23,10 @@ scr_characterArray();
 
 //Global vars
 global.debug = true;
-score = 0; //Score is a built in global var
+global.moneyPlayerOne = 0; //Player one money
+
+//Randomize the seed to get true random numbers
+randomize();
 
 room_goto_next();</code>
   <enableViews>-1</enableViews>
