@@ -23,7 +23,7 @@ for (i = 0; i < global.numberOfWeapons; i++) {
 }
 
 // [0] test gun 1
-global.weaponArray[0,0] = "Test Gun 1 "; //Name
+global.weaponArray[0,0] = "Test Gun 1"; //Name
 global.weaponArray[0,1] = 30;
 global.weaponArray[0,2] = 70;
 global.weaponArray[0,3] = 2;
@@ -35,7 +35,7 @@ global.weaponArray[0,8] = spr_testgun1;
 global.weaponArray[0,9] = 10;
 
 // [1] test gun 2
-global.weaponArray[1,0] = "Test Gun 2 ";
+global.weaponArray[1,0] = "Test Gun 2";
 global.weaponArray[1,1] = 5;
 global.weaponArray[1,2] = 45;
 global.weaponArray[1,3] = 1;

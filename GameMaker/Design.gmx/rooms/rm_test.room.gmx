@@ -58,6 +58,8 @@ instance_create(-10, -10, cont_spawner);</code>
     <instance objName="obj_collider" x="832" y="448" name="inst_8B6A1B6F" locked="0" code="" scaleX="3.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="352" y="384" name="inst_2739A378" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="672" y="704" name="inst_59FD0785" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mysterybox" x="1152" y="704" name="inst_28C2D2C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mysterybox" x="832" y="256" name="inst_02F49607" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
