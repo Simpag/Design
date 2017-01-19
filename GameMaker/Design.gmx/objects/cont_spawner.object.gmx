@@ -28,7 +28,7 @@
             <string>global.wave = 0;                                //The wave
 toSpawn = 0;                                    //How many enemies to spawn
 global.enemiesLeft = 0;                         //How many enemies there's left
-respawnDelay = 5;                               //Number of secounds before respawn
+respawnDelay = 1;                               //Number of secounds before respawn
 
 //Create spawnpointsarray
 scr_spawnPointsArray();

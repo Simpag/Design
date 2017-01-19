@@ -25,17 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Enemy variables
+            <string>///Enemy variables
 hp = 100;
 moveSpeed = 2.5;
 worth = 20;
-spawned = false;        //Temporary fix for clipping
+turnSpeed = 0.2;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,58 +50,14 @@ spawned = false;        //Temporary fix for clipping
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawned = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (spawned = true){
-hit = place_meeting(x,y,obj_testenemy1)
-if (hit) { x=xprevious y=yprevious }
-}
+            <string>///Setup Steering Behaviour
+position = vect2(x,y); // will be used to update xy
+velocity = vect2(0,0);
+steering = vect2(0,0); // desired velocity
 
-if (alarm [0] == -1 &amp;&amp; spawned == false) alarm[0] = 60;
+max_speed = moveSpeed;
+max_force = turnSpeed; // How fast it turns
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -125,12 +79,70 @@ if (alarm [0] == -1 &amp;&amp; spawned == false) alarm[0] = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_enemy_pathfindning();
+            <string>///Enemy health
 if (hp &lt;= 0) {
     instance_destroy();
     global.moneyPlayerOne += worth;
     global.enemiesLeft--;
 }
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Steering Behaviour
+
+
+// reset steering
+steering = vect2(0,0);
+
+
+//## Steering Behaviours go below here ##//
+
+// Add like this. (First one doesn't need the vect_add)
+//steering = vect_add(steering, sb_#behaviour#(argument,stuff,blah));
+
+//steering = vect_add(steering, sb_seek(mouse_x, mouse_y, 1));
+//steering = vect_add(steering, sb_wander(128,128,90,1));
+//steering = vect_add(steering, sb_flee(mouse_x,mouse_y,1));
+//steering = vect_add(steering, sb_evade(obj_master_drone,1));
+//steering = vect_add(steering, sb_path_loop(my_path,30,my_path_dir,1));
+//steering = vect_add(steering, sb_path_tofro());
+steering = vect_add(steering, sb_avoid_collision(obj_collider,80,40,1));
+
+//## Steering Behaviours go above here ##//
+
+
+//Limit steering by max_force
+steering = vect_truncate(steering, max_force); 
+
+// Limit velocity to max_speed
+velocity = vect_truncate(vect_add(velocity, steering),max_speed); 
+
+//Add velocity to position
+position = vect_add(position, velocity);
+
+//update xy
+x = position[1];
+y = position[2];
+
 </string>
           </argument>
         </arguments>
