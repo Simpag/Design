@@ -44,7 +44,8 @@
     draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner.toSpawn));
     draw_text(view_xview[0]+10, view_yview[0]+210, "Enemies Left: " + string(global.enemiesLeft));
     draw_text(view_xview[0]+10, view_yview[0]+225, "Spawnpoints: " + string(array_length_1d(global.spawnPointsToChoose)));
-    draw_text(view_xview[0]+10, view_yview[0]+240, "canBuy: " + string(obj_mysterybox.canBuy));
+    draw_text(view_xview[0]+10, view_yview[0]+240, "canBuy: " + string(obj_mysterybox_tier_one.canBuy));
+    //draw_text(view_xview[0]+10, view_yview[0]+255, "Weapons in tier: " + string(obj_mysterybox_tier_one.));
 }
 </string>
           </argument>

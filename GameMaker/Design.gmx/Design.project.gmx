@@ -63,7 +63,7 @@
     </scripts>
     <scripts name="Mysterybox">
       <script>scripts\scr_randomweapon.gml</script>
-      <script>scripts\script15.gml</script>
+      <script>scripts\scr_weapontier_array.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -90,7 +90,7 @@
       <object>objects\obj_testenemy1</object>
     </objects>
     <objects name="Interactive Objects">
-      <object>objects\obj_mysterybox</object>
+      <object>objects\obj_mysterybox_tier_one</object>
     </objects>
   </objects>
   <rooms name="rooms">

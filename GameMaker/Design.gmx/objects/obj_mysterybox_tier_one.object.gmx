@@ -8,30 +8,6 @@
   <parentName>obj_collider</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>range = 10;
-canBuy = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -53,7 +29,7 @@ canBuy = false;
     canBuy = true;
     
     if (score &gt;= cost) {
-        scr_randomweapon(1);
+        _randomWeapon = scr_randomweapon(1);        
     }
 } else {
     canBuy = false;
