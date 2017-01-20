@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//size of cells
-var cell_width = 16;
-var cell_height = 16;
+var cell_width = 32;
+var cell_height = 32;
 //amout of cells
 var hcells = room_width/cell_width;
 var vcells = room_height/cell_height;

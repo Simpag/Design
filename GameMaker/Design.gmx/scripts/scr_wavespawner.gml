@@ -13,8 +13,8 @@ for (i = 0; i < toSpawn; i++) {
     //Make sure the enemy is not ontop of another
     var spawn_id = instance_create(_x, _y, obj_enemy_parent);
     do {
-        spawn_id.x += irandom_range(-5, 5);
-        spawn_id.y += irandom_range(-5, 5);
+        spawn_id.x += irandom_range(-10, 10);
+        spawn_id.y += irandom_range(-10, 10);
     
         with (spawn_id) {
             collision = place_meeting(x,y,obj_collider);

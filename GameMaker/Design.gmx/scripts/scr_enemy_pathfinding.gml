@@ -1,4 +1,4 @@
-///scr_enemy_pathfindning
+///scr_enemy_pathfinding
 image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 
 path = path_add();
