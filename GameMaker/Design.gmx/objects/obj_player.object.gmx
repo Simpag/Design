@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set state
+            <string>///Variables
+//Set state
 state = playerStates.idle;
 
 //initialize variables
@@ -34,9 +35,13 @@ hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
 moveSpeed = 4;                      //Move speed
 goIdle = 10;                        //Go into idle after secounds
-facing = "Down";                    //Variable to know which dir player is facing        
+facing = 0;                         //Variable to know which dir player is facing        
+
+//Movement variables
 move_x = 0;                         //Move var in x dir, used in movement script
 move_y = 0;                         //Move var in y dir, used in movement script    
+move_acceleration = 0.8;            //Acceleration factor
+move_restitution = 0.6;             //Slowdown factor
 
 //Initiate Camera
 instance_create(x, y, cont_view);
@@ -154,24 +159,8 @@ switch (state) {
             <string>/// Step Behaviour
 
 // reset steering
-steering = vect2(0,0);
-
 position = vect2(x,y); // will be used to update xy
 
-//Limit steering by max_force
-steering = vect_truncate(steering, max_force); 
-
-// Limit velocity to max_speed
-velocity = vect_truncate(vect_add(velocity, steering),max_speed); 
-
-//Add velocity to position
-position = vect_add(position, velocity);
-
-//update xy
-//x = position[1];
-//y = position[2];
-
-//image_angle = vect_direction(velocity);
 </string>
           </argument>
         </arguments>
@@ -221,7 +210,9 @@ position = vect_add(position, velocity);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = global.characterArray[character,1];
+            <string>var sprite = global.characterArray[character,1];
+sprite_index = sprite;
+image_angle = facing;
 draw_self();
 </string>
           </argument>

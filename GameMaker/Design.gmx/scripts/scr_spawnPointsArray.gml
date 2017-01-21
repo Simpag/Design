@@ -22,7 +22,7 @@ for (i = 0; i < global.numberOfRooms; i++) {
 
 //rm_test
 global.spawnPointArray[0,0] = rm_test; //which room
-global.spawnPointArray[0,1] = 2; //Number of spawnpoints
+global.spawnPointArray[0,1] = 3; //Number of spawnpoints
 global.spawnPointArray[0,2] = 544; //x cord
 global.spawnPointArray[0,3] = 352; //y cord 
 global.spawnPointArray[0,4] = 416; //#2 x cord

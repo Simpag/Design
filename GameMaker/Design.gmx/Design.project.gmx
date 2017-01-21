@@ -40,16 +40,16 @@
     <scripts name="PlayerScripts">
       <script>scripts\scr_characterArray.gml</script>
       <script>scripts\scr_graphics.gml</script>
-      <scripts name="Weapon">
-        <script>scripts\scr_shoot.gml</script>
-        <script>scripts\scr_weaponArray.gml</script>
-      </scripts>
-      <scripts name="movement">
+      <scripts name="Movement">
         <script>scripts\scr_movement.gml</script>
         <script>scripts\scr_normal.gml</script>
         <script>scripts\scr_inputs.gml</script>
         <script>scripts\scr_collision.gml</script>
         <script>scripts\scr_idle.gml</script>
+      </scripts>
+      <scripts name="Weapon">
+        <script>scripts\scr_shoot.gml</script>
+        <script>scripts\scr_weaponArray.gml</script>
       </scripts>
     </scripts>
     <scripts name="Enemies">
@@ -58,8 +58,9 @@
     </scripts>
     <scripts name="Spawner">
       <script>scripts\scr_spawnPoints.gml</script>
-      <script>scripts\scr_wavespawner.gml</script>
+      <script>scripts\scr_wavespawner_calculate.gml</script>
       <script>scripts\scr_spawnPointsArray.gml</script>
+      <script>scripts\scr_wavespawner_spawn.gml</script>
     </scripts>
     <scripts name="Utillities">
       <script>scripts\scr_distance_to_object.gml</script>

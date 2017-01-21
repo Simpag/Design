@@ -2,7 +2,6 @@
 // reset steering
 steering = vect2(0,0);
 
-
 //## Steering Behaviours go below here ##//
 
 // Add like this. (First one doesn't need the vect_add)
@@ -19,7 +18,6 @@ steering = vect_add(steering, sb_pursuit(obj_player,1));
 //steering = vect_add(steering, sb_alignment(obj_enemy_parent,128,1));
 steering = vect_add(steering, sb_separation(obj_enemy_parent,64,1));
 //steering = vect_add(steering, sb_cohesion(obj_enemy_parent,184,1));
-steering = vect_add(steering, sb_avoid_collision(obj_enemy_parent,80,30,1));
 steering = vect_add(steering, sb_avoid_collision(obj_collider,80,30,1));
 
 //## Steering Behaviours go above here ##//

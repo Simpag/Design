@@ -1,12 +1,10 @@
 //Find out how many spawnpoints there are in the room
 var _room;
 for (i = 0; i < global.numberOfRooms; i++){
-    if (room == global.spawnPointArray[i, 0]) _room = i;
-}
-
-//Make an array and assign the spawnpoints numbered 0, 1...
-for (i = 0; i < _room; i++) {
-    global.spawnPointsToChoose[i] = 0;   
+    if (room == global.spawnPointArray[i, 0]) {
+        _room = i;
+        break;
+    }
 }
 
 //Create the spawnpoints and assign them to an array for the enemies to pick from

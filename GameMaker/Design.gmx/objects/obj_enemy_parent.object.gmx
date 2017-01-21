@@ -134,7 +134,7 @@ if (scr_distance_to_object(sprite_height, obj_collider) == true) {
           <argument>
             <kind>1</kind>
             <string>hp -= global.weaponArray[obj_gun.weapon,2];
-with (obj_bullet) instance_destroy();
+with (other) instance_destroy();
 </string>
           </argument>
         </arguments>

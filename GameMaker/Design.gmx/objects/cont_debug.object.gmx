@@ -30,21 +30,20 @@
     draw_set_valign(fa_top);
     draw_set_color(c_black);
     draw_text(view_xview[0] + 10, view_yview[0] + 15, "State: " + string(obj_player.state));
-    draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_gun.weapon,0]);
+    if(instance_exists(obj_gun))draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_gun.weapon,0]);
     draw_text(view_xview[0]+10, view_yview[0]+45, "Character: " + global.characterArray[obj_player.character,0]);
     draw_text(view_xview[0]+10, view_yview[0]+60, "Facing: " + string(obj_player.facing));
     draw_text(view_xview[0]+10, view_yview[0]+75, "Move_x: " + string(obj_player.move_x));
     draw_text(view_xview[0]+10, view_yview[0]+90, "Move_y: " + string(obj_player.move_y));
-    draw_text(view_xview[0]+10, view_yview[0]+105, "a: " + string(obj_player.a));
-    draw_text(view_xview[0]+10, view_yview[0]+120, "b: " + string(obj_player.b));
-    draw_text(view_xview[0]+10, view_yview[0]+135, "c: " + string(obj_player.c));
-    draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
+    draw_text(view_xview[0]+10, view_yview[0]+105, "Enemies: " + string(instance_number(obj_enemy_parent)));
+    draw_text(view_xview[0]+10, view_yview[0]+120, "b: ");
+    draw_text(view_xview[0]+10, view_yview[0]+135, "c: ");
+    if(instance_exists(obj_gun))draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
     draw_text(view_xview[0]+10, view_yview[0]+165, "Money Player One: " + string(global.moneyPlayerOne));
     draw_text(view_xview[0]+10, view_yview[0]+180, "Wave: " + string(global.wave));
-    draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner.toSpawn));
+    draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner._toSpawn));
     draw_text(view_xview[0]+10, view_yview[0]+210, "Enemies Left: " + string(global.enemiesLeft));
     draw_text(view_xview[0]+10, view_yview[0]+225, "Spawnpoints: " + string(array_length_1d(global.spawnPointsToChoose)));
-    draw_text(view_xview[0]+10, view_yview[0]+240, "Weapon: " + string(obj_gun.weapon));
 }
 </string>
           </argument>

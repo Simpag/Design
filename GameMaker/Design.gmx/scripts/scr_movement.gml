@@ -1,28 +1,44 @@
 ///scr_move
 scr_inputs();
-scr_graphics();
 
-/*key left will be either -1 or 0
+/* Move direction
+key left will be either -1 or 0
 Key right will be either 1 or 0
 So its move = -1 + 0 = -1 or
 move = 0 + 1 = 1 or
 move = 0 + 0 = 0 or
 move = -1 + 1 = 0
 */
-move_x = key_right - key_left;
-move_y = key_down - key_up;
+var move_x_dir = key_right - key_left;
+var move_y_dir = key_down - key_up;
 
-/* hsp = horizontal speed
-so movespeed * -1, 1 or 0
+//Acceleration
+var move_x_add = move_x_dir * move_acceleration;
+var move_y_add = move_y_dir * move_acceleration;
+
+//Restitution
+/*
+move_x_sub = if our current x is less than move_x_restitution then subtract that so we don't go under 0
+then multiplay it by the direction we're moveing and if we're not pressing a button move_x_dir == 0 will be 
+equal to 1 but if we're pressing a button it will be equal to 0.
 */
-if (move_x != 0 || move_y != 0) { //If the player is pressing a button
-    hsp = move_x * moveSpeed;
-    vsp = move_y * moveSpeed;
-} else {
-    hsp = 0;
-    vsp = 0;
-    state = playerStates.normal; //go back to normal state when the player stops
+var move_x_sub = min(move_restitution, abs(move_x)) * sign(move_x) * (move_x_dir == 0);
+var move_y_sub = min(move_restitution, abs(move_y)) * sign(move_y) * (move_y_dir == 0);
+
+//Make sure that move_x is always inbetween -movespeed and movespeed
+move_x = clamp(move_x + move_x_add - move_x_sub, -moveSpeed, moveSpeed);
+move_y = clamp(move_y + move_y_add - move_y_sub, -moveSpeed, moveSpeed);
+
+//If we move diagonally the two speed vectors will be added together so we'll move faster than the movespeed.
+//So normalize the move
+if !(move_x == 0 && move_y == 0) { //If the player is moving
+    var dist = sqrt(sqr(move_x) + sqr(move_y)); //Basic vector calculation
+    var mindist = min(moveSpeed, dist);
+    move_x = (move_x / dist) * mindist;
+    move_y = (move_y / dist) * mindist;
+    
+    //Collision checking
+    scr_collision();
 }
 
-//No code under this
-scr_collision();
+scr_graphics();

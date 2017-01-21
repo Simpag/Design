@@ -7,6 +7,3 @@ scr_graphics();
 if (key_right) || (key_left) || (key_down) || (key_up) {
     state = playerStates.normal;
 }
-
-//No code under this
-scr_collision();

@@ -23,7 +23,8 @@ scr_characterArray();
 
 //Global vars
 global.debug = true;
-global.moneyPlayerOne = 0; //Player one money
+global.moneyPlayerOne = 0;  //Player one money
+global.spawnCap = 10;       //Amout of enemies on the screen
 
 //Randomize the seed to get true random numbers
 randomize();

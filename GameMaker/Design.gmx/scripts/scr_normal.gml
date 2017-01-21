@@ -11,8 +11,5 @@ if (key_right) || (key_left) || (key_down) || (key_up) {
 //Stay in normal state
 if ((key_shoot) || key_use) alarm[0] = -1;
 
-//No code under this
-scr_collision();
-
 //Go into idle after 10 sec
 alarm[0] = goIdle * room_speed;
