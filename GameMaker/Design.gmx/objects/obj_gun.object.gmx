@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>weapon = 0;
 canFire = true;
+rotateOffsetX = 0;
+rotateOffsetY = 0;
 </string>
           </argument>
         </arguments>
@@ -77,8 +79,7 @@ if (key_shoot) {
     scr_shoot();
 }
 
-x = obj_player.x + global.weaponArray[weapon, 5];
-y = obj_player.y + global.weaponArray[weapon, 6];
+scr_gunrotation();
 </string>
           </argument>
         </arguments>
@@ -129,6 +130,7 @@ y = obj_player.y + global.weaponArray[weapon, 6];
           <argument>
             <kind>1</kind>
             <string>sprite_index = global.weaponArray[weapon, 8];
+image_angle = obj_player.facing - 90;
 draw_self();
 </string>
           </argument>

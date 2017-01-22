@@ -37,7 +37,12 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="PlayerScripts">
+    <scripts name="Weapon">
+      <script>scripts\scr_shoot.gml</script>
+      <script>scripts\scr_weaponArray.gml</script>
+      <script>scripts\scr_gunrotation.gml</script>
+    </scripts>
+    <scripts name="Player">
       <script>scripts\scr_characterArray.gml</script>
       <script>scripts\scr_graphics.gml</script>
       <scripts name="Movement">
@@ -46,10 +51,6 @@
         <script>scripts\scr_inputs.gml</script>
         <script>scripts\scr_collision.gml</script>
         <script>scripts\scr_idle.gml</script>
-      </scripts>
-      <scripts name="Weapon">
-        <script>scripts\scr_shoot.gml</script>
-        <script>scripts\scr_weaponArray.gml</script>
       </scripts>
     </scripts>
     <scripts name="Enemies">

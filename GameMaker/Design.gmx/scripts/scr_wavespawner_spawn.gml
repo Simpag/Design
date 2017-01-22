@@ -1,5 +1,5 @@
 //If tospawn is less than spawncap set the amout to be spawned to tospawn
-if !(OrgToSpawn < global.spawnCap) spawn = global.spawnCap - instance_number(obj_enemy_parent);
+/*if !(OrgToSpawn < global.spawnCap) spawn = global.spawnCap - instance_number(obj_enemy_parent);
 
 
 if (instance_number(obj_enemy_parent) < global.spawnCap) {
