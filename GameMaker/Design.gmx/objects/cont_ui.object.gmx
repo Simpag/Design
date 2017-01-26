@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,32 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.debug == true) {
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
-    draw_set_color(c_black);
-    draw_text(view_xview[0] + 10, view_yview[0] + 15, "State: " + string(obj_player.state));
-    if(instance_exists(obj_gun))draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_gun.weapon,0]);
-    draw_text(view_xview[0]+10, view_yview[0]+45, "Character: " + global.characterArray[obj_player.character,0]);
-    draw_text(view_xview[0]+10, view_yview[0]+60, "Facing: " + string(obj_player.facing));
-    draw_text(view_xview[0]+10, view_yview[0]+75, "Move_x: " + string(obj_player.move_x));
-    draw_text(view_xview[0]+10, view_yview[0]+90, "Move_y: " + string(obj_player.move_y));
-    draw_text(view_xview[0]+10, view_yview[0]+105, "Enemies: " + string(instance_number(obj_enemy_parent)));
-    draw_text(view_xview[0]+10, view_yview[0]+120, "b: ");
-    draw_text(view_xview[0]+10, view_yview[0]+135, "c: ");
-    if(instance_exists(obj_gun))draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
-    draw_text(view_xview[0]+10, view_yview[0]+165, "Money Player One: " + string(global.playerOneMoney));
-    draw_text(view_xview[0]+10, view_yview[0]+180, "Wave: " + string(global.wave));
-    draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner._toSpawn));
-    draw_text(view_xview[0]+10, view_yview[0]+210, "Enemies Left: " + string(global.enemiesLeft));
-    draw_text(view_xview[0]+10, view_yview[0]+225, "Spawnpoints: " + string(array_length_1d(global.spawnPointsToChoose)));
-}
+            <string>x = obj_player.x;
+y = obj_player.y;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="112">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -67,13 +49,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.debug = !global.debug;
+            <string>x += (obj_player.x-x)/20;
+y += (obj_player.y-y)/20;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="78">
+    <event eventtype="8" enumb="74">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -90,30 +73,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.wave += 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="77">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.enemiesLeft = 0;
+            <string>draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_sprite(spr_watergun_front, 0,10, window_get_height()-10);
+draw_set_color(c_red);
+draw_line_width(10, 10, global.playerOneHealth, 10, 6);
+draw_set_color(c_white);
 </string>
           </argument>
         </arguments>
