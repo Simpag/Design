@@ -1,8 +1,7 @@
 ///scr_enemy_pathfinding
 
-if (_eGrid == false) {
+if (!instance_exists(cont_grid)) {
     instance_create(-1, -1, cont_grid)
-    _eGrid = true;
 } 
 
 
