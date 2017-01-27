@@ -82,7 +82,7 @@ max_force = turnSpeed; // How fast it turns
             <string>///Enemy health
 if (hp &lt;= 0) {
     instance_destroy();
-    global.moneyPlayerOne += worth;
+    global.playerOneMoney += worth;
     global.enemiesLeft--;
 }
 </string>
@@ -106,11 +106,15 @@ if (hp &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>///Enemy ai
-if (scr_distance_to_object(sprite_height, obj_collider) == true) {
+if (distance_to_object(obj_collider) &lt; sprite_height+4) {
     scr_enemy_pathfinding();
 } else {
-    scr_steering_behaviour();
+    path_end();
+    scr_steering_behaviour_normal();
 }
+
+image_angle = point_direction(x, y, obj_player.x, obj_player.y)
+position = vect2(x,y); // will be used to update xy for steering
 </string>
           </argument>
         </arguments>

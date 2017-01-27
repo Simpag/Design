@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.wave = 0;                                //The wave
-_toSpawn = 0;                                 //How many enemies to spawn
-global.enemiesLeft = 0;                         //How many enemies there's left
+            <string>global.wave = 0;                                //The wave, don't touch
+_toSpawn = 0;                                   //How many enemies to spawn, don't touch
+global.enemiesLeft = 0;                         //How many enemies there's left, don't touch
 respawnDelay = 1;                               //Number of secounds before respawn
 
 //Create spawnpointsarray
@@ -104,7 +104,7 @@ scr_wavespawner_calculate();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.enemiesLeft &lt;= 0 &amp;&amp; alarm[0] == -1) {
+            <string>if (global.enemiesLeft &lt;= 0 &amp;&amp; alarm[0] == -1 &amp;&amp; keyboard_check_pressed(ord("U"))) {
     alarm[0] = respawnDelay * room_speed;
 }
 
