@@ -29,6 +29,9 @@
 canFire = true;
 rotateOffsetX = 0;
 rotateOffsetY = 0;
+
+//Particles
+scr_muzzleflash();
 </string>
           </argument>
         </arguments>

@@ -41,6 +41,8 @@
       <script>scripts\scr_shoot.gml</script>
       <script>scripts\scr_weaponArray.gml</script>
       <script>scripts\scr_gunrotation.gml</script>
+      <script>scripts\scr_muzzleflash.gml</script>
+      <script>scripts\scr_muzzleflash_play.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_characterArray.gml</script>
