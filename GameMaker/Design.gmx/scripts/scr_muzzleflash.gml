@@ -3,14 +3,14 @@ global.muzzleFlash = part_system_create()
 
 flash = part_type_create();
 part_type_shape(flash,pt_shape_explosion);
-part_type_size(flash,0.25,0.35,-0.10,1);
-part_type_scale(flash,1,1);
+part_type_size(flash,0.20,0.30,-0.10,0);
+part_type_scale(flash,0.8,1);
 part_type_color3(flash,2743039,1442044,255);
 part_type_alpha3(flash,0.80,0.51,0);
-part_type_speed(flash,3,5,0,0);
+part_type_speed(flash,3,5,0,2);
 part_type_gravity(flash,0,0);
 part_type_blend(flash,1);
-part_type_life(flash,1,2);
+part_type_life(flash,5,10);
 
 emitter1 = part_emitter_create(global.muzzleFlash);
 
