@@ -26,12 +26,39 @@
           <argument>
             <kind>1</kind>
             <string>weapon = 0;
-canFire = true;
+canShoot = true;
 rotateOffsetX = 0;
 rotateOffsetY = 0;
 
 //Particles
 scr_muzzleflash();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reload
+canShoot = true;
+
+global.weaponArray[weapon, 15] = global.weaponArray[weapon,16];
+global.weaponArray[weapon,1] -= global.weaponArray[weapon,16];
 </string>
           </argument>
         </arguments>
@@ -54,7 +81,8 @@ scr_muzzleflash();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canFire = true;
+            <string>///Rate of fire
+canShoot = true;
 </string>
           </argument>
         </arguments>
@@ -78,8 +106,12 @@ scr_muzzleflash();
           <argument>
             <kind>1</kind>
             <string>scr_inputs();
-if (key_shoot) {
+if (key_shoot &amp;&amp; canShoot &amp;&amp; global.weaponArray[weapon,15] &gt; 0) {
     scr_shoot();
+}
+
+if (key_reload) {
+    scr_reload();
 }
 
 scr_gunrotation();
@@ -110,6 +142,15 @@ scr_gunrotation();
 } else {
     weapon = 0;
 }
+
+//Disable all alarms
+for (i = 0; i &lt; 2; i++) {
+    alarm[i] = -1;
+}
+
+canShoot = true;
+
+if (global.weaponArray[weapon,15] &lt;= 0) scr_reload();//reload if empty
 </string>
           </argument>
         </arguments>

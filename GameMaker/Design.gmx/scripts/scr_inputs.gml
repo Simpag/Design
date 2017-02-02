@@ -6,3 +6,4 @@ key_down = keyboard_check(ord("S"));
 key_up = keyboard_check(ord("W"));
 key_shoot = keyboard_check(vk_space);
 key_use = keyboard_check_pressed(ord("E"));
+key_reload = keyboard_check_pressed(ord("R"));

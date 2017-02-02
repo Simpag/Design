@@ -36,9 +36,11 @@
     draw_text(view_xview[0]+10, view_yview[0]+75, "Move_x: " + string(obj_player.move_x));
     draw_text(view_xview[0]+10, view_yview[0]+90, "Move_y: " + string(obj_player.move_y));
     draw_text(view_xview[0]+10, view_yview[0]+105, "Enemies: " + string(instance_number(obj_enemy_parent)));
-    draw_text(view_xview[0]+10, view_yview[0]+120, "b: ");
-    draw_text(view_xview[0]+10, view_yview[0]+135, "c: ");
-    if(instance_exists(obj_gun))draw_text(view_xview[0]+10, view_yview[0]+150, "canFire: " + string(obj_gun.canFire));
+    if(instance_exists(obj_gun)) { 
+        draw_text(view_xview[0]+10, view_yview[0]+120, "Clip: " + string(global.weaponArray[obj_gun.weapon,15]));
+        draw_text(view_xview[0]+10, view_yview[0]+135, "canShoot: " + string(obj_gun.canShoot));
+        draw_text(view_xview[0]+10, view_yview[0]+150, "Ammo: " + string(global.weaponArray[obj_gun.weapon,1]));
+    }
     draw_text(view_xview[0]+10, view_yview[0]+165, "Money Player One: " + string(global.playerOneMoney));
     draw_text(view_xview[0]+10, view_yview[0]+180, "Wave: " + string(global.wave));
     draw_text(view_xview[0]+10, view_yview[0]+195, "ToSpawn: " + string(cont_spawner._toSpawn));

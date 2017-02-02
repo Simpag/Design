@@ -14,8 +14,11 @@
 [i,11] = Weapon number                      12
 [i,12] = Bullet Speed                       13
 [i,13] = Range                              14
+[i, 14] = Reaload Time In Sec               15
+[i, 15] = Current Clip                      16
+[i, 16] = Clip Size                         17
 */
-numberOfWeaponInfo = 14; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfWeaponInfo = 17; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfWeapons = 4; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -40,10 +43,13 @@ global.weaponArray[0,10] = 35; //Tickets
 global.weaponArray[0,11] = 0; //Weapon number
 global.weaponArray[0,12] = 10; //Bullet speed
 global.weaponArray[0,13] = 200; //Range
+global.weaponArray[0,14] = 0.5; //Reaload Time
+global.weaponArray[0,15] = global.weaponArray[0,16]; //Current clip
+global.weaponArray[0,16] = 15; //Clip size
 
 // [1] test gun 1 (2)
 global.weaponArray[1,0] = "Test Gun 1"; //Name
-global.weaponArray[1,1] = 1; //Ammo
+global.weaponArray[1,1] = 100; //Ammo
 global.weaponArray[1,2] = 120; //Damage
 global.weaponArray[1,3] = 1; //Rate of fire
 global.weaponArray[1,4] = 20; //Muzzle flash
@@ -56,10 +62,13 @@ global.weaponArray[1,10] = 20;//Tickets
 global.weaponArray[1,11] = 1; //Weapon number
 global.weaponArray[1,12] = 10; //Bullet speed
 global.weaponArray[1,13] = 200; //Range
+global.weaponArray[1,14] = 1; //Reaload Time
+global.weaponArray[1,15] = global.weaponArray[1,16]; //Current clip
+global.weaponArray[1,16] = 15; //Clip size
 
 // [2] Watergun (3)
 global.weaponArray[2,0] = "Watergun"; //Name
-global.weaponArray[2,1] = 50; //Ammo
+global.weaponArray[2,1] = 500; //Ammo
 global.weaponArray[2,2] = 90; //Damage
 global.weaponArray[2,3] = 30; //Rate of fire
 global.weaponArray[2,4] = 22; //Muzzle flash, bullet offset
@@ -72,6 +81,9 @@ global.weaponArray[2,10] = 10; //Tickets
 global.weaponArray[2,11] = 2; //Weapon number
 global.weaponArray[2,12] = 20; //Bullet speed
 global.weaponArray[2,13] = 100; //Range
+global.weaponArray[2,14] = 0.3; //Reaload Time
+global.weaponArray[2,15] = global.weaponArray[2,16]; //Current clip
+global.weaponArray[2,16] = 50; //Clip size
 
 // [3] test gun 3 (4)
 global.weaponArray[3,0] = "Test Gun 3"; //Name
@@ -88,3 +100,6 @@ global.weaponArray[3,10] = 20; //Tickets
 global.weaponArray[3,11] = 3; //Weapon number
 global.weaponArray[3,12] = 10; //Bullet speed
 global.weaponArray[3,13] = 200; //Range
+global.weaponArray[3,14] = 2; //Reaload Time
+global.weaponArray[3,15] = global.weaponArray[3,16]; //Current clip
+global.weaponArray[3,16] = 20; //Clip size
