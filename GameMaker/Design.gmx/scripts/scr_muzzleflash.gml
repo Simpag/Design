@@ -1,6 +1,7 @@
 ///Muzzle Flash particle system
 global.muzzleFlash = part_system_create()
 
+//Flash
 flash = part_type_create();
 part_type_shape(flash,pt_shape_explosion);
 part_type_size(flash,0.20,0.30,-0.10,0);
@@ -12,8 +13,7 @@ part_type_gravity(flash,0,0);
 part_type_blend(flash,1);
 part_type_life(flash,5,10);
 
-emitter1 = part_emitter_create(global.muzzleFlash);
-
+//Smoke
 smoke = part_type_create();
 part_type_shape(smoke,pt_shape_cloud);
 part_type_size(smoke,0.50,0.70,0.02,0);
@@ -25,4 +25,4 @@ part_type_gravity(smoke,0,0);
 part_type_blend(smoke,1);
 part_type_life(smoke,15,20);
 
-emitter2 = part_emitter_create(global.muzzleFlash);
+muzzle = part_emitter_create(global.muzzleFlash);

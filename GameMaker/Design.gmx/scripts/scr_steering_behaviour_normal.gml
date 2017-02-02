@@ -19,7 +19,8 @@ steering = vect_add(steering, sb_pursuit(obj_player,1));
 //steering = vect_add(steering, sb_alignment(obj_enemy_parent,128,1));
 steering = vect_add(steering, sb_separation(obj_enemy_parent,32,11));
 //steering = vect_add(steering, sb_cohesion(obj_enemy_parent,184,1));
-steering = vect_add(steering, sb_avoid_collision(obj_collider,80,30,1));
+steering = vect_add(steering, sb_avoid_collision(obj_collider,80,30,3));
+steering = vect_add(steering, sb_avoid_collision(obj_mysterybox,80,30,3));
 
 //## Steering Behaviours go above here ##//
 

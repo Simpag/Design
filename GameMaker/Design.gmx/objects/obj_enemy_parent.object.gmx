@@ -106,7 +106,7 @@ if (hp &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>///Enemy ai
-if (distance_to_object(obj_collider) &lt; sprite_height+4) {
+if ((distance_to_object(obj_collider) &lt; sprite_height+4) || (distance_to_object(obj_mysterybox) &lt; sprite_height+4) ) {
     scr_enemy_pathfinding();
 } else {
     path_end();
