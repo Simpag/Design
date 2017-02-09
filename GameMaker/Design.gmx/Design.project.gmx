@@ -11,9 +11,9 @@
         <sprite>sprites\spr_testgun1</sprite>
         <sprite>sprites\spr_testgun1_bullet</sprite>
       </sprites>
-      <sprites name="Test gun 2">
-        <sprite>sprites\spr_testgun2</sprite>
-        <sprite>sprites\spr_testgun2_bullet</sprite>
+      <sprites name="M1911 silenced">
+        <sprite>sprites\spr_m1911_front</sprite>
+        <sprite>sprites\spr_m1911_top</sprite>
       </sprites>
       <sprite>sprites\spr_testgun4</sprite>
       <sprites name="Watergun">
@@ -120,6 +120,7 @@
       <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
       <script>scripts\scr_weapontier_array_testing.gml</script>
       <script>scripts\scr_random_weapon_ticket.gml</script>
+      <script>scripts\scr_display_random_weapon.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_muzzleflash.gml</script>
@@ -151,6 +152,7 @@
     </objects>
     <objects name="Interactive Objects">
       <object>objects\obj_mysterybox</object>
+      <object>objects\obj_mysterybox_weapon</object>
     </objects>
   </objects>
   <rooms name="rooms">

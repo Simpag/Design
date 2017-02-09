@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>range = 10;
 cost = 0;
+randomTime = 1; //How many secounds it takes to get a weapon
+randomWp = 0;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -58,6 +61,30 @@ position = vect2(x,y);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var _wp = scr_display_random_weapon(_time, 0, 2);
+obj_mysterybox_weapon.sprite_index = _wp;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -76,8 +103,65 @@ position = vect2(x,y);
           <argument>
             <kind>1</kind>
             <string>if (scr_distance_to_object(range, obj_player) &amp;&amp; (global.playerOneMoney &gt;= cost) &amp;&amp; obj_player.key_use) {
-    obj_gun.weapon = scr_random_weapon_ticket();
+    image_speed = 14/room_speed;
+    _time = randomTime;
+    randomWp = scr_random_weapon_ticket();
+    instance_create(x,y,obj_mysterybox_weapon);
+    alarm[0] = 0.0001;
 }
+/*
+if (_time &lt;= 0 &amp;&amp; obj_player.key_use) {
+    obj_gun.weapon = randomWp
+    image_speed = -14/room_speed;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed = 0;
+image_index = 12;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_text(x, y-20, string(randomWp));
 </string>
           </argument>
         </arguments>
