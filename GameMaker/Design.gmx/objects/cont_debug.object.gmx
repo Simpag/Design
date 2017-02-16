@@ -34,7 +34,7 @@
     draw_text(view_xview[0]+10, view_yview[0]+45, "Character: " + global.characterArray[obj_player.character,0]);
     draw_text(view_xview[0]+10, view_yview[0]+60, "Facing: " + string(obj_player.facing));
     draw_text(view_xview[0]+10, view_yview[0]+75, "Move_x: " + string(obj_player.move_x));
-    draw_text(view_xview[0]+10, view_yview[0]+90, "Move_y: " + string(obj_player.move_y));
+    draw_text(view_xview[0]+10, view_yview[0]+90, "Objects: " + string(instance_count));
     draw_text(view_xview[0]+10, view_yview[0]+105, "Enemies: " + string(instance_number(obj_enemy_parent)));
     if(instance_exists(obj_gun)) { 
         draw_text(view_xview[0]+10, view_yview[0]+120, "Clip: " + string(global.weaponArray[obj_gun.weapon,15]));
