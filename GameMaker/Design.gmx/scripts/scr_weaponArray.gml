@@ -28,36 +28,36 @@ for (i = 0; i < global.numberOfWeapons; i++) {
     }
 }
 
-// [0] test gun 0 (1)
-global.weaponArray[0,0] = "Test Gun 0"; //Name
-global.weaponArray[0,1] = 15; //Ammo
-global.weaponArray[0,2] = 70; //Damage
-global.weaponArray[0,3] = 2; //Rate of fire
-global.weaponArray[0,4] = 20; //Muzzle flash
+// [0] Ak-47 (1)
+global.weaponArray[0,0] = "AK-47"; //Name
+global.weaponArray[0,1] = 45; //Ammo
+global.weaponArray[0,2] = 25; //Damage
+global.weaponArray[0,3] = 5; //Rate of fire
+global.weaponArray[0,4] = 24; //Muzzle flash
 global.weaponArray[0,5] = 5; //x offset
 global.weaponArray[0,6] = 5; //y offset
 global.weaponArray[0,7] = spr_testgun1_bullet; //bullet sprite
-global.weaponArray[0,8] = spr_testgun1; //Gun sprite
-global.weaponArray[0,9] = spr_testgun1; //Gun Front tespri
-global.weaponArray[0,10] = 35; //Tickets
+global.weaponArray[0,8] = spr_ak47_top; //Gun Top Sprite
+global.weaponArray[0,9] = spr_ak47_front; //Gun Front Sprite
+global.weaponArray[0,10] = 15; //Tickets
 global.weaponArray[0,11] = 0; //Weapon number
 global.weaponArray[0,12] = 10; //Bullet speed
-global.weaponArray[0,13] = 200; //Range
+global.weaponArray[0,13] = 2000; //Range
 global.weaponArray[0,14] = 0.5; //Reaload Time
 global.weaponArray[0,15] = global.weaponArray[0,16]; //Current clip
 global.weaponArray[0,16] = 15; //Clip size
 
-// [1] test gun 1 (2)
-global.weaponArray[1,0] = "Test Gun 1"; //Name
-global.weaponArray[1,1] = 100; //Ammo
+// [1] Mini-Uzi (2)
+global.weaponArray[1,0] = "Mini-Uzi"; //Name
+global.weaponArray[1,1] = 50; //Ammo
 global.weaponArray[1,2] = 120; //Damage
-global.weaponArray[1,3] = 1; //Rate of fire
-global.weaponArray[1,4] = 20; //Muzzle flash
+global.weaponArray[1,3] = 2; //Rate of fire
+global.weaponArray[1,4] = 18; //Muzzle flash
 global.weaponArray[1,5] = 5; //x offset
 global.weaponArray[1,6] = 5; //y offset
 global.weaponArray[1,7] = spr_testgun1_bullet; //bullet sprite
-global.weaponArray[1,8] = spr_testgun4; //Gun sprite
-global.weaponArray[1,9] = spr_testgun4; //Gun Front sprite
+global.weaponArray[1,8] = spr_miniuzi_top; //Gun sprite
+global.weaponArray[1,9] = spr_miniuzi_front; //Gun Front sprite
 global.weaponArray[1,10] = 20;//Tickets
 global.weaponArray[1,11] = 1; //Weapon number
 global.weaponArray[1,12] = 10; //Bullet speed

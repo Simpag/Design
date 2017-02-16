@@ -7,18 +7,22 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Gun">
-      <sprites name="Test gun 1">
-        <sprite>sprites\spr_testgun1</sprite>
+      <sprites name="Ak47">
+        <sprite>sprites\spr_ak47_top</sprite>
+        <sprite>sprites\spr_ak47_front</sprite>
         <sprite>sprites\spr_testgun1_bullet</sprite>
       </sprites>
       <sprites name="M1911 silenced">
         <sprite>sprites\spr_m1911_front</sprite>
         <sprite>sprites\spr_m1911_top</sprite>
       </sprites>
-      <sprite>sprites\spr_testgun4</sprite>
       <sprites name="Watergun">
         <sprite>sprites\spr_watergun_top</sprite>
         <sprite>sprites\spr_watergun_front</sprite>
+      </sprites>
+      <sprites name="Mini uzi">
+        <sprite>sprites\spr_miniuzi_top</sprite>
+        <sprite>sprites\spr_miniuzi_front</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
