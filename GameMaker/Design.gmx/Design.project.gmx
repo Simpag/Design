@@ -110,6 +110,8 @@
           <script>scripts\vect_to_vect3.gml</script>
         </scripts>
       </scripts>
+      <script>scripts\scr_target_player.gml</script>
+      <script>scripts\scr_nearest_player.gml</script>
     </scripts>
     <scripts name="Spawner">
       <script>scripts\scr_spawnPoints.gml</script>

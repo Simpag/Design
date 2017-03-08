@@ -128,15 +128,15 @@ max_force = 0.2; // How fast it turns
 scr_inputs(2);
 switch (state) {
     case playerStates.idle:
-        scr_idle(2);
+        scr_idle();
     break;
     
     case playerStates.normal:
-        scr_normal(2);
+        scr_normal();
     break;
     
     case playerStates.movement:
-        scr_movement(2);
+        scr_movement();
     break;    
 }
 </string>

@@ -30,6 +30,9 @@ hp = 100;
 moveSpeed = 1.5;
 worth = 20;
 turnSpeed = 0.7;
+changeRange = 3;
+target = scr_target_player();
+hitBy = noone;
 </string>
           </argument>
         </arguments>
@@ -79,48 +82,24 @@ max_force = turnSpeed; // How fast it turns
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Enemy health
-if (hp &lt;= 0) {
-    instance_destroy();
-    global.playerOneMoney += worth;
-    global.enemiesLeft--;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Enemy ai
-if ((distance_to_object(obj_collider) &lt; sprite_height+4) || (distance_to_object(obj_mysterybox) &lt; sprite_height+4) ) {
-    scr_enemy_pathfinding();
+
+scr_nearest_player();
+
+//Decide which alg to use
+if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
+    scr_enemy_pathfinding(target);
 } else {
     path_end();
-    scr_steering_behaviour_normal();
+    scr_steering_behaviour_normal(target);
 }
 
-image_angle = point_direction(x, y, obj_player.x, obj_player.y)
+image_angle = point_direction(x, y, target.x, target.y)
 position = vect2(x,y); // will be used to update xy for steering
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="obj_bullet">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -137,8 +116,21 @@ position = vect2(x,y); // will be used to update xy for steering
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp -= global.weaponArray[obj_gun.weapon,2];
-with (other) instance_destroy();
+            <string>///Enemy health
+
+if (hp &lt;= 0) {
+    instance_destroy();
+    global.enemiesLeft--;
+    switch(hitBy) {
+        case obj_player_one:
+            global.playerOneMoney += worth;
+        break;
+        
+        case obj_player_two:
+            global.playerTwoMoney += worth;
+        break;
+    }
+}
 </string>
           </argument>
         </arguments>

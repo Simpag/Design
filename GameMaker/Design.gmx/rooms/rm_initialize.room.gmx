@@ -25,6 +25,7 @@ scr_characterArray();
 //Global vars
 global.debug = true;
 global.spawnCap = 10;       //Amout of enemies on the screen
+global.numberOfPlayers = 2;
 
 //Randomize the seed to get true random numbers
 randomize();
