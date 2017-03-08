@@ -30,6 +30,7 @@
 state = playerStates.normal;
 
 //initialize variables
+player = 1;                         //Used for scripts
 character = 0;                      //Set active character
 hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
@@ -125,17 +126,18 @@ max_force = 0.2; // How fast it turns
           <argument>
             <kind>1</kind>
             <string>///States
+scr_inputs(1);
 switch (state) {
     case playerStates.idle:
-        scr_idle();
+        scr_idle(1);
     break;
     
     case playerStates.normal:
-        scr_normal();
+        scr_normal(1);
     break;
     
     case playerStates.movement:
-        scr_movement();
+        scr_movement(1);
     break;    
 }
 </string>
@@ -215,6 +217,10 @@ position = vect2(x,y); // will be used to update xy
             <string>var sprite = global.characterArray[character,1];
 sprite_index = sprite;
 image_angle = facing;
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_black);
+draw_text(x,y, string(state));
 draw_self();
 </string>
           </argument>

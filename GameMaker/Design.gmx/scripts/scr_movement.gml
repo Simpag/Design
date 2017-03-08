@@ -1,6 +1,4 @@
 ///scr_move
-scr_inputs();
-
 /* Move direction
 key left will be either -1 or 0
 Key right will be either 1 or 0

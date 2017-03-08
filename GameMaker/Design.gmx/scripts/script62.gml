@@ -1,7 +1,6 @@
 ///scr_inputs(player)
 //get the player´s input
-_player = argument[0];
-switch(_player) {
+switch(player) {
     case 1:
         key_right = keyboard_check(ord("D"));
         key_left = keyboard_check(ord("A"));
@@ -13,12 +12,12 @@ switch(_player) {
         break;
         
     case 2:
-        key_right = keyboard_check(vk_right);
-        key_left = keyboard_check(vk_left);
-        key_down = keyboard_check(vk_down);
-        key_up = keyboard_check(vk_up);
-        key_shoot = keyboard_check(vk_numpad0);
-        key_use = keyboard_check_pressed(vk_numpad1);
-        key_reload = keyboard_check_pressed(vk_lcontrol);
+        key_right = keyboard_check(ord("L"));
+        key_left = keyboard_check(ord("J"));
+        key_down = keyboard_check(ord("K"));
+        key_up = keyboard_check(ord("I"));
+        key_shoot = keyboard_check(ord("P"));
+        key_use = keyboard_check_pressed(ord("O"));
+        key_reload = keyboard_check_pressed(ord("U"));
         break;
 }

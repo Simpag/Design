@@ -138,8 +138,9 @@
     <objects name="Enemies">
       <object>objects\obj_enemy_parent</object>
     </objects>
-    <objects name="Player">
-      <object>objects\obj_player</object>
+    <objects name="Players">
+      <object>objects\obj_player_one</object>
+      <object>objects\obj_player_two</object>
       <objects name="Gun">
         <object>objects\obj_gun</object>
         <object>objects\obj_bullet</object>

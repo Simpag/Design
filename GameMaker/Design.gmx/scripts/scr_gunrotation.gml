@@ -1,5 +1,6 @@
-x = obj_player.x + lengthdir_x(global.weaponArray[weapon, 5], obj_player.facing);
-y = obj_player.y + lengthdir_y(global.weaponArray[weapon, 6], obj_player.facing);
+x = obj_player_one.x + lengthdir_x(global.weaponArray[weapon, 5], obj_player_one.facing);
+y = obj_player_one.y + lengthdir_y(global.weaponArray[weapon, 6], obj_player_one.facing);
+image_angle = obj_player_one.facing - 90;
 
 /*scr_inputs();
 var mx = key_right - key_left;

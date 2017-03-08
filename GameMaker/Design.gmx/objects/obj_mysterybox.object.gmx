@@ -77,7 +77,7 @@ position = vect2(x,y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_player) &lt; range &amp;&amp; (global.playerOneMoney &gt;= cost) &amp;&amp; (obj_player.key_use) &amp;&amp; (!instance_exists(obj_mysterybox_weapon))) {
+            <string>if (distance_to_object(obj_player_one) &lt; range &amp;&amp; (global.playerOneMoney &gt;= cost) &amp;&amp; (obj_player_one.key_use) &amp;&amp; (!instance_exists(obj_mysterybox_weapon))) {
     image_speed = 14/room_speed;
     instance_create(x,y,obj_mysterybox_weapon);
 }

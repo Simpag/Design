@@ -17,6 +17,7 @@ enum playerStates {
     movement, //2
 }
 
+
 //Arrays
 scr_weaponArray();
 scr_characterArray();

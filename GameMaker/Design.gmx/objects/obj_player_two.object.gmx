@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,20 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weapon = 0;
-canShoot = true;
-rotateOffsetX = 0;
-rotateOffsetY = 0;
-player = 1;                         //Used for scripts
+            <string>///Variables
+//Set state
+state = playerStates.normal;
 
-//Particles
-scr_muzzleflash();
+//initialize variables
+character = 0;                      //Set active character
+hsp = 0;                            //Set horizontal speed to 0, standing still.
+vsp = 0;                            //Same as above but vertical
+moveSpeed = 4;                      //Move speed
+goIdle = 10;                        //Go into idle after secounds
+facing = 0;                         //Variable to know which dir player is facing  
+global.playerTwoHealth = 100;       //Player one hp      
+global.playerTwoMoney = 300;          //Player one money
+
+//Movement variables
+move_x = 0;                         //Move var in x dir, used in movement script
+move_y = 0;                         //Move var in y dir, used in movement script    
+move_acceleration = 0.8;            //Acceleration factor
+move_restitution = 0.6;             //Slowdown factor
+
+//Initiate Camera
+//instance_create(x, y, cont_ui);
+
+//Create Gun
+//instance_create(x, y, obj_gun);
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,11 +70,15 @@ scr_muzzleflash();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reload
-canShoot = true;
+            <string>/// Steering Behaviour Support
 
-global.weaponArray[weapon, 15] = global.weaponArray[weapon,16];
-global.weaponArray[weapon,1] -= global.weaponArray[weapon,16];
+//Steering behaviour stuff
+position = vect2(x,y); // will be used to update xy
+velocity = vect2(0,0);
+steering = vect2(0,0); // desired velocity
+
+max_speed = moveSpeed;
+max_force = 0.2; // How fast it turns
 </string>
           </argument>
         </arguments>
@@ -82,8 +101,7 @@ global.weaponArray[weapon,1] -= global.weaponArray[weapon,16];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Rate of fire
-canShoot = true;
+            <string>state = playerStates.idle;
 </string>
           </argument>
         </arguments>
@@ -106,21 +124,25 @@ canShoot = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; global.weaponArray[weapon,15] &gt; 0) {
-    scr_shoot();
+            <string>///States
+scr_inputs(2);
+switch (state) {
+    case playerStates.idle:
+        scr_idle(2);
+    break;
+    
+    case playerStates.normal:
+        scr_normal(2);
+    break;
+    
+    case playerStates.movement:
+        scr_movement(2);
+    break;    
 }
-
-if (obj_player_one.key_reload) {
-    scr_reload();
-}
-
-scr_gunrotation();
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="60">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -137,20 +159,38 @@ scr_gunrotation();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (weapon &lt; global.numberOfWeapons-1) { // -1 because its zerobased
-    weapon++;
+            <string>/// Step Behaviour
+
+// reset steering
+position = vect2(x,y); // will be used to update xy
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (character &lt; global.numberOfCharacters-1) { // -1 because its zerobased
+    character++;
 } else {
-    weapon = 0;
+    character = 0;
 }
-
-//Disable all alarms
-for (i = 0; i &lt; 2; i++) {
-    alarm[i] = -1;
-}
-
-canShoot = true;
-
-if (global.weaponArray[weapon,15] &lt;= 0) scr_reload();//reload if empty
 </string>
           </argument>
         </arguments>
@@ -173,8 +213,37 @@ if (global.weaponArray[weapon,15] &lt;= 0) scr_reload();//reload if empty
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = global.weaponArray[weapon, 8];
+            <string>var sprite = global.characterArray[character,1];
+sprite_index = sprite;
+image_angle = facing;
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_black);
+draw_text(x,y, string(state));
 draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="66">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(x, y +50, obj_enemy_parent);
 </string>
           </argument>
         </arguments>
@@ -183,7 +252,7 @@ draw_self();
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
