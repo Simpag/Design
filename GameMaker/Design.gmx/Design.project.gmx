@@ -144,8 +144,8 @@
       <object>objects\obj_player_one</object>
       <object>objects\obj_player_two</object>
       <objects name="Gun">
-        <object>objects\obj_gun</object>
-        <object>objects\obj_bullet</object>
+        <object>objects\obj_player_one_gun</object>
+        <object>objects\obj_player_one_bullet</object>
       </objects>
     </objects>
     <objects name="Static Objects">

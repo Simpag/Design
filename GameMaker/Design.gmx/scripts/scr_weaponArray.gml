@@ -15,10 +15,9 @@
 [i,12] = Bullet Speed                       13
 [i,13] = Range                              14
 [i, 14] = Reaload Time In Sec               15
-[i, 15] = Current Clip                      16
-[i, 16] = Clip Size                         17
+[i, 15] = Clip Size                         17
 */
-numberOfWeaponInfo = 17; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfWeaponInfo = 16; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfWeapons = 4; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -44,8 +43,7 @@ global.weaponArray[0,11] = 0; //Weapon number
 global.weaponArray[0,12] = 10; //Bullet speed
 global.weaponArray[0,13] = 2000; //Range
 global.weaponArray[0,14] = 0.5; //Reaload Time
-global.weaponArray[0,15] = global.weaponArray[0,16]; //Current clip
-global.weaponArray[0,16] = 15; //Clip size
+global.weaponArray[0,15] = 15; //Clip size
 
 // [1] Mini-Uzi (2)
 global.weaponArray[1,0] = "Mini-Uzi"; //Name
@@ -63,8 +61,7 @@ global.weaponArray[1,11] = 1; //Weapon number
 global.weaponArray[1,12] = 10; //Bullet speed
 global.weaponArray[1,13] = 200; //Range
 global.weaponArray[1,14] = 1; //Reaload Time
-global.weaponArray[1,15] = global.weaponArray[1,16]; //Current clip
-global.weaponArray[1,16] = 15; //Clip size
+global.weaponArray[1,15] = 15; //Clip size
 
 // [2] Watergun (3)
 global.weaponArray[2,0] = "Watergun"; //Name
@@ -82,8 +79,7 @@ global.weaponArray[2,11] = 2; //Weapon number
 global.weaponArray[2,12] = 20; //Bullet speed
 global.weaponArray[2,13] = 100; //Range
 global.weaponArray[2,14] = 0.3; //Reaload Time
-global.weaponArray[2,15] = global.weaponArray[2,16]; //Current clip
-global.weaponArray[2,16] = 50; //Clip size
+global.weaponArray[2,15] = 50; //Clip size
 
 // [3] M1911 (4)
 global.weaponArray[3,0] = "M1911"; //Name
@@ -101,5 +97,4 @@ global.weaponArray[3,11] = 3; //Weapon number
 global.weaponArray[3,12] = 10; //Bullet speed
 global.weaponArray[3,13] = 200; //Range
 global.weaponArray[3,14] = 2; //Reaload Time
-global.weaponArray[3,15] = global.weaponArray[3,16]; //Current clip
-global.weaponArray[3,16] = 20; //Clip size
+global.weaponArray[3,15] = 20; //Clip size

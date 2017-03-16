@@ -75,7 +75,7 @@ y += (obj_player_one.y-y)/20;
             <kind>1</kind>
             <string>draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_sprite(global.weaponArray[obj_gun.weapon, 9], 0,10, window_get_height()-10);
+draw_sprite(global.weaponArray[obj_player_one_gun.weapon, 9], 0,10, window_get_height()-10);
 draw_set_color(c_red);
 draw_line_width(10, 10, global.playerOneHealth, 10, 6);
 draw_set_color(c_white);

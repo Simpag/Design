@@ -27,12 +27,55 @@
             <kind>1</kind>
             <string>weapon = 0;
 canShoot = true;
-rotateOffsetX = 0;
-rotateOffsetY = 0;
-player = 1;                         //Used for scripts
+player = 1;                         //Used for scripts    
+holdingWeapon = 0;   
 
 //Particles
 scr_muzzleflash();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Holding Weapon Array
+//Weapon Array
+/*
+[i,0] = Clip Size                           1
+[i,1] = Ammo                                2
+[i,2] = Current Clip                        3
+[i,3] = Current Ammo                        4
+*/
+
+numberOfHoldingWeaponInfo = 4; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfHoldingWeapons = 2; // !!!!! DONT FORGET TO INCREASE !!!!!!
+
+//Fill array to prevent crash
+for (i = 0; i &lt; numberOfHoldingWeapons; i++) {
+    for(j = 0; j &lt; numberOfHoldingWeaponInfo; j++) {
+        holdingWeapon[i,j] = 0;   
+    }
+}
+
+// [0] Primary (1)
+holdingWeapon[0,0] = global.weaponArray[weapon,15]; //Clip Size 
+holdingWeapon[0,1] = global.weaponArray[weapon,1]; //Ammo
+holdingWeapon[0,2] = holdingWeapon[0,0]; //Current Clip
+holdingWeapon[0,3] = holdingWeapon[0,1]; //Current Ammo
 </string>
           </argument>
         </arguments>
@@ -56,10 +99,16 @@ scr_muzzleflash();
           <argument>
             <kind>1</kind>
             <string>///Reload
-canShoot = true;
+if (holdingWeapon[holdingWeapon,3] &gt;= holdingWeapon[holdingWeapon,0]) {
+    holdingWeapon[holdingWeapon,2] = holdingWeapon[holdingWeapon,0]; 
+} else if (holdingWeapon[holdingWeapon,3] &gt; 0) {
+    holdingWeapon[holdingWeapon,2] = holdingWeapon[holdingWeapon,1];
+}
 
-global.weaponArray[weapon, 15] = global.weaponArray[weapon,16];
-global.weaponArray[weapon,1] -= global.weaponArray[weapon,16];
+//Remove clip from ammo count
+holdingWeapon[holdingWeapon,1] -= holdingWeapon[holdingWeapon,2];
+
+canShoot = true;
 </string>
           </argument>
         </arguments>
@@ -106,7 +155,7 @@ canShoot = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; global.weaponArray[weapon,15] &gt; 0) {
+            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; curClip &gt; 0) {
     scr_shoot();
 }
 
@@ -137,10 +186,10 @@ scr_gunrotation();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (weapon &lt; global.numberOfWeapons-1) { // -1 because its zerobased
-    weapon++;
+            <string>if (holdingWeapon &lt; numberOfHoldingWeapons-1) { // -1 because its zerobased
+    holdingWeapon++;
 } else {
-    weapon = 0;
+    holdingWeapon = 0;
 }
 
 //Disable all alarms
@@ -149,8 +198,6 @@ for (i = 0; i &lt; 2; i++) {
 }
 
 canShoot = true;
-
-if (global.weaponArray[weapon,15] &lt;= 0) scr_reload();//reload if empty
 </string>
           </argument>
         </arguments>
@@ -175,6 +222,33 @@ if (global.weaponArray[weapon,15] &lt;= 0) scr_reload();//reload if empty
             <kind>1</kind>
             <string>sprite_index = global.weaponArray[weapon, 8];
 draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// [0] Primary (1)
+holdingWeapon[1,0] = global.weaponArray[2,15]; //Clip Size 
+holdingWeapon[1,1] = global.weaponArray[2,1]; //Ammo
+holdingWeapon[1,2] = holdingWeapon[1,0]; //Current Clip
+holdingWeapon[1,3] = holdingWeapon[1,1]; //Current Ammo
 </string>
           </argument>
         </arguments>
