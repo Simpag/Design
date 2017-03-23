@@ -26,7 +26,7 @@ scr_player_money();
 //Global vars
 global.debug = true;
 global.spawnCap = 10;       //Amout of enemies on the screen
-global.numberOfPlayers = 2;
+global.numberOfPlayers = 1;
 
 //Randomize the seed to get true random numbers
 randomize();

@@ -8,5 +8,9 @@ if (key_right) || (key_left) || (key_down) || (key_up) {
 //Stay in normal state
 if ((key_shoot) || key_use) alarm[0] = -1;
 
+//Not moving
+image_speed = 0;
+image_index = 0;
+
 //Go into idle after 10 sec
 if (!alarm[0]) alarm[0] = goIdle * room_speed;

@@ -25,10 +25,15 @@
         <sprite>sprites\spr_miniuzi_front</sprite>
       </sprites>
     </sprites>
-    <sprites name="Player">
+    <sprites name="Characters">
       <sprite>sprites\spr_testcharacter1</sprite>
       <sprite>sprites\spr_testcharacter2</sprite>
       <sprite>sprites\spr_player_collider</sprite>
+      <sprites name="affro">
+        <sprite>sprites\spr_affro_melee</sprite>
+        <sprite>sprites\spr_affro_walk</sprite>
+        <sprite>sprites\spr_affro_walk2</sprite>
+      </sprites>
     </sprites>
     <sprites name="Static Objects">
       <sprite>sprites\spr_collider</sprite>
@@ -36,9 +41,15 @@
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_testenemy1</sprite>
+      <sprites name="basic">
+        <sprite>sprites\spr_zombie_attack</sprite>
+        <sprite>sprites\spr_basic_zombie_walk</sprite>
+      </sprites>
     </sprites>
     <sprites name="Interactive objects">
       <sprite>sprites\spr_mysterybox</sprite>
+      <sprite>sprites\spr_ammo_pack</sprite>
+      <sprite>sprites\spr_health_pack</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -146,7 +157,6 @@
     </objects>
     <objects name="Players">
       <object>objects\obj_player_one</object>
-      <object>objects\obj_player_two</object>
       <objects name="Gun">
         <object>objects\obj_player_one_gun</object>
         <object>objects\obj_player_one_bullet</object>

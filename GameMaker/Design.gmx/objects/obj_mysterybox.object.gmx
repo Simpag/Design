@@ -112,8 +112,8 @@ if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-if (instance_exists(obj_mysterybox_weapon)) image_index = 12;
-if (!instance_exists(obj_mysterybox_weapon)) image_index = 0;
+if (boxBought) image_index = 12;
+if (!boxBought) image_index = 0;
 </string>
           </argument>
         </arguments>

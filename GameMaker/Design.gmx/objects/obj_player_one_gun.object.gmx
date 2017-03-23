@@ -25,33 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weapon = 0;
-canShoot = true;
-player = 1;                         //Used for scripts
-secondaryEmpty = true;  
-
-//Particles
-scr_muzzleflash();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Holding Weapon Array
 //Weapon Array
 /*
@@ -72,12 +45,12 @@ for (i = 0; i &lt; numberOfHoldingWeapons; i++) {
     }
 }
 
-// [0] Primary (1)
-holdingWeapon[0,0] = global.weaponArray[weapon,15]; //Clip Size 
-holdingWeapon[0,1] = global.weaponArray[weapon,1];  //Ammo
+// [0] Primary/Starting (1)
+holdingWeapon[0,0] = global.weaponArray[3,15];      //Clip Size 
+holdingWeapon[0,1] = global.weaponArray[3,1];       //Ammo
 holdingWeapon[0,2] = holdingWeapon[0,0];            //Current Clip
 holdingWeapon[0,3] = holdingWeapon[0,1];            //Current Ammo
-holdingWeapon[0,4] = 0;                             //Weapon number
+holdingWeapon[0,4] = 3;                             //Weapon number
 
 // [1] empty (2)
 holdingWeapon[1,0] = 0;                             //Clip Size 
@@ -85,6 +58,33 @@ holdingWeapon[1,1] = 0;                             //Ammo
 holdingWeapon[1,2] = 0;                             //Current Clip
 holdingWeapon[1,3] = 0;                             //Current Ammo
 holdingWeapon[1,4] = 0;                             //Weapon number
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>weapon = 0;
+canShoot = true;
+player = 1;                         //Used for scripts
+secondaryEmpty = true;  
+
+//Particles
+scr_muzzleflash();
 </string>
           </argument>
         </arguments>
@@ -190,6 +190,30 @@ if (obj_player_one.key_switch) {
 }
 
 scr_gun_rotation(obj_player_one);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed = 0;
+image_index = 0;
 </string>
           </argument>
         </arguments>
