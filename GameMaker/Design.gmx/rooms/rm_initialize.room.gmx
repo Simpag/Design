@@ -21,6 +21,7 @@ enum playerStates {
 //Arrays
 scr_weaponArray();
 scr_characterArray();
+scr_player_money();
 
 //Global vars
 global.debug = true;

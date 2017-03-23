@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = global.weaponArray[obj_gun.weapon, 7];
+            <string>sprite_index = global.weaponArray[obj_player_one_gun.weapon, 7];
 startX = x;
 startY = y;
 </string>
@@ -50,7 +50,7 @@ startY = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_point(startX, startY) &gt; global.weaponArray[obj_gun.weapon,13]) {
+            <string>if (distance_to_point(startX, startY) &gt; global.weaponArray[obj_player_one_gun.weapon,13]) {
     instance_destroy();
 }
 </string>
@@ -76,12 +76,52 @@ startY = y;
           <argument>
             <kind>1</kind>
             <string>with(other) {
-    hp -= global.weaponArray[obj_gun.weapon,2];
-    hitBy = obj_player_one;
+    hitBy = 0; //Player one
+    hp -= global.weaponArray[obj_player_one_gun.weapon,2];
 }
 
 instance_destroy();
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>532</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_effect</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>3</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>13</kind>
+            <string>255</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>

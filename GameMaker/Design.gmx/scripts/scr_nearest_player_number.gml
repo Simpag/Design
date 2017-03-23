@@ -1,7 +1,7 @@
 ///scr_nearest_player()
 switch(global.numberOfPlayers) {
     case 1:
-        return (obj_player_one);
+        return (0);
         break;
         
     case 2:
@@ -9,10 +9,10 @@ switch(global.numberOfPlayers) {
         _p1 = distance_to_object(obj_player_one);
         _p2 = distance_to_object(obj_player_two);
     
-        if (_p1 <= _p2) {
-            return (obj_player_one);
+        if (_p1 < _p2) {
+            return (0);
         } else {
-            return (obj_player_two);
+            return (1);
         }
         break;
 }

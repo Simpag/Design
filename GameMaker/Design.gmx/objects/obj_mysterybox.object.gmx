@@ -3,7 +3,7 @@
   <spriteName>spr_mysterybox</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-20</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>range = 50;
+            <string>///Variables
+range = 50;
 cost = 0;
 randomTime = 1; //How many secounds it takes to get a weapon
 image_speed = 0;
+playerBought = noone;
 </string>
           </argument>
         </arguments>
@@ -77,9 +79,13 @@ position = vect2(x,y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_player_one) &lt; range &amp;&amp; (global.playerOneMoney &gt;= cost) &amp;&amp; (obj_player_one.key_use) &amp;&amp; (!instance_exists(obj_mysterybox_weapon))) {
+            <string>var _near = scr_nearest_player();
+var _nearnum = scr_nearest_player_number();
+
+if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (!instance_exists(obj_mysterybox_weapon))) {
     image_speed = 14/room_speed;
     instance_create(x,y,obj_mysterybox_weapon);
+    playerBought = _near;
 }
 </string>
           </argument>

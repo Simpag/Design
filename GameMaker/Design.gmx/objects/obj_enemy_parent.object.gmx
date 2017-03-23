@@ -84,7 +84,7 @@ max_force = turnSpeed; // How fast it turns
             <kind>1</kind>
             <string>///Enemy ai
 
-scr_nearest_player();
+scr_changeRange_player();
 
 //Decide which alg to use
 if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
@@ -121,15 +121,7 @@ position = vect2(x,y); // will be used to update xy for steering
 if (hp &lt;= 0) {
     instance_destroy();
     global.enemiesLeft--;
-    switch(hitBy) {
-        case obj_player_one:
-            global.playerOneMoney += worth;
-        break;
-        
-        case obj_player_two:
-            global.playerTwoMoney += worth;
-        break;
-    }
+    global.playerMoney[hitBy] += worth;
 }
 </string>
           </argument>

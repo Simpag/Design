@@ -32,6 +32,9 @@ holdingWeapon = 0;
 
 //Particles
 scr_muzzleflash();
+
+
+must fix to know which weapon the player is holding
 </string>
           </argument>
         </arguments>
@@ -76,6 +79,12 @@ holdingWeapon[0,0] = global.weaponArray[weapon,15]; //Clip Size
 holdingWeapon[0,1] = global.weaponArray[weapon,1]; //Ammo
 holdingWeapon[0,2] = holdingWeapon[0,0]; //Current Clip
 holdingWeapon[0,3] = holdingWeapon[0,1]; //Current Ammo
+
+// [1] empty (2)
+holdingWeapon[1,0] = 0; //Clip Size 
+holdingWeapon[1,1] = 0; //Ammo
+holdingWeapon[1,2] = 0; //Current Clip
+holdingWeapon[1,3] = 0; //Current Ammo
 </string>
           </argument>
         </arguments>
@@ -155,7 +164,7 @@ canShoot = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; curClip &gt; 0) {
+            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; holdingWeapon[weapon,2] &gt; 0) {
     scr_shoot();
 }
 
@@ -163,41 +172,22 @@ if (obj_player_one.key_reload) {
     scr_reload();
 }
 
+if (obj_player_one.key_switch) {
+    if (weapon &lt; 1) {
+        weapon++;
+    } else {
+        weapon = 0;
+    }
+    
+    //Disable all alarms
+    for (i = 0; i &lt; 2; i++) {
+        alarm[i] = -1;
+    }
+    
+    canShoot = true;
+}
+
 scr_gunrotation();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="60">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (holdingWeapon &lt; numberOfHoldingWeapons-1) { // -1 because its zerobased
-    holdingWeapon++;
-} else {
-    holdingWeapon = 0;
-}
-
-//Disable all alarms
-for (i = 0; i &lt; 2; i++) {
-    alarm[i] = -1;
-}
-
-canShoot = true;
 </string>
           </argument>
         </arguments>

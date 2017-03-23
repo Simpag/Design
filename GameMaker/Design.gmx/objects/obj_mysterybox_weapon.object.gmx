@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -120,8 +120,8 @@ if (alarmOn == false &amp;&amp; rW == true) {
     alarm[0] = rWT * room_speed;
     alarmOn = true;
 } else if (alarmOn == false &amp;&amp; rW == false) {
-    if (obj_player.key_use &amp;&amp; distance_to_object(obj_player) &lt; obj_mysterybox.range) {
-        obj_gun.weapon = randomWp
+    if (obj_mysterybox.playerBought.key_use &amp;&amp; distance_to_object(obj_mysterybox.playerBought) &lt; obj_mysterybox.range) {
+        //set player weapon = randomWp
         obj_mysterybox.image_speed = -14/room_speed;
         instance_destroy();
     }

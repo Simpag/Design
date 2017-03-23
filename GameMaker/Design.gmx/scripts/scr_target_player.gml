@@ -6,7 +6,7 @@ switch(global.numberOfPlayers) {
         
     case 2:
         _r = random_range(0, 100)
-        if (distance_to_object(obj_player_one) > distance_to_object(obj_player_two)) {
+        if (distance_to_object(obj_player_one) < distance_to_object(obj_player_two)) {
             _r += 25;
         } else {
             _r -= 25;

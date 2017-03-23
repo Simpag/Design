@@ -49,9 +49,11 @@
       <script>scripts\scr_weaponArray.gml</script>
       <script>scripts\scr_gunrotation.gml</script>
       <script>scripts\scr_reload.gml</script>
+      <script>scripts\scr_apply_new_weapon.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_characterArray.gml</script>
+      <script>scripts\scr_player_money.gml</script>
       <script>scripts\scr_graphics.gml</script>
       <scripts name="Movement">
         <script>scripts\scr_movement.gml</script>
@@ -111,7 +113,7 @@
         </scripts>
       </scripts>
       <script>scripts\scr_target_player.gml</script>
-      <script>scripts\scr_nearest_player.gml</script>
+      <script>scripts\scr_changeRange_player.gml</script>
     </scripts>
     <scripts name="Spawner">
       <script>scripts\scr_spawnPoints.gml</script>
@@ -126,6 +128,8 @@
       <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
       <script>scripts\scr_weapontier_array_testing.gml</script>
       <script>scripts\scr_random_weapon_ticket.gml</script>
+      <script>scripts\scr_nearest_player.gml</script>
+      <script>scripts\scr_nearest_player_number.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_muzzleflash.gml</script>
