@@ -29,8 +29,8 @@
 range = 50;
 cost = 0;
 randomTime = 1; //How many secounds it takes to get a weapon
+boxBought = false;
 image_speed = 0;
-playerBought = noone;
 </string>
           </argument>
         </arguments>
@@ -81,11 +81,13 @@ position = vect2(x,y);
             <kind>1</kind>
             <string>var _near = scr_nearest_player();
 var _nearnum = scr_nearest_player_number();
+var _rndWp //The weapon randomizer
 
-if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (!instance_exists(obj_mysterybox_weapon))) {
+if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (boxBought == false)) {
     image_speed = 14/room_speed;
-    instance_create(x,y,obj_mysterybox_weapon);
-    playerBought = _near;
+    _rndWp = instance_create(x,y,obj_mysterybox_weapon);
+    _rndWp.playerBought = _near;
+    boxBought = true;
 }
 </string>
           </argument>

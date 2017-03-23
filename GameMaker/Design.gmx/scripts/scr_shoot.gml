@@ -1,15 +1,17 @@
-///scr_shoot
+///scr_shoot(player bullet);
+_bullet = argument[0];
+
 //Remove bullet from clip
-global.weaponArray[weapon,15]--;
+holdingWeapon[weapon,2]--;
 
 //Rate of fire
 canShoot = false;
-alarm[0] = room_speed/global.weaponArray[weapon, 3];
+alarm[0] = room_speed/global.weaponArray[holdingWeapon[weapon,4],3];
 
 //Create the muzzle flash
-scr_muzzleflash_play(obj_player_one_gun);
+scr_muzzleflash_play();
 
 //Create bullet and set speed and direction
-bullet = instance_create(x + lengthdir_x(global.weaponArray[weapon, 4], obj_player_one_gun.image_angle), y + lengthdir_y(global.weaponArray[weapon, 4], obj_player_one_gun.image_angle), obj_player_one_bullet); 
-bullet.direction = obj_player_one_gun.image_angle;
-bullet.speed = global.weaponArray[weapon, 12];
+bullet = instance_create(x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 4], image_angle), y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 4], image_angle), _bullet); 
+bullet.direction = image_angle;
+bullet.speed = global.weaponArray[holdingWeapon[weapon,4], 12];

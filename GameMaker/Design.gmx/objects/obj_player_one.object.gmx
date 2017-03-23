@@ -48,7 +48,7 @@ move_restitution = 0.6;             //Slowdown factor
 instance_create(x, y, cont_ui);
 
 //Create Gun
-instance_create(x, y, obj_player_one_gun);
+playerGun = instance_create(x, y, obj_player_one_gun);
 </string>
           </argument>
         </arguments>
@@ -123,21 +123,11 @@ max_force = 0.2; // How fast it turns
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///States
-scr_inputs(1);
-switch (state) {
-    case playerStates.idle:
-        scr_idle();
-    break;
-    
-    case playerStates.normal:
-        scr_normal();
-    break;
-    
-    case playerStates.movement:
-        scr_movement();
-    break;    
-}
+            <string>/// Step Behaviour
+
+// reset steering
+position = vect2(x,y); // will be used to update xy
+
 </string>
           </argument>
         </arguments>
@@ -158,11 +148,21 @@ switch (state) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Step Behaviour
-
-// reset steering
-position = vect2(x,y); // will be used to update xy
-
+            <string>///States
+scr_inputs(1);
+switch (state) {
+    case playerStates.idle:
+        scr_idle();
+    break;
+    
+    case playerStates.normal:
+        scr_normal();
+    break;
+    
+    case playerStates.movement:
+        scr_movement();
+    break;    
+}
 </string>
           </argument>
         </arguments>

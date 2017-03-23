@@ -47,7 +47,7 @@
     <scripts name="Weapon">
       <script>scripts\scr_shoot.gml</script>
       <script>scripts\scr_weaponArray.gml</script>
-      <script>scripts\scr_gunrotation.gml</script>
+      <script>scripts\scr_gun_rotation.gml</script>
       <script>scripts\scr_reload.gml</script>
       <script>scripts\scr_apply_new_weapon.gml</script>
     </scripts>

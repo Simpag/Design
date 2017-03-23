@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rX = random(5);                 //Random X
+            <string>rX = random(5) + 2;             //Random X
 rY = random(10) + 5;            //Random Y
 x += rX;                        //Set x cord
 flight = 0.1                    //How fast the weapons move upwards
 rW = true;                      //Random wp
 rWT = random_range(0.1, 0.25);  //How many times a sec the weapon changes
 rT = irandom(2) + 1;            //How long the animation will play
+playerBought = noone;           //Who bought the gun
 alarmOn = false;
 
 //Select an random weapon
@@ -120,13 +121,15 @@ if (alarmOn == false &amp;&amp; rW == true) {
     alarm[0] = rWT * room_speed;
     alarmOn = true;
 } else if (alarmOn == false &amp;&amp; rW == false) {
-    if (obj_mysterybox.playerBought.key_use &amp;&amp; distance_to_object(obj_mysterybox.playerBought) &lt; obj_mysterybox.range) {
-        //set player weapon = randomWp
+    if (playerBought.key_use &amp;&amp; distance_to_object(playerBought) &lt; obj_mysterybox.range) {
+        scr_apply_new_weapon(randomWp, playerBought.playerGun);
         obj_mysterybox.image_speed = -14/room_speed;
+        obj_mysterybox.boxBought = false;
         instance_destroy();
     }
     
-    y += sin(_x) * 5;
+    //Make the weapon bob up and down
+    y += sin(_x) * 10;
     _x++;
 }
 
