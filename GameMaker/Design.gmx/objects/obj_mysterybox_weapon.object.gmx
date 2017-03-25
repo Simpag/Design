@@ -88,8 +88,8 @@ _x = 0;
           <argument>
             <kind>1</kind>
             <string>alarmOn = false;
-_wp = irandom(global.numberOfWeapons - 1);
-sprite_index = global.weaponArray[_wp,9];
+_wp = irandom(global.numberOfWeapons - 1); //Get an random integer, -1 because the first gun is 0
+sprite_index = global.weaponArray[_wp,9];  //Select an random wp image
 </string>
           </argument>
         </arguments>
@@ -112,7 +112,8 @@ sprite_index = global.weaponArray[_wp,9];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (rY &gt; 0) {
+            <string>///Controller
+if (rY &gt; 0) {
     rY -= flight;
     y -= flight;
 }
@@ -129,8 +130,8 @@ if (alarmOn == false &amp;&amp; rW == true) {
     }
     
     //Make the weapon bob up and down
-    y += sin(_x) * 10;
-    _x++;
+    y += sin(_x);
+    _x += 0.2;
 }
 
 if (rW == false) {

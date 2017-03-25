@@ -173,20 +173,7 @@ if (obj_player_one.key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0) {
 }
 
 if (obj_player_one.key_switch) {
-    if (secondaryEmpty == false) {
-            if (weapon &lt; 1) {
-                weapon++;
-            } else {
-                weapon = 0;
-            }
-            
-            //Disable all alarms
-            for (i = 0; i &lt; 2; i++) {
-                alarm[i] = -1;
-            }
-            
-            canShoot = true;
-    }
+    scr_switch();
 }
 
 scr_gun_rotation(obj_player_one);

@@ -1,9 +1,9 @@
 ///scr_gun_rotaion(player);
 _player = argument[0];
 
-x = _player.x + lengthdir_x(global.characterArray[_player.character,3], _player.facing);
-y = _player.y + lengthdir_y(global.characterArray[_player.character,3], _player.facing);
-image_angle = _player.facing;
+x = _player.x + lengthdir_x(global.characterArray[_player.character,3], _player.facing - 90);
+y = _player.y + lengthdir_y(global.characterArray[_player.character,3], _player.facing - 90);
+image_angle = _player.facing - 90;
 
 /*scr_inputs();
 var mx = key_right - key_left;

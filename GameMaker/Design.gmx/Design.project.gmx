@@ -61,6 +61,7 @@
       <script>scripts\scr_gun_rotation.gml</script>
       <script>scripts\scr_reload.gml</script>
       <script>scripts\scr_apply_new_weapon.gml</script>
+      <script>scripts\scr_switch.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_characterArray.gml</script>
