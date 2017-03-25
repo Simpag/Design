@@ -30,7 +30,7 @@
     draw_set_valign(fa_top);
     draw_set_color(c_black);
     draw_text(view_xview[0] + 10, view_yview[0] + 15, "State: " + string(obj_player_one.state));
-    if(instance_exists(obj_player_one_gun))draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_player_one_gun.weapon,0]);
+    if(instance_exists(obj_player_one_gun))draw_text(view_xview[0]+10, view_yview[0]+30, "Weapon: " + global.weaponArray[obj_player_one_gun.holdingWeapon[obj_player_one_gun.weapon,4],0]);
     draw_text(view_xview[0]+10, view_yview[0]+45, "Character: " + global.characterArray[obj_player_one.character,0]);
     draw_text(view_xview[0]+10, view_yview[0]+60, "Facing: " + string(obj_player_one.facing));
     //draw_text(view_xview[0]+10, view_yview[0]+75, "Near: " + string(obj_mysterybox._nearnum));

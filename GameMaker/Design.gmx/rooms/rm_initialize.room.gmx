@@ -17,11 +17,19 @@ enum playerStates {
     movement, //2
 }
 
+//Initiate states for the basic enemy
+enum basicStates {
+    follow, //0
+    attack, //1
+}
+
 
 //Arrays
-scr_weaponArray();
-scr_characterArray();
-scr_player_money();
+scr_weapon_array();
+scr_character_array();
+scr_player_money_array();
+scr_player_health_array();
+scr_spawn_points_array();
 
 //Global vars
 global.debug = true;

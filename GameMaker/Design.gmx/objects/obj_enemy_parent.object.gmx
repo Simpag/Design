@@ -26,14 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>///Enemy variables
-hp = 100;
-moveSpeed = 1.5;
-worth = 20;
-turnSpeed = 0.7;
-changeRange = 3;
-target = scr_target_player();
-hitBy = noone;
-image_speed = 13/room_speed;
+hp = 100;                           //His health
+damage = 15;                        //How much damage he does
+moveSpeed = 1.5;                    //How fast he moves
+worth = 50;                         //How much money the player gets when he dies
+turnSpeed = 0.7;                    //How fast he can turn
+changeRange = 3;                    //How close the player has to get before it changes target
+target = scr_target_player();       //Select target 
+hitBy = noone;                      //To know who hit him
+animationSpeed = 13;                //Animation speed
+attackRange = 0.5;                  //How far he can attack
+canAttack = true;                   //If he can attack
+isAttacking = false;                //If he is attacking
+
+//Set state
+state = basicStates.follow;
 </string>
           </argument>
         </arguments>
@@ -66,7 +73,7 @@ max_force = turnSpeed; // How fast it turns
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -83,24 +90,39 @@ max_force = turnSpeed; // How fast it turns
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Enemy ai
+            <string>if (distance_to_object(target) &gt; attackRange + 0.01) state = basicStates.follow;
+isAttacking = false;
 
-scr_changeRange_player();
-
-//Decide which alg to use
-if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
-    scr_enemy_pathfinding(target);
-} else {
-    path_end();
-    scr_steering_behaviour_normal(target);
-}
-
-image_angle = point_direction(x, y, target.x, target.y)
-position = vect2(x,y); // will be used to update xy for steering
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (distance_to_object(target) &lt; attackRange - 0.1) scr_player_damage(scr_player_to_number(target), damage);
+canAttack = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -123,6 +145,84 @@ if (hp &lt;= 0) {
     instance_destroy();
     global.enemiesLeft--;
     global.playerMoney[hitBy] += worth;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enemy ai
+
+scr_changeRange_player(); //If the other player gets to close it changes target. 
+
+switch(state) {
+    case basicStates.follow:
+        //Decide which alg to use for ai
+        if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
+            scr_enemy_pathfinding(target);
+        } else {
+            path_end();
+            scr_steering_behaviour_normal(target);
+        }
+        
+        sprite_index = spr_basic_zombie_walk;
+        animationSpeed = 13;
+        
+        if (distance_to_object(target) &lt; attackRange) state = basicStates.attack;
+        
+        break;
+        
+    case basicStates.attack:
+        path_end(); //Stop the enemy
+        
+        scr_attack_normal(1, spr_basic_zombie_attack_right, spr_basic_zombie_attack_left, 1, 13, target); 
+    break;
+
+}
+
+image_angle = point_direction(x, y, target.x, target.y)
+image_speed = animationSpeed/room_speed;
+position = vect2(x,y); // will be used to update xy for steering
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index != spr_basic_zombie_walk) {
+    animationSpeed = 0;
+    image_index = 0;
 }
 </string>
           </argument>

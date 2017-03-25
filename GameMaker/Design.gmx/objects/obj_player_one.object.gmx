@@ -35,8 +35,7 @@ hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
 moveSpeed = 4;                      //Move speed
 goIdle = 10;                        //Go into idle after secounds
-facing = 0;                         //Variable to know which dir player is facing  
-global.playerOneHealth = 100;       //Player one hp      
+facing = 0;                         //Variable to know which dir player is facing      
 
 //Movement variables
 move_x = 0;                         //Move var in x dir, used in movement script
@@ -195,6 +194,29 @@ switch (state) {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//if (sprite_index == spr_player_damage) sprite_index = spr_player_normal
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -219,7 +241,33 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 draw_text(x,y, string(state));
+
+draw_healthbar(x-30, y-30, x+30, y-50, global.playerHealth[0], c_black, c_red, c_lime, 0, true, true)
+
 draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.playerHealth[0] = 100;
 </string>
           </argument>
         </arguments>
@@ -242,7 +290,7 @@ draw_self();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y +50, obj_enemy_parent);
+            <string>instance_create(x+100, y +100, obj_enemy_parent);
 </string>
           </argument>
         </arguments>

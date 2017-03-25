@@ -25,60 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Holding Weapon Array
-//Weapon Array
-/*
-[i,0] = Clip Size                           1
-[i,1] = Ammo                                2
-[i,2] = Current Clip                        3
-[i,3] = Current Ammo                        4
-[i,4] = Weapon number                       5
-*/
+            <string>scr_holding_weapon_array();
 
-numberOfHoldingWeaponInfo = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
-numberOfHoldingWeapons = 2; // !!!!! DONT FORGET TO INCREASE !!!!!!
-
-//Fill array to prevent crash
-for (i = 0; i &lt; numberOfHoldingWeapons; i++) {
-    for(j = 0; j &lt; numberOfHoldingWeaponInfo; j++) {
-        holdingWeapon[i,j] = 0;   
-    }
-}
-
-// [0] Primary/Starting (1)
-holdingWeapon[0,0] = global.weaponArray[3,15];      //Clip Size 
-holdingWeapon[0,1] = global.weaponArray[3,1];       //Ammo
-holdingWeapon[0,2] = holdingWeapon[0,0];            //Current Clip
-holdingWeapon[0,3] = holdingWeapon[0,1];            //Current Ammo
-holdingWeapon[0,4] = 3;                             //Weapon number
-
-// [1] empty (2)
-holdingWeapon[1,0] = 0;                             //Clip Size 
-holdingWeapon[1,1] = 0;                             //Ammo
-holdingWeapon[1,2] = 0;                             //Current Clip
-holdingWeapon[1,3] = 0;                             //Current Ammo
-holdingWeapon[1,4] = 0;                             //Weapon number
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>weapon = 0;
+weapon = 0;
 canShoot = true;
 player = 1;                         //Used for scripts
 secondaryEmpty = true;  

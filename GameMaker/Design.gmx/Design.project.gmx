@@ -42,7 +42,8 @@
     <sprites name="Enemies">
       <sprite>sprites\spr_testenemy1</sprite>
       <sprites name="basic">
-        <sprite>sprites\spr_zombie_attack</sprite>
+        <sprite>sprites\spr_basic_zombie_attack_right</sprite>
+        <sprite>sprites\spr_basic_zombie_attack_left</sprite>
         <sprite>sprites\spr_basic_zombie_walk</sprite>
       </sprites>
     </sprites>
@@ -57,15 +58,12 @@
   <scripts name="scripts">
     <scripts name="Weapon">
       <script>scripts\scr_shoot.gml</script>
-      <script>scripts\scr_weaponArray.gml</script>
       <script>scripts\scr_gun_rotation.gml</script>
       <script>scripts\scr_reload.gml</script>
       <script>scripts\scr_apply_new_weapon.gml</script>
       <script>scripts\scr_switch.gml</script>
     </scripts>
     <scripts name="Player">
-      <script>scripts\scr_characterArray.gml</script>
-      <script>scripts\scr_player_money.gml</script>
       <script>scripts\scr_graphics.gml</script>
       <scripts name="Movement">
         <script>scripts\scr_movement.gml</script>
@@ -78,6 +76,9 @@
     <scripts name="Enemies">
       <script>scripts\scr_enemy_pathfinding.gml</script>
       <script>scripts\scr_steering_behaviour_normal.gml</script>
+      <script>scripts\scr_target_player.gml</script>
+      <script>scripts\scr_changeRange_player.gml</script>
+      <script>scripts\scr_attack_normal.gml</script>
       <scripts name="Steering Ai">
         <scripts name="GMLscripts.com">
           <script>scripts\collision_circle_list.gml</script>
@@ -124,28 +125,34 @@
           <script>scripts\vect_to_vect3.gml</script>
         </scripts>
       </scripts>
-      <script>scripts\scr_target_player.gml</script>
-      <script>scripts\scr_changeRange_player.gml</script>
     </scripts>
     <scripts name="Spawner">
       <script>scripts\scr_spawnPoints.gml</script>
       <script>scripts\scr_wavespawner_calculate.gml</script>
-      <script>scripts\scr_spawnPointsArray.gml</script>
       <script>scripts\scr_wavespawner_spawn.gml</script>
     </scripts>
     <scripts name="Utillities">
-      <script>scripts\scr_distance_to_object.gml</script>
+      <script>scripts\scr_player_damage.gml</script>
+      <script>scripts\scr_nearest_player_number.gml</script>
+      <script>scripts\scr_player_to_number.gml</script>
+      <script>scripts\scr_nearest_player.gml</script>
     </scripts>
     <scripts name="Mysterybox">
       <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
       <script>scripts\scr_weapontier_array_testing.gml</script>
       <script>scripts\scr_random_weapon_ticket.gml</script>
-      <script>scripts\scr_nearest_player.gml</script>
-      <script>scripts\scr_nearest_player_number.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_muzzleflash.gml</script>
       <script>scripts\scr_muzzleflash_play.gml</script>
+    </scripts>
+    <scripts name="Arrays">
+      <script>scripts\scr_player_money_array.gml</script>
+      <script>scripts\scr_weapon_array.gml</script>
+      <script>scripts\scr_character_array.gml</script>
+      <script>scripts\scr_player_health_array.gml</script>
+      <script>scripts\scr_spawn_points_array.gml</script>
+      <script>scripts\scr_holding_weapon_array.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

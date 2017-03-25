@@ -77,7 +77,7 @@ startY = y;
             <kind>1</kind>
             <string>with(other) {
     hitBy = 0; //Player one
-    hp -= global.weaponArray[obj_player_one_gun.weapon,2];
+    hp -= global.weaponArray[obj_player_one_gun.holdingWeapon[obj_player_one_gun.weapon,4],2];
 }
 
 instance_destroy();

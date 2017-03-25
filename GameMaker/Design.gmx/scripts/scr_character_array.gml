@@ -1,10 +1,10 @@
-//Weapon Array
+//Character Array
 /*
 [i,0] = Name                        1
 [i,1] = Sprite index                2
 [i,2] = Character number            3
 [i,3] = Character hand              4
-[i,3] = Animation speed             5
+[i,4] = Animation speed             5
 */
 numberOfCharacterInfo = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfCharacters = 2; // !!!!! DONT FORGET TO INCREASE !!!!!!
