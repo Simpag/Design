@@ -113,30 +113,32 @@ sprite_index = global.weaponArray[_wp,9];  //Select an random wp image
           <argument>
             <kind>1</kind>
             <string>///Controller
-if (rY &gt; 0) {
-    rY -= flight;
-    y -= flight;
-}
-
-if (alarmOn == false &amp;&amp; rW == true) {
-    alarm[0] = rWT * room_speed;
-    alarmOn = true;
-} else if (alarmOn == false &amp;&amp; rW == false) {
-    if (playerBought.key_use &amp;&amp; distance_to_object(playerBought) &lt; obj_mysterybox.range) {
-        scr_apply_new_weapon(randomWp, playerBought.playerGun);
-        obj_mysterybox.image_speed = -14/room_speed;
-        obj_mysterybox.boxBought = false;
-        instance_destroy();
+if (global.freezeGame == false) {
+    if (rY &gt; 0) {
+        rY -= flight;
+        y -= flight;
     }
     
-    //Make the weapon bob up and down
-    y += sin(_x);
-    _x += 0.2;
-}
-
-if (rW == false) {
-    alarm[0] = -1;
-    alarmOn = false;
+    if (alarmOn == false &amp;&amp; rW == true) {
+        alarm[0] = rWT * room_speed;
+        alarmOn = true;
+    } else if (alarmOn == false &amp;&amp; rW == false) {
+        if (playerBought.key_use &amp;&amp; distance_to_object(playerBought) &lt; obj_mysterybox.range) {
+            scr_apply_new_weapon(randomWp, playerBought.playerGun);
+            obj_mysterybox.image_speed = -14/room_speed;
+            obj_mysterybox.boxBought = false;
+            instance_destroy();
+        }
+        
+        //Make the weapon bob up and down
+        y += sin(_x);
+        _x += 0.2;
+    }
+    
+    if (rW == false) {
+        alarm[0] = -1;
+        alarmOn = false;
+    }
 }
 </string>
           </argument>

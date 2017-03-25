@@ -113,19 +113,21 @@ canShoot = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; holdingWeapon[weapon,2] &gt; 0) {
-    scr_shoot(obj_player_one_bullet);
+            <string>if (global.freezeGame == false) {
+    if (obj_player_one.key_shoot &amp;&amp; canShoot &amp;&amp; holdingWeapon[weapon,2] &gt; 0) {
+        scr_shoot(obj_player_one_bullet);
+    }
+    
+    if (obj_player_one.key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0) {
+        scr_reload();
+    }
+    
+    if (obj_player_one.key_switch) {
+        scr_switch();
+    }
+    
+    scr_gun_rotation(obj_player_one);
 }
-
-if (obj_player_one.key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0) {
-    scr_reload();
-}
-
-if (obj_player_one.key_switch) {
-    scr_switch();
-}
-
-scr_gun_rotation(obj_player_one);
 </string>
           </argument>
         </arguments>

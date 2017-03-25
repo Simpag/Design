@@ -24,6 +24,7 @@
         <sprite>sprites\spr_miniuzi_top</sprite>
         <sprite>sprites\spr_miniuzi_front</sprite>
       </sprites>
+      <sprite>sprites\spr_gun_shell</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_testcharacter1</sprite>
@@ -133,9 +134,13 @@
     </scripts>
     <scripts name="Utillities">
       <script>scripts\scr_player_damage.gml</script>
+      <script>scripts\scr_player_heal.gml</script>
       <script>scripts\scr_nearest_player_number.gml</script>
       <script>scripts\scr_player_to_number.gml</script>
+      <script>scripts\scr_number_to_player.gml</script>
       <script>scripts\scr_nearest_player.gml</script>
+      <script>scripts\scr_check_command.gml</script>
+      <script>scripts\scr_weapon_name_to_number.gml</script>
     </scripts>
     <scripts name="Mysterybox">
       <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
@@ -168,6 +173,7 @@
       <objects name="Gun">
         <object>objects\obj_player_one_gun</object>
         <object>objects\obj_player_one_bullet</object>
+        <object>objects\obj_player_one_shell</object>
       </objects>
     </objects>
     <objects name="Static Objects">
@@ -177,6 +183,7 @@
       <object>objects\cont_ui</object>
       <object>objects\cont_debug</object>
       <object>objects\cont_grid</object>
+      <object>objects\cont_commands</object>
     </objects>
     <objects name="Interactive Objects">
       <object>objects\obj_mysterybox</object>
@@ -187,10 +194,6 @@
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_test</room>
   </rooms>
-  <constants number="2">
-    <constant name="Test_Gun_1">0</constant>
-    <constant name="Test_Gun_2">1</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

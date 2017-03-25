@@ -167,37 +167,40 @@ if (hp &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>///Enemy ai
-
-scr_changeRange_player(); //If the other player gets to close it changes target. 
-
-switch(state) {
-    case basicStates.follow:
-        //Decide which alg to use for ai
-        if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
-            scr_enemy_pathfinding(target);
-        } else {
-            path_end();
-            scr_steering_behaviour_normal(target);
-        }
-        
-        sprite_index = spr_basic_zombie_walk;
-        animationSpeed = 13;
-        
-        if (distance_to_object(target) &lt; attackRange) state = basicStates.attack;
-        
+if (global.freezeGame == false) {
+    scr_changeRange_player(); //If the other player gets to close it changes target. 
+    
+    switch(state) {
+        case basicStates.follow:
+            //Decide which alg to use for ai
+            if ((distance_to_object(obj_collider) &lt; sprite_height+4)) {
+                scr_enemy_pathfinding(target);
+            } else {
+                path_end();
+                scr_steering_behaviour_normal(target);
+            }
+            
+            sprite_index = spr_basic_zombie_walk;
+            animationSpeed = 13;
+            
+            if (distance_to_object(target) &lt; attackRange) state = basicStates.attack;
+            
+            break;
+            
+        case basicStates.attack:
+            path_end(); //Stop the enemy
+            
+            scr_attack_normal(1, spr_basic_zombie_attack_right, spr_basic_zombie_attack_left, 1, 13, target); 
         break;
-        
-    case basicStates.attack:
-        path_end(); //Stop the enemy
-        
-        scr_attack_normal(1, spr_basic_zombie_attack_right, spr_basic_zombie_attack_left, 1, 13, target); 
-    break;
-
+    
+    }
+    
+    image_angle = point_direction(x, y, target.x, target.y)
+    image_speed = animationSpeed/room_speed;
+    position = vect2(x,y); // will be used to update xy for steering
+} else {
+    path_end();
 }
-
-image_angle = point_direction(x, y, target.x, target.y)
-image_speed = animationSpeed/room_speed;
-position = vect2(x,y); // will be used to update xy for steering
 </string>
           </argument>
         </arguments>

@@ -18,3 +18,6 @@ image_speed = global.weaponArray[holdingWeapon[weapon,4], 5]/room_speed;
 bullet = instance_create(x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 4], image_angle), y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 4], image_angle), _bullet); 
 bullet.direction = image_angle;
 bullet.speed = global.weaponArray[holdingWeapon[weapon,4], 12];
+
+
+instance_create(x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle), y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle), obj_player_one_shell)

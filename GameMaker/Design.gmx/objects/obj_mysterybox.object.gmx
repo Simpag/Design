@@ -79,15 +79,17 @@ position = vect2(x,y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var _near = scr_nearest_player();
-var _nearnum = scr_nearest_player_number();
-var _rndWp //The weapon randomizer
-
-if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (boxBought == false)) {
-    image_speed = 14/room_speed;
-    _rndWp = instance_create(x,y,obj_mysterybox_weapon);
-    _rndWp.playerBought = _near;
-    boxBought = true;
+            <string>if (global.freezeGame == false) {
+    var _near = scr_nearest_player();
+    var _nearnum = scr_nearest_player_number();
+    var _rndWp //The weapon randomizer
+    
+    if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (boxBought == false)) {
+        image_speed = 14/room_speed;
+        _rndWp = instance_create(x,y,obj_mysterybox_weapon);
+        _rndWp.playerBought = _near;
+        boxBought = true;
+    }
 }
 </string>
           </argument>
