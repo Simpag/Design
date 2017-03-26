@@ -60,7 +60,9 @@
       <sprite>sprites\spr_menu_next</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Weapon">
@@ -172,6 +174,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main_menu</font>
+    <font>fonts\fnt_popup</font>
   </fonts>
   <objects name="objects">
     <objects name="Spawner">
@@ -188,6 +191,14 @@
           <object>objects\obj_player_one_gun</object>
           <object>objects\obj_player_one_shell</object>
           <object>objects\obj_player_one_bullet</object>
+        </objects>
+      </objects>
+      <objects name="Player Two">
+        <object>objects\obj_player_two</object>
+        <objects name="Gun Two">
+          <object>objects\obj_player_two_gun</object>
+          <object>objects\obj_player_two_shell</object>
+          <object>objects\obj_player_two_bullet</object>
         </objects>
       </objects>
       <objects name="Player Parent">
@@ -207,6 +218,7 @@
       <object>objects\cont_debug</object>
       <object>objects\cont_grid</object>
       <object>objects\cont_commands</object>
+      <object>objects\cont_popup</object>
     </objects>
     <objects name="Interactive Objects">
       <object>objects\obj_mysterybox</object>
@@ -219,8 +231,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
-    <room>rooms\rm_test</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

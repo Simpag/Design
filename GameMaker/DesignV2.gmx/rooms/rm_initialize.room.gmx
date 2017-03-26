@@ -34,7 +34,7 @@ scr_spawn_points_array();
 //Global vars
 global.debug = true;
 global.spawnCap = 10;       //Amout of enemies on the screen
-global.numberOfPlayers = 1;
+global.numberOfPlayers = 0;
 global.freezeGame = false;  //If the game is froze or not
 
 //Randomize the seed to get true random numbers

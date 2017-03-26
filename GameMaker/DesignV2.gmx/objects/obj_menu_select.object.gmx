@@ -30,6 +30,8 @@ state = "select";
 characterChosen = 0;
 active = false;
 darken = c_gray;
+joinedPlayers = 0;
+caller = "";
 </string>
           </argument>
         </arguments>
@@ -62,20 +64,37 @@ darken = c_gray;
         }
     break;
     
+//Start Game
+    case "startGame":
+        if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any) &amp;&amp; global.numberOfPlayers != 0) room_goto_next();
+    break;
+    
 //Part one    
     case "join1":
         if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
-            //Make the character visable
-            cont_menu._display1.darken = c_white;
-            cont_menu._characterNext1.darken = c_white;
-            cont_menu._characterPrevious1.darken = c_white;  
-            
-            //Activate buttons
-            cont_menu._characterNext1.active = true; 
-            cont_menu._characterPrevious1.active = true;
-            
-            //Destroy join button            
-            instance_destroy();
+            if (cont_menu._display1.joinedPlayers == 0) {
+                //Make the character visable
+                cont_menu._display1.darken = c_white;
+                cont_menu._characterNext1.darken = c_white;
+                cont_menu._characterPrevious1.darken = c_white;  
+                
+                //Activate buttons
+                cont_menu._characterNext1.active = true; 
+                cont_menu._characterPrevious1.active = true;
+                
+                //Add one to joined
+                cont_menu._display1.joinedPlayers++;
+                
+                //Add one to the global players
+                global.numberOfPlayers++;
+                
+                //Destroy join button            
+                instance_destroy();
+            } else {
+                _error = instance_create(x, y, cont_popup);
+                _error.state = "invalidPlayers";
+                _error.caller = 1;
+            }
         }
     break;
     
@@ -106,17 +125,29 @@ darken = c_gray;
 //Part 2
     case "join2":
         if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
-            //Make the character visable
-            cont_menu._display2.darken = c_white;
-            cont_menu._characterNext2.darken = c_white;
-            cont_menu._characterPrevious2.darken = c_white;  
-            
-            //Activate buttons
-            cont_menu._characterNext2.active = true; 
-            cont_menu._characterPrevious2.active = true;
-            
-            //Destroy join button            
-            instance_destroy();
+            if (cont_menu._display1.joinedPlayers = 1) {
+                //Make the character visable
+                cont_menu._display2.darken = c_white;
+                cont_menu._characterNext2.darken = c_white;
+                cont_menu._characterPrevious2.darken = c_white;  
+                
+                //Activate buttons
+                cont_menu._characterNext2.active = true; 
+                cont_menu._characterPrevious2.active = true;
+                
+                //Add one to joined
+                cont_menu._display1.joinedPlayers++;
+                
+                //Add one to the global players
+                global.numberOfPlayers++;
+                
+                //Destroy join button            
+                instance_destroy();
+            } else {
+                _error = instance_create(x, y, cont_popup);
+                _error.state = "invalidPlayers";
+                _error.caller = 2;
+            }
         }
     break;
     
@@ -139,6 +170,112 @@ darken = c_gray;
                     cont_menu._display2.characterChosen--;
                 } else {
                     cont_menu._display2.characterChosen = global.numberOfCharacters - 1;
+                }
+            }
+        }
+    break;
+    
+//Part 3
+    case "join3":
+        if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+            if (cont_menu._display1.joinedPlayers = 2) {
+                //Make the character visable
+                cont_menu._display3.darken = c_white;
+                cont_menu._characterNext3.darken = c_white;
+                cont_menu._characterPrevious3.darken = c_white;  
+                
+                //Activate buttons
+                cont_menu._characterNext3.active = true; 
+                cont_menu._characterPrevious3.active = true;
+                
+                //Add one to joined
+                cont_menu._display1.joinedPlayers++;
+                
+                //Add one to the global players
+                global.numberOfPlayers++;
+                
+                //Destroy join button            
+                instance_destroy();
+            } else {
+                _error = instance_create(x, y, cont_popup);
+                _error.state = "invalidPlayers";
+                _error.caller = 3;
+            }
+        }
+    break;
+    
+    case "characterNext3":
+        if (active) {
+            if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+                if (cont_menu._display3.characterChosen &lt; global.numberOfCharacters - 1) {
+                    cont_menu._display3.characterChosen++;
+                } else {
+                    cont_menu._display3.characterChosen = 0;
+                }
+            }
+        }
+    break;
+    
+    case "characterPrevious3":
+        if (active) {
+            if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+                if (cont_menu._display3.characterChosen &gt; 0) {
+                    cont_menu._display3.characterChosen--;
+                } else {
+                    cont_menu._display3.characterChosen = global.numberOfCharacters - 1;
+                }
+            }
+        }
+    break;
+    
+//Part 4
+    case "join4":
+        if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+            if (cont_menu._display1.joinedPlayers = 3) {
+                //Make the character visable
+                cont_menu._display4.darken = c_white;
+                cont_menu._characterNext4.darken = c_white;
+                cont_menu._characterPrevious4.darken = c_white;  
+                
+                //Activate buttons
+                cont_menu._characterNext4.active = true; 
+                cont_menu._characterPrevious4.active = true;
+                
+                //Add one to joined
+                cont_menu._display1.joinedPlayers++;
+                
+                //Add one to the global players
+                global.numberOfPlayers++;
+                
+                //Destroy join button            
+                instance_destroy();
+            } else {
+                _error = instance_create(x, y, cont_popup);
+                _error.state = "invalidPlayers";
+                _error.caller = 4;
+            }
+        }
+    break;
+    
+    case "characterNext4":
+        if (active) {
+            if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+                if (cont_menu._display4.characterChosen &lt; global.numberOfCharacters - 1) {
+                    cont_menu._display4.characterChosen++;
+                } else {
+                    cont_menu._display4.characterChosen = 0;
+                }
+            }
+        }
+    break;
+    
+    case "characterPrevious4":
+        if (active) {
+            if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+                if (cont_menu._display4.characterChosen &gt; 0) {
+                    cont_menu._display4.characterChosen--;
+                } else {
+                    cont_menu._display4.characterChosen = global.numberOfCharacters - 1;
                 }
             }
         }
@@ -166,7 +303,8 @@ darken = c_gray;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (state) {
+            <string>draw_set_alpha(1);
+switch (state) {
     case "select":
         mask_index = spr_menu_select;
         draw_sprite_ext(spr_menu_select, 0, x, y, 1, 1, 0, c_white, 1);   
@@ -176,6 +314,12 @@ darken = c_gray;
         //Draw character
         draw_sprite_ext(global.characterArray[characterChosen,1], 0, x, y, 1, 1, 0, darken, 1);   
         mask_index = global.characterArray[characterChosen,1];
+    break;
+    
+//Start Game
+    case "startGame":
+        draw_text(x, y, "Start Game");
+        mask_index =  spr_menu_join;
     break;
     
 //Part one    
@@ -205,6 +349,38 @@ darken = c_gray;
     break;
     
     case "characterPrevious2":
+        _previous = draw_sprite_ext(spr_menu_previous, 0, x, y, 1, 1, 0, darken, 1);  
+         mask_index = spr_menu_previous; 
+    break;
+    
+//Part three    
+    case "join3":
+        draw_sprite_ext(spr_menu_join, 0, x, y, 1, 1, 0, c_white, 1);
+        mask_index =  spr_menu_join;
+    break;
+    
+    case "characterNext3":
+        _next = draw_sprite_ext(spr_menu_next, 0, x, y, 1, 1, 0, darken, 1);
+        mask_index =  spr_menu_next;    
+    break;
+    
+    case "characterPrevious3":
+        _previous = draw_sprite_ext(spr_menu_previous, 0, x, y, 1, 1, 0, darken, 1);  
+         mask_index = spr_menu_previous; 
+    break;
+    
+//Part four   
+    case "join4":
+        draw_sprite_ext(spr_menu_join, 0, x, y, 1, 1, 0, c_white, 1);
+        mask_index =  spr_menu_join;
+    break;
+    
+    case "characterNext4":
+        _next = draw_sprite_ext(spr_menu_next, 0, x, y, 1, 1, 0, darken, 1);
+        mask_index =  spr_menu_next;    
+    break;
+    
+    case "characterPrevious4":
         _previous = draw_sprite_ext(spr_menu_previous, 0, x, y, 1, 1, 0, darken, 1);  
          mask_index = spr_menu_previous; 
     break;

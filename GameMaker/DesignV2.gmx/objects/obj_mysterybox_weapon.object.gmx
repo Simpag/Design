@@ -34,8 +34,7 @@ rWT = random_range(0.1, 0.25);  //How many times a sec the weapon changes
 rT = irandom(2) + 1;            //How long the animation will play
 playerBought = noone;           //Who bought the gun
 alarmOn = false;                //If the alarms are on
-fading = false;                 //When it should start to fade
-fadeRate = 0.2;                 //How fast it should fade away
+fadeRate = 0.08;                 //How fast it should fade away
 _xx = 0;                        //Don't mind, used for fading
 
 //Select an random weapon
@@ -43,29 +42,6 @@ randomWp = scr_random_weapon_ticket();
 
 //Stop animation
 alarm[1] = rT * room_speed;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_alpha -= fadeRate;
 </string>
           </argument>
         </arguments>
@@ -161,14 +137,13 @@ if (global.freezeGame == false) {
         _x += 0.2;
         
         //Fade gun away
-        if (!fading) {
-            alarm[2] = (-0.045*power(_xx, 2)+10) * room_speed; //-0.045x^2+10
-            _xx++;
-            fading = true;
-        }
+        image_alpha -= 0.002*power(_xx,2);
+        _xx += fadeRate/room_speed;
         
         //Destroy gun if noone picks it up in time
-        if (image_alpha &lt;= 0.02) {
+        if (image_alpha &lt;= 0.4) {
+            obj_mysterybox.image_speed = -14/room_speed;
+            obj_mysterybox.boxBought = false;
             instance_destroy();
         }
     }
@@ -178,30 +153,6 @@ if (global.freezeGame == false) {
         alarmOn = false;
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-draw_text(x, y-100, string(image_alpha));
 </string>
           </argument>
         </arguments>

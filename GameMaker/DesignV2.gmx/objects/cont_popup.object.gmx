@@ -5,24 +5,10 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_player_parent</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -39,8 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Create Gun
-playerGun = instance_create(x, y, obj_player_two_gun);
+            <string>state = "";
+caller = "";
+float = 0;
+floatSpeed = 0.5;
+
+//Used to destroy the popup
+startX = x;
+startY = y;
+
 </string>
           </argument>
         </arguments>
@@ -63,24 +56,71 @@ playerGun = instance_create(x, y, obj_player_two_gun);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(2);
+            <string>switch (state) {
+    case "invalidPlayers":
+        //Make text float
+        switch (caller) {
+        //Up
+            case 1:
+            case 2:
+                 y +=  0.02 * power(float,2) + 0.5;
+                 float += floatSpeed;
+                 
+                 //Destroy the popup
+                 if (y - startY &gt; 150) instance_destroy();
+             break;
+         //Down
+             case 3:
+             case 4:
+                 y -=  0.02 * power(float,2) + 0.5;
+                 float += floatSpeed;
+                 
+                 //Destroy the popup
+                 if (startY - y &gt; 150) instance_destroy();
+             break;
+        }
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch (state) {
+        case "invalidPlayers":
+            //Text
+            _errorText = "Player " + string(cont_menu._display1.joinedPlayers + 1) + " must join first.";
+            
+            //Format text
+            draw_set_font(fnt_popup);
+            draw_set_color(c_black);
+            
+            //Fade the text
+            draw_set_alpha(-0.002 * power(float,2) + 1);
+            
+            //Draw text
+            draw_text(x, y, _errorText);
+        break;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
