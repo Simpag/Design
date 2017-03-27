@@ -39,8 +39,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_bullet = obj_player_one_bullet;
-shell = obj_player_one_shell;
+            <string>_bullet = obj_player_two_bullet;
+shell = obj_player_two_shell;
 </string>
           </argument>
         </arguments>
@@ -63,8 +63,8 @@ shell = obj_player_one_shell;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(1);
-scr_gun_rotation(obj_player_one);
+            <string>scr_inputs(2);
+scr_gun_rotation(obj_player_two);
 </string>
           </argument>
         </arguments>

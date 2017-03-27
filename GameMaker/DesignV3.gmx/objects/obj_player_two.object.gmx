@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_player_parent_gun</parentName>
+  <parentName>obj_player_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -33,14 +33,14 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_bullet = obj_player_one_bullet;
-shell = obj_player_one_shell;
+            <string>//Create Gun
+playerGun = instance_create(x, y, obj_player_two_gun);
 </string>
           </argument>
         </arguments>
@@ -63,8 +63,7 @@ shell = obj_player_one_shell;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(1);
-scr_gun_rotation(obj_player_one);
+            <string>scr_inputs(2);
 </string>
           </argument>
         </arguments>

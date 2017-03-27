@@ -3,26 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_player_parent_gun</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -33,14 +19,14 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_bullet = obj_player_one_bullet;
-shell = obj_player_one_shell;
+            <string>active = false;
+command = "";
 </string>
           </argument>
         </arguments>
@@ -63,25 +49,76 @@ shell = obj_player_one_shell;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(1);
-scr_gun_rotation(obj_player_one);
+            <string>//Clear keyboard string if it isnt active
+if (!active) {
+    keyboard_string = "";
+}
+
+if (keyboard_check(vk_control) &amp;&amp; keyboard_check_pressed(vk_home)) {
+    if (!active) {
+        //Activate console
+        active = true;
+        global.freezeGame = true;
+        boxX = 0;
+    } else {
+        //Deactivate
+        active = false;
+        command = ""; //Clear command
+        global.freezeGame = false;
+    }
+}
+
+if (keyboard_check_pressed(vk_enter) &amp;&amp; active) { 
+    //Deactivate
+    active = false;
+    command = keyboard_string;
+    scr_check_command();
+    global.freezeGame = false;    
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Format text
+draw_set_color(c_lime);
+draw_set_halign(fa_left);
+//draw_set_font();
+
+//Draw the text field
+if (active) {
+    draw_set_alpha(0.9);
+    draw_rectangle_colour(view_xview[0] + 15, view_yview[0] + 15, view_xview[0] + boxX - 15, view_yview[0] + 50, c_gray, c_gray, c_gray, c_gray, 0);
+    if (boxX &lt; view_wport[0]) {
+        boxX += 20;
+    } else {
+        boxX = view_wport[0];
+    }
+    draw_set_alpha(1);
+}
+
+//Draw the text
+draw_text(view_xview[0] + 25, view_yview[0] + 25, keyboard_string);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
