@@ -221,7 +221,6 @@
     <objects name="Controllers">
       <object>objects\cont_ui</object>
       <object>objects\cont_debug</object>
-      <object>objects\obj_drone_flock_grid</object>
       <object>objects\cont_grid</object>
       <object>objects\cont_commands</object>
       <object>objects\cont_popup</object>
