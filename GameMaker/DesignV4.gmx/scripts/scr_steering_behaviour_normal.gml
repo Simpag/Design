@@ -21,7 +21,7 @@ steering = vect_add(steering, sb_pursuit(_target,40));
 //steering = vect_add(steering, sb_alignment(obj_enemy_parent,128,1));
 steering = vect_add(steering, sb_separation(3,grid_controller,20));
 //steering = vect_add(steering, sb_cohesion(obj_enemy_parent,184,1));
-steering = vect_add(steering, sb_avoid_collision(obj_collider,50,500,800));
+steering = vect_add(steering, sb_avoid_collision(obj_collider,150,5000,800));
 
 //## Steering Behaviours go above here ##//
 
@@ -36,5 +36,7 @@ velocity = vect_truncate(vect_add(velocity, steering),max_speed);
 position = vect_add(position, velocity);
 
 //update xy
+
+phy_rotation= -point_direction(phy_position_x,phy_position_y,_target.x, target.y);
 phy_position_x = position[1];
 phy_position_y = position[2];
