@@ -131,7 +131,7 @@ isAttacking = false;
           <argument>
             <kind>1</kind>
             <string>///Zombie Attack Delay
-if (distance_to_object(target) &lt; attackRange - 0.1) scr_player_damage(scr_player_to_number(target), damage);
+if (distance_to_object(target) &lt; attackRange + 0.1) scr_player_damage(scr_player_to_number(target), damage);
 canAttack = true;
 </string>
           </argument>

@@ -2,6 +2,7 @@
 _name = argument[0];
 string_lower(_name);
 string_replace_all(_name, " ", ""); //Remove all spaces
+string_replace_all(_name, "-", ""); //Remove all dashes
 
 switch (_name) {
     case "ak47":
@@ -18,5 +19,9 @@ switch (_name) {
     
     case "m1911":
         return(3);
+    break;
+    
+    case "shotgun":
+        return(4);
     break;
 }

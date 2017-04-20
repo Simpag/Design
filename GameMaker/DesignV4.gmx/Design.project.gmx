@@ -24,6 +24,11 @@
         <sprite>sprites\spr_miniuzi_top</sprite>
         <sprite>sprites\spr_miniuzi_front</sprite>
       </sprites>
+      <sprites name="Shotgun">
+        <sprite>sprites\spr_shotgun_top</sprite>
+        <sprite>sprites\spr_shotgun_front</sprite>
+        <sprite>sprites\spr_shotgun_bullet</sprite>
+      </sprites>
       <sprite>sprites\spr_gun_shell</sprite>
     </sprites>
     <sprites name="Characters">
