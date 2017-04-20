@@ -73,11 +73,12 @@
       <script>scripts\scr_switch.gml</script>
     </scripts>
     <scripts name="Player">
+      <script>scripts\scr_inputs_shoot.gml</script>
+      <script>scripts\scr_inputs.gml</script>
       <script>scripts\scr_graphics.gml</script>
       <scripts name="Movement">
         <script>scripts\scr_movement.gml</script>
         <script>scripts\scr_normal.gml</script>
-        <script>scripts\scr_inputs.gml</script>
         <script>scripts\scr_collision.gml</script>
         <script>scripts\scr_idle.gml</script>
       </scripts>
@@ -175,6 +176,8 @@
     <scripts name="Main Menu">
       <script>scripts\scr_menu_main.gml</script>
       <script>scripts\scr_menu_play.gml</script>
+      <script>scripts\scr_menu_stats.gml</script>
+      <script>scripts\scr_menu_settings.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

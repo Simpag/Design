@@ -27,8 +27,11 @@ if (!buttonsExists) {
     _characterPrevious4 = instance_create(1102, window_get_height() - 90, obj_menu_select);
     _join4 = instance_create(1152 , window_get_height() - 146, obj_menu_select);
     
-    //Start Game
+//Start Game
     _startGame = instance_create(window_get_width()/2, window_get_height()/2, obj_menu_select);
+    
+//Back Button
+    _backButton = instance_create(20, window_get_height() - 20, obj_menu_select);
     
 //Set button properties
     //Part one
@@ -55,8 +58,11 @@ if (!buttonsExists) {
     _characterPrevious4.state = "characterPrevious4";
     _join4.state = "join4";
     
-    //Start Game
+//Start Game
     _startGame.state = "startGame";
+    
+//Back Button
+    _backButton.state = "back";
     
 //Make sure no more buttons are created
     buttonsExists = true;

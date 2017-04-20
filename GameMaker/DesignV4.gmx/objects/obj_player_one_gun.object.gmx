@@ -63,7 +63,8 @@ shell = obj_player_one_shell;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(1);
+            <string>scr_inputs_shoot(1, global.weaponArray[holdingWeapon[weapon,4],17]);
+scr_inputs(1);
 scr_gun_rotation(obj_player_one);
 </string>
           </argument>

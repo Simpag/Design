@@ -43,6 +43,8 @@ move_y = 0;                         //Move var in y dir, used in movement script
 move_acceleration = 0.8;            //Acceleration factor
 move_restitution = 0.6;             //Slowdown factor
 
+phy_fixed_rotation = true;
+
 //Initiate Camera
 instance_create(x, y, cont_ui);
 </string>

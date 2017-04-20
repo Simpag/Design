@@ -59,6 +59,14 @@ buttonsExists = false;
         scr_menu_play();
     break;
     
+    case "Stats":
+        scr_menu_stats();
+    break;
+    
+    case "Settings":
+        scr_menu_settings();
+    break;
+    
 }
 
 draw_text(100, 20, state);

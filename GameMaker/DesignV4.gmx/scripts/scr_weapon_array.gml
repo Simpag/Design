@@ -17,9 +17,10 @@
 [i,14] = Reaload Time In Sec                15
 [i,15] = Clip Size                          16
 [i,16] = Shell y Offset                     17
+[i, 17] = Weapon type (Semi, Auto, shotgun) 18
 */
 
-numberOfWeaponInfo = 17; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfWeaponInfo = 18; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfWeapons = 4; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -47,6 +48,7 @@ global.weaponArray[0,13] = 2000; //Range
 global.weaponArray[0,14] = 0.5; //Reaload Time
 global.weaponArray[0,15] = 15; //Clip size
 global.weaponArray[0,16] = -2; //Shell y Offset
+global.weaponArray[0,17] = "Auto"; //Weapon Type
 
 // [1] Mini-Uzi (2)
 global.weaponArray[1,0] = "MINI UZI"; //Name
@@ -66,6 +68,7 @@ global.weaponArray[1,13] = 200; //Range
 global.weaponArray[1,14] = 1; //Reaload Time
 global.weaponArray[1,15] = 15; //Clip size
 global.weaponArray[1,16] = 2; //Shell y Offset
+global.weaponArray[1,17] = "Auto"; //Weapon Type
 
 // [2] Watergun (3)
 global.weaponArray[2,0] = "WATERGUN"; //Name
@@ -85,6 +88,7 @@ global.weaponArray[2,13] = 100; //Range
 global.weaponArray[2,14] = 0.3; //Reaload Time
 global.weaponArray[2,15] = 50; //Clip size
 global.weaponArray[2,16] = -5; //Shell y Offset
+global.weaponArray[2,17] = "Auto"; //Weapon Type
 
 // [3] M1911 (4)
 global.weaponArray[3,0] = "M1911"; //Name
@@ -104,3 +108,4 @@ global.weaponArray[3,13] = 200; //Range
 global.weaponArray[3,14] = 1; //Reaload Time
 global.weaponArray[3,15] = 20; //Clip size
 global.weaponArray[3,16] = 4; //Shell y Offset
+global.weaponArray[3,17] = "Semi"; //Weapon Type

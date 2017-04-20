@@ -19,6 +19,10 @@ if (!buttonsExists) {
     var b2 = instance_create(window_get_width()/2, 280, obj_menu_select);
     var b3 = instance_create(window_get_width()/2, 400, obj_menu_select);
     
+    b1.state = "select";
+    b2.state = "select";
+    b3.state = "select";
+    
     b1.option = _text1;
     b2.option = _text2;
     b3.option = _text3;

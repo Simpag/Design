@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>option = "";
-state = "select";
+state = "";
 characterChosen = 0;
 active = false;
 darken = c_gray;
@@ -66,7 +66,26 @@ caller = "";
     
 //Start Game
     case "startGame":
-        if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any) &amp;&amp; global.numberOfPlayers != 0) room_goto_next();
+        if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any) &amp;&amp; global.numberOfPlayers != 0) {
+            room_goto_next();
+            with(obj_menu_select) instance_destroy();
+            with(obj_player_one_bullet) instance_destroy();
+            cont_menu.buttonsExists = false;
+        }
+        
+    break;
+    
+//Back Button
+    case "back":
+    if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any)) {
+        cont_menu.state = "Main";
+    
+        global.numberOfPlayers = 0;
+        
+        with(obj_menu_select) instance_destroy();
+        with(obj_player_one_bullet) instance_destroy();
+        cont_menu.buttonsExists = false;
+        }
     break;
     
 //Part one    
@@ -319,6 +338,12 @@ switch (state) {
 //Start Game
     case "startGame":
         draw_text(x, y, "Start Game");
+        mask_index =  spr_menu_join;
+    break;
+    
+//Back Button
+    case "back":
+        draw_text(x, y, "Back");
         mask_index =  spr_menu_join;
     break;
     
