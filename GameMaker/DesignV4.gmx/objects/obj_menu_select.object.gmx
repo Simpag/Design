@@ -67,6 +67,12 @@ caller = "";
 //Start Game
     case "startGame":
         if (position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_any) &amp;&amp; global.numberOfPlayers != 0) {
+            //Fill chosen character array
+            global.chosenCharacter[0] = cont_menu._display1.characterChosen;
+            global.chosenCharacter[1] = cont_menu._display2.characterChosen;
+            global.chosenCharacter[2] = cont_menu._display3.characterChosen;
+            global.chosenCharacter[3] = cont_menu._display4.characterChosen;
+            
             room_goto_next();
             with(obj_menu_select) instance_destroy();
             with(obj_player_one_bullet) instance_destroy();
@@ -332,7 +338,6 @@ switch (state) {
     case "characterDisplay":   
         //Draw character
         draw_sprite_ext(global.characterArray[characterChosen,1], 0, x, y, 1, 1, 0, darken, 1);   
-        mask_index = global.characterArray[characterChosen,1];
     break;
     
 //Start Game

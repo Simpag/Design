@@ -1,5 +1,5 @@
 ///scr_gun_rotaion(player);
-_player = argument[0];
+var _player = argument[0];
 
 x = _player.x + lengthdir_x(global.characterArray[_player.character,3], _player.facing - 90);
 y = _player.y + lengthdir_y(global.characterArray[_player.character,3], _player.facing - 90);

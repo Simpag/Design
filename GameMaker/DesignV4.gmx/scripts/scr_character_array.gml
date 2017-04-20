@@ -18,7 +18,7 @@ for (i = 0; i < global.numberOfCharacters; i++) {
 
 // [0] test character 0
 global.characterArray[0,0] = "Affro Frank";         //Name
-global.characterArray[0,1] = spr_affro_walk;        //Sprite index
+global.characterArray[0,1] = spr_affro_walk2;        //Sprite index
 global.characterArray[0,2] = 0;                     //Character number
 global.characterArray[0,3] = 35;                    //Character hand 
 global.characterArray[0,4] = 13;                    //Animation speed 

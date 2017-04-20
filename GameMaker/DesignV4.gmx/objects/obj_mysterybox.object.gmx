@@ -31,6 +31,7 @@ cost = 0;
 randomTime = 1; //How many secounds it takes to get a weapon
 boxBought = false;
 image_speed = 0;
+depth = -y;
 </string>
           </argument>
         </arguments>

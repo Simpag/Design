@@ -167,6 +167,7 @@
     </scripts>
     <scripts name="Arrays">
       <script>scripts\scr_player_money_array.gml</script>
+      <script>scripts\scr_chosen_character_array.gml</script>
       <script>scripts\scr_weapon_array.gml</script>
       <script>scripts\scr_character_array.gml</script>
       <script>scripts\scr_player_health_array.gml</script>
@@ -199,14 +200,6 @@
           <object>objects\obj_player_one_gun</object>
           <object>objects\obj_player_one_shell</object>
           <object>objects\obj_player_one_bullet</object>
-        </objects>
-      </objects>
-      <objects name="Player Two">
-        <object>objects\obj_player_two</object>
-        <objects name="Gun Two">
-          <object>objects\obj_player_two_gun</object>
-          <object>objects\obj_player_two_shell</object>
-          <object>objects\obj_player_two_bullet</object>
         </objects>
       </objects>
       <objects name="Player Parent">

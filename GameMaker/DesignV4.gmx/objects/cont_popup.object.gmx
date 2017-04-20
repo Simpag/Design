@@ -79,6 +79,15 @@ startY = y;
                  if (startY - y &gt; 150) instance_destroy();
              break;
         }
+        
+//Wrong command
+    case "wrongCommand":
+        y -=  0.02 * power(float,2) + 0.5;
+        float += floatSpeed;
+        
+        //Destroy the popup
+        if (startY - y &gt; 150) instance_destroy();
+    break;
 }
 </string>
           </argument>
@@ -103,20 +112,35 @@ startY = y;
           <argument>
             <kind>1</kind>
             <string>switch (state) {
-        case "invalidPlayers":
-            //Text
-            _errorText = "Player " + string(cont_menu._display1.joinedPlayers + 1) + " must join first.";
-            
-            //Format text
-            draw_set_font(fnt_popup);
-            draw_set_color(c_black);
-            
-            //Fade the text
-            draw_set_alpha(-0.002 * power(float,2) + 1);
-            
-            //Draw text
-            draw_text(x, y, _errorText);
-        break;
+    case "invalidPlayers":
+        //Text
+        _errorText = "Player " + string(cont_menu._display1.joinedPlayers + 1) + " must join first.";
+        
+        //Format text
+        draw_set_font(fnt_popup);
+        draw_set_color(c_black);
+        
+        //Fade the text
+        draw_set_alpha(-0.002 * power(float,2) + 1);
+        
+        //Draw text
+        draw_text(x, y, _errorText);
+    break;
+    
+    case "wrongCommand":
+        //Text
+        _errorText = "No such command found, try /help for command list";
+        
+        //Format text
+        draw_set_font(fnt_popup);
+        draw_set_color(c_black);
+        
+        //Fade the text
+        draw_set_alpha(-0.002 * power(float,2) + 1);
+        
+        //Draw text
+        draw_text(x, y, _errorText);
+    break;
 }
 </string>
           </argument>

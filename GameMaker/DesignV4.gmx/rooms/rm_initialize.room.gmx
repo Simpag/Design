@@ -30,9 +30,10 @@ scr_character_array();
 scr_player_money_array();
 scr_player_health_array();
 scr_spawn_points_array();
+scr_chosen_character_array();
 
 //Global vars
-global.debug = true;
+global.debug = false;
 global.spawnCap = 10;       //Amout of enemies on the screen
 global.numberOfPlayers = 0;
 global.freezeGame = false;  //If the game is froze or not

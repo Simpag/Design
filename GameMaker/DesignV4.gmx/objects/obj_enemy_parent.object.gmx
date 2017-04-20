@@ -104,7 +104,8 @@ max_force = turnSpeed; // How fast it turns
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(target) &gt; attackRange + 0.01) state = basicStates.follow;
+            <string>///Zombie Attack State
+if (distance_to_object(target) &gt; attackRange + 0.01) state = basicStates.follow;
 isAttacking = false;
 
 </string>
@@ -129,7 +130,8 @@ isAttacking = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(target) &lt; attackRange - 0.1) scr_player_damage(scr_player_to_number(target), damage);
+            <string>///Zombie Attack Delay
+if (distance_to_object(target) &lt; attackRange - 0.1) scr_player_damage(scr_player_to_number(target), damage);
 canAttack = true;
 </string>
           </argument>
@@ -155,7 +157,11 @@ canAttack = true;
             <kind>1</kind>
             <string>///Enemy ai
 if (global.freezeGame == false) {
-    scr_changeRange_player(); //If the other player gets to close it changes target. 
+    if (hitBy == noone) {
+        target = scr_changeRange_player(); //If the other player gets to close it changes target. 
+    } else {
+        target = hitBy;
+    }
     position = vect2(phy_position_x,phy_position_y); // will be used to update xy for steering
 
     switch(state) {
@@ -185,33 +191,6 @@ if (global.freezeGame == false) {
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Enemy health
-
-if (hp &lt;= 0) {
-    instance_destroy();
-    global.enemiesLeft--;
-    global.playerMoney[hitBy] += worth;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

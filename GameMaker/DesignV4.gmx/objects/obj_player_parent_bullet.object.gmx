@@ -79,53 +79,20 @@ physics_apply_impulse(x, y, lengthdir_x(global.weaponArray[gun.holdingWeapon[gun
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(other) {
-    hitBy = 0; //Player one
-    hp -= global.weaponArray[gun.holdingWeapon[gun.weapon,4],2];
+            <string>with(other) { //Inside the hit zombie
+    hitBy = other.player; //Other in this case is the bullet
+    hp -= global.weaponArray[other.gun.holdingWeapon[other.gun.weapon,4],2];
+    
+    ///Enemy health
+    if (hp &lt;= 0) {
+        instance_destroy();
+        global.enemiesLeft--;
+        global.playerMoney[scr_player_to_number(hitBy) - 1] += worth;
+    }
 }
 
 instance_destroy();
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>532</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_effect</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>3</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>13</kind>
-            <string>255</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>
