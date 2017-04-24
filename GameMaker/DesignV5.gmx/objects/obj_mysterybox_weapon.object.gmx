@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-200</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,8 +34,9 @@ rWT = random_range(0.1, 0.25);  //How many times a sec the weapon changes
 rT = irandom(2) + 1;            //How long the animation will play
 playerBought = noone;           //Who bought the gun
 alarmOn = false;                //If the alarms are on
-fadeRate = 0.08;                 //How fast it should fade away
+fadeRate = 0.08;                //How fast it should fade away
 _xx = 0;                        //Don't mind, used for fading
+depth = -y - 500;
 
 //Select an random weapon
 randomWp = scr_random_weapon_ticket();

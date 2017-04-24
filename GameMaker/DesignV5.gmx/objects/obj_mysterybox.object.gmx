@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variables
-range = 50;
-cost = 0;
-randomTime = 1; //How many secounds it takes to get a weapon
-boxBought = false;
-image_speed = 0;
-depth = -y;
+            <string>/// Obstacle Setup
+
+//This is all that is needed to be referenced
+//by the obstacle avoidance behaviour.
+//If your obstacles move, they need this in the Step event too.
+position = vect2(x,y);
 </string>
           </argument>
         </arguments>
@@ -52,12 +51,13 @@ depth = -y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Obstacle Setup
-
-//This is all that is needed to be referenced
-//by the obstacle avoidance behaviour.
-//If your obstacles move, they need this in the Step event too.
-position = vect2(x,y);
+            <string>///Variables
+range = 50;
+cost = 0;
+randomTime = 1; //How many secounds it takes to get a weapon
+boxBought = false;
+image_speed = 0;
+depth = -y;
 </string>
           </argument>
         </arguments>

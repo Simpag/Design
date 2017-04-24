@@ -65,9 +65,9 @@ switch (c_type) {
     
     case "/spaw":
         var _t = string_copy(command, 8, 25);
-        var _tt = string_letters(_t); //Remoev all numbers
+        _t = string_letters(_t); //Remoev all numbers
         var _a = string_copy(command, 10, 1000000000);
-        var _aa = string_digits(_a); //Remove all letters
+        _a = string_digits(_a); //Remove all letters
         
         switch (_tt) {
             case "basic":
@@ -75,6 +75,14 @@ switch (c_type) {
             break;
         }
     break;
+    /*
+    case "/wave":
+        var _w = string_copy(command, 7, 10000);
+        _w = string_digits(_w); //Remoev all letters
+        _w = string_replace(_w, " ", ""); //Remove all spaces
+        
+        global.wave = _w;
+    break; */
     
     default:
         var _popup = instance_create(x + 50, y + 5, cont_popup);

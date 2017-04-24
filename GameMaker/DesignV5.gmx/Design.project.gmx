@@ -149,9 +149,9 @@
       </scripts>
     </scripts>
     <scripts name="Spawner">
-      <script>scripts\scr_spawnPoints.gml</script>
-      <script>scripts\scr_wavespawner_calculate.gml</script>
+      <script>scripts\scr_create_spawn_points.gml</script>
       <script>scripts\scr_wavespawner_spawn.gml</script>
+      <script>scripts\scr_wavespawner_calculate.gml</script>
     </scripts>
     <scripts name="Utillities">
       <script>scripts\scr_player_damage.gml</script>
@@ -194,8 +194,8 @@
   </fonts>
   <objects name="objects">
     <objects name="Spawner">
-      <object>objects\cont_spawner</object>
       <object>objects\cont_spawnPoint</object>
+      <object>objects\cont_spawner</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy_parent</object>
@@ -225,9 +225,9 @@
     <objects name="Controllers">
       <object>objects\cont_ui</object>
       <object>objects\cont_debug</object>
-      <object>objects\cont_grid</object>
       <object>objects\cont_commands</object>
       <object>objects\cont_popup</object>
+      <object>objects\cont_grid</object>
     </objects>
     <objects name="Interactive Objects">
       <object>objects\obj_mysterybox</object>

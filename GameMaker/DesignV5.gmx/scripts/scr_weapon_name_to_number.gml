@@ -24,4 +24,8 @@ switch (_name) {
     case "shotgun":
         return(4);
     break;
+    
+    default: 
+        return(99999);
+    break;
 }

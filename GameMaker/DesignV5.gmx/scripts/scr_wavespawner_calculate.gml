@@ -10,4 +10,3 @@ _toSpawn = OrgToSpawn;
 if (OrgToSpawn < global.spawnCap) {
     spawn = OrgToSpawn;
 }
-scr_wavespawner_spawn();

@@ -31,7 +31,7 @@ global.enemiesLeft = 0;                         //How many enemies there's left,
 respawnDelay = 1;                               //Number of secounds before respawn
 
 //Create spawnpoints
-scr_spawnPoints();
+scr_create_spawn_points();
 </string>
           </argument>
         </arguments>
@@ -79,6 +79,7 @@ scr_spawnPoints();
             <kind>1</kind>
             <string>global.wave++;
 scr_wavespawner_calculate();
+scr_wavespawner_spawn();
 </string>
           </argument>
         </arguments>

@@ -28,6 +28,7 @@
             <string>//Create Gun
 playerGun = instance_create(x, y, obj_player_one_gun);
 playerIndex = 0;
+scrollThroughtWeapons = 0;
 </string>
           </argument>
         </arguments>
@@ -83,6 +84,34 @@ scr_inputs_shoot(2, global.weaponArray[obj_player_one_gun.holdingWeapon[obj_play
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="78">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (scrollThroughtWeapons &lt; global.numberOfWeapons - 1) {
+    scrollThroughtWeapons++;
+} else {
+    scrollThroughtWeapons = 0;
+}
+scr_apply_new_weapon(scrollThroughtWeapons, obj_player_one_gun);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="9" enumb="66">

@@ -17,12 +17,15 @@
 [i,14] = Reaload Time In Sec                15
 [i,15] = Clip Size                          16
 [i,16] = Shell y Offset                     17
-[i, 17] = Firemode (Semi, Auto)             18
-[i, 18] = Weapon Type (normal, shotgun etc) 19
-[i, 19] = Number Of Pellets (shotgun only)  20
+[i,17] = Firemode (Semi, Auto)              18
+[i,18] = Weapon Type (normal, shotgun etc)  19
+[i,19] = Number Of Pellets (shotgun only)   20
+[i,20] = Bullet Spread (Degrees)            21
+[i,21] = Screen Shake Factor                22
+[i,22] = Screen Shake Duration              23
 */
 
-numberOfWeaponInfo = 20; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfWeaponInfo = 23; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfWeapons = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -48,15 +51,17 @@ global.weaponArray[0,11] = 0; //Weapon number
 global.weaponArray[0,12] = 30; //Bullet speed
 global.weaponArray[0,13] = 2000; //Range
 global.weaponArray[0,14] = 0.5; //Reaload Time
-global.weaponArray[0,15] = 15; //Clip size
+global.weaponArray[0,15] = 30; //Clip size
 global.weaponArray[0,16] = -2; //Shell y Offset
 global.weaponArray[0,17] = "Auto"; //Firemode
 global.weaponArray[0,18] = "Normal"; //Weapon Type
-
+global.weaponArray[0,20] = 1; //Bullet Spread
+global.weaponArray[0,21] = 0.5; //Screen Shake Factor
+global.weaponArray[0,22] = 6; //Screen Shake Duration
 // [1] Mini-Uzi (2)
 global.weaponArray[1,0] = "MINI UZI"; //Name
 global.weaponArray[1,1] = 50; //Ammo
-global.weaponArray[1,2] = 120; //Damage
+global.weaponArray[1,2] = 15; //Damage
 global.weaponArray[1,3] = 2; //Rate of fire
 global.weaponArray[1,4] = 18; //Muzzle flash
 global.weaponArray[1,5] = 0; //Weapon animation speed 
@@ -67,17 +72,20 @@ global.weaponArray[1,9] = spr_miniuzi_front; //Gun Front sprite
 global.weaponArray[1,10] = 20;//Tickets
 global.weaponArray[1,11] = 1; //Weapon number
 global.weaponArray[1,12] = 25; //Bullet speed
-global.weaponArray[1,13] = 200; //Range
+global.weaponArray[1,13] = 1000; //Range
 global.weaponArray[1,14] = 1; //Reaload Time
-global.weaponArray[1,15] = 15; //Clip size
+global.weaponArray[1,15] = 45; //Clip size
 global.weaponArray[1,16] = 2; //Shell y Offset
 global.weaponArray[1,17] = "Auto"; //Firemode
 global.weaponArray[1,18] = "Normal"; //Weapon Type
+global.weaponArray[1,20] = 1; //Bullet Spread
+global.weaponArray[1,21] = 0.5; //Screen Shake Factor
+global.weaponArray[1,22] = 6; //Screen Shake Duration
 
 // [2] Watergun (3)
 global.weaponArray[2,0] = "WATERGUN"; //Name
 global.weaponArray[2,1] = 500; //Ammo
-global.weaponArray[2,2] = 90; //Damage
+global.weaponArray[2,2] = 5; //Damage
 global.weaponArray[2,3] = 30; //Rate of fire
 global.weaponArray[2,4] = 22; //Muzzle flash, bullet offset
 global.weaponArray[2,5] = 0; //Weapon animation speed 
@@ -88,12 +96,15 @@ global.weaponArray[2,9] = spr_watergun_front; //Gun Front sprite
 global.weaponArray[2,10] = 10; //Tickets
 global.weaponArray[2,11] = 2; //Weapon number
 global.weaponArray[2,12] = 20; //Bullet speed
-global.weaponArray[2,13] = 100; //Range
-global.weaponArray[2,14] = 0.3; //Reaload Time
+global.weaponArray[2,13] = 500; //Range
+global.weaponArray[2,14] = 0.4; //Reaload Time
 global.weaponArray[2,15] = 50; //Clip size
 global.weaponArray[2,16] = -5; //Shell y Offset
 global.weaponArray[2,17] = "Auto"; //Firemode
 global.weaponArray[2,18] = "Normal"; //Weapon Type
+global.weaponArray[2,20] = 3; //Bullet Spread
+global.weaponArray[2,21] = 0.1; //Screen Shake Factor
+global.weaponArray[2,22] = 6; //Screen Shake Duration
 
 // [3] M1911 (4)
 global.weaponArray[3,0] = "M1911"; //Name
@@ -115,6 +126,9 @@ global.weaponArray[3,15] = 20; //Clip size
 global.weaponArray[3,16] = 4; //Shell y Offset
 global.weaponArray[3,17] = "Semi"; //Firemode
 global.weaponArray[3,18] = "Normal"; //Weapon Type
+global.weaponArray[3,20] = 1; //Bullet Spread
+global.weaponArray[3,21] = 0.2; //Screen Shake Factor
+global.weaponArray[3,22] = 6; //Screen Shake Duration
 
 // [4] Shotgun (5)
 global.weaponArray[4,0] = "Shotgun"; //Name
@@ -137,3 +151,6 @@ global.weaponArray[4,16] = 4; //Shell y Offset
 global.weaponArray[4,17] = "Semi"; //Firemode
 global.weaponArray[4,18] = "Shotgun"; //Weapon Type
 global.weaponArray[4,19] = 5; //Number Of Pellets
+global.weaponArray[4,20] = 5; //Bullet Spread
+global.weaponArray[4,21] = 2; //Screen Shake Factor
+global.weaponArray[4,22] = 8; //Screen Shake Duration
