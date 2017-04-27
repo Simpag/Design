@@ -15,6 +15,7 @@ instance_create(-10, -10, cont_debug);
 instance_create(-10, -10, cont_grid);
 instance_create(-10, -10, cont_spawner);
 instance_create(-10, -10, cont_commands);
+instance_create(-10, -10, cont_ui);
 
 //Spawn players
 switch (global.numberOfPlayers) {
@@ -70,7 +71,7 @@ switch (global.numberOfPlayers) {
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="cont_ui" xview="1" yview="360" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="680" vborder="400" hspeed="10" vspeed="10"/>
+    <view visible="-1" objName="" xview="1" yview="360" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="680" vborder="400" hspeed="10" vspeed="10"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -80,12 +81,14 @@ switch (global.numberOfPlayers) {
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_collider" x="320" y="736" name="inst_82D46604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collider" x="832" y="448" name="inst_8B6A1B6F" locked="0" code="" scaleX="3.5" scaleY="2.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collider" x="352" y="384" name="inst_2739A378" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider_tall" x="320" y="736" name="inst_82D46604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider_tall" x="832" y="448" name="inst_8B6A1B6F" locked="0" code="" scaleX="3.5" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider_tall" x="352" y="384" name="inst_2739A378" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_mysterybox" x="832" y="256" name="inst_02F49607" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
-    <instance objName="obj_collider" x="640" y="928" name="inst_838998BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collider" x="815" y="285" name="inst_52DF7926" locked="0" code="" scaleX="1.79999995231628" scaleY="1.05999994277954" colour="4294967295" rotation="90"/>
+    <instance objName="obj_collider_tall" x="640" y="928" name="inst_838998BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider_tall" x="815" y="285" name="inst_52DF7926" locked="0" code="" scaleX="1.79999995231628" scaleY="1.05999994277954" colour="4294967295" rotation="90"/>
+    <instance objName="obj_collider_short" x="608" y="649" name="inst_BEC8FDE5" locked="0" code="" scaleX="1.84375" scaleY="1.8387097120285" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider_zombie" x="281" y="601" name="inst_E362A195" locked="0" code="" scaleX="2.03225803375244" scaleY="1.96774196624756" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="1568" y="672" w="32" h="32" xo="0" yo="0" id="10000014" name="inst_039B283F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

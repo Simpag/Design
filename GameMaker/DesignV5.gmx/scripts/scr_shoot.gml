@@ -26,7 +26,9 @@ switch (global.weaponArray[holdingWeapon[weapon,4], 18]) {
         with(bullet) event_user(0);
         
         //Create shell
-        instance_create(x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle), y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle), shell);
+        var shellX = x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle) - lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle);
+        var shellY = y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle) + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle);
+        instance_create(shellX, shellY, shell);
     break;
     
     case "Shotgun":
@@ -41,7 +43,9 @@ switch (global.weaponArray[holdingWeapon[weapon,4], 18]) {
         }
         
         //Create shell
-        instance_create(x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle), y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle), shell);
+        var shellX = x + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle) - lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle);
+        var shellY = y + lengthdir_y(global.weaponArray[holdingWeapon[weapon,4], 6], image_angle) + lengthdir_x(global.weaponArray[holdingWeapon[weapon,4], 16], image_angle);
+        instance_create(shellX, shellY, shell);
     break;
 }
 

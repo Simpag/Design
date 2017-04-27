@@ -47,9 +47,6 @@ move_restitution = 0.6;             //Slowdown factor
 sprite_index = global.characterArray[character,1];
 
 phy_fixed_rotation = true;
-
-//Initiate Camera
-instance_create(x, y, cont_ui);
 </string>
           </argument>
         </arguments>

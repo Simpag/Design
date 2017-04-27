@@ -42,8 +42,10 @@
       </sprites>
     </sprites>
     <sprites name="Static Objects">
-      <sprite>sprites\spr_collider</sprite>
       <sprite>sprites\spr_spawnPoint</sprite>
+      <sprite>sprites\spr_collider_tall</sprite>
+      <sprite>sprites\spr_collider_zombie</sprite>
+      <sprite>sprites\spr_collider_short</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprites name="basic">
@@ -220,7 +222,10 @@
       </objects>
     </objects>
     <objects name="Static Objects">
-      <object>objects\obj_collider</object>
+      <object>objects\obj_collider_tall</object>
+      <object>objects\obj_collider_short</object>
+      <object>objects\obj_collider_zombie</object>
+      <object>objects\obj_collider_parent</object>
     </objects>
     <objects name="Controllers">
       <object>objects\cont_ui</object>

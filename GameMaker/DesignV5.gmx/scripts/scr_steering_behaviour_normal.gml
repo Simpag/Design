@@ -21,7 +21,7 @@ steering = vect_add(steering, sb_pursuit(_target,40));
 //steering = vect_add(steering, sb_alignment(obj_enemy_parent,128,1));
 steering = vect_add(steering, sb_separation(obj_enemy_parent_ai,32,20));
 //steering = vect_add(steering, sb_cohesion(obj_enemy_parent,184,1));
-steering = vect_add(steering, sb_avoid_collision(obj_collider,80,30,5));
+steering = vect_add(steering, sb_avoid_collision(obj_collider_parent,80,30,5));
 
 //## Steering Behaviours go above here ##//
 
