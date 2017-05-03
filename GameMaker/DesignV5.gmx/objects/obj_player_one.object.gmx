@@ -65,8 +65,12 @@ scrollThroughtWeapons = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_inputs(1);
-scr_inputs_shoot(2, global.weaponArray[obj_player_one_gun.holdingWeapon[obj_player_one_gun.weapon,4],17]);
+            <string>if (global.numberOfPlayers == 1) {
+    scr_inputs_shoot(0, global.weaponArray[obj_player_one_gun.holdingWeapon[obj_player_one_gun.weapon,4],17]);
+} else {
+    scr_inputs_shoot(1, global.weaponArray[obj_player_one_gun.holdingWeapon[obj_player_one_gun.weapon,4],17]);
+}
+scr_inputs(1);
 </string>
           </argument>
         </arguments>

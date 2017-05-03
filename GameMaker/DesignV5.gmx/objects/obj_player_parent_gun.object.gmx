@@ -113,7 +113,7 @@ canShoot = true;
           <argument>
             <kind>1</kind>
             <string>if (global.freezeGame == false) {
-    if (key_shoot &amp;&amp; canShoot &amp;&amp; holdingWeapon[weapon,2] &gt; 0) {
+    if (key_shoot &amp;&amp; canShoot) {
         scr_shoot(_bullet);
     }
     

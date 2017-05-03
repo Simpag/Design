@@ -4,7 +4,16 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_M1911_shot</sound>
+    <sound>sound\snd_ak47_shot</sound>
+    <sound>sound\snd_ak47_reload</sound>
+    <sound>sound\snd_M1911_reload</sound>
+    <sound>sound\snd_dryfire</sound>
+    <sound>sound\snd_shotgun_reload</sound>
+    <sound>sound\snd_shotgun_shell</sound>
+    <sound>sound\snd_shotgun_shot</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Gun">
       <sprites name="Ak47">
@@ -164,6 +173,7 @@
       <script>scripts\scr_nearest_player.gml</script>
       <script>scripts\scr_check_command.gml</script>
       <script>scripts\scr_weapon_name_to_number.gml</script>
+      <script>scripts\scr_view.gml</script>
     </scripts>
     <scripts name="Mysterybox">
       <script>scripts\scr_randomweapon_testing_based_on_tiers.gml</script>
@@ -210,6 +220,14 @@
           <object>objects\obj_player_one_gun</object>
           <object>objects\obj_player_one_shell</object>
           <object>objects\obj_player_one_bullet</object>
+        </objects>
+      </objects>
+      <objects name="Player Two">
+        <object>objects\obj_player_two</object>
+        <objects name="Gun Two">
+          <object>objects\obj_player_two_gun</object>
+          <object>objects\obj_player_two_shell</object>
+          <object>objects\obj_player_two_bullet</object>
         </objects>
       </objects>
       <objects name="Player Parent">

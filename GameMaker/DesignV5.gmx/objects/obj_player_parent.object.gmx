@@ -35,13 +35,15 @@ hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
 moveSpeed = 4;                      //Move speed
 goIdle = 10;                        //Go into idle after secounds
-facing = 0;                         //Variable to know which dir player is facing      
+facing = 0;                         //Variable to know which dir player is facing   
+spawned = true;                     //If the players has spawned   
+spawnedT = 0;                       //Used for spawn blink
 
 //Movement variables
 move_x = 0;                         //Move var in x dir, used in movement script
 move_y = 0;                         //Move var in y dir, used in movement script    
-move_acceleration = 0.8;            //Acceleration factor
-move_restitution = 0.6;             //Slowdown factor
+move_acceleration = 0.2;            //Acceleration factor
+move_restitution = 0.15;             //Slowdown factor
 
 //Set active character
 sprite_index = global.characterArray[character,1];
@@ -216,6 +218,13 @@ draw_set_color(c_black);
 draw_healthbar(x-30, y-30, x+30, y-50, global.playerHealth[0], c_black, c_red, c_lime, 0, true, true)
 draw_text(x, y-70, string(global.playerHealth[0]))
 draw_self();
+
+//Player spawn blink
+if (spawned == true) {
+    spawnedT += 0.15;
+    image_alpha = (((sin(spawnedT))/10) + 0.9); //Start blinking
+    if (spawnedT &gt; 15 &amp;&amp; image_alpha = 1) spawned = false; //Stop blinking 
+}
 </string>
           </argument>
         </arguments>

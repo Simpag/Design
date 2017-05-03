@@ -42,7 +42,7 @@ if !(move_x == 0 && move_y == 0) { //If the player is moving
     //scr_collision(); <-- Old collision
     phy_position_x += move_x;
     phy_position_y += move_y;
-    
+
 } else {
     state = playerStates.normal;
 }

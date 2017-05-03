@@ -30,13 +30,14 @@ _angle = gun.image_angle + 270 + random_range(-30, 30);               //Directio
 image_alpha = 1;                                                            //Start alpha
 scale = 0.6;                                                                //Start scale
 minScale = 0.5;                                                             //On the floor
-maxScale = 1.3; 
+maxScale = 1.3;
 _speed = random_range(0.5, 4);                                              //Highest point
-//phy_speed_x = lengthdir_x(_speed, _angle);                                                        //The speed
+//phy_speed_x = lengthdir_x(_speed, _angle);                                //The speed
 //phy_speed_y = lengthdir_y(_speed, _angle);
 physics_apply_impulse(x, y, lengthdir_x(_speed, _angle), lengthdir_y(_speed, _angle) )
 fadeRate = 0.001;                                                           //How fast it will disappear 
 state = "up";                                                               //Which way its going
+playShell = false;                                                          //If iy should play shell sound
 </string>
           </argument>
         </arguments>
@@ -78,6 +79,11 @@ state = "up";                                                               //Wh
         }
         
         phy_rotation += spin;  
+        
+        if (playShell == true) {
+            audio_play_sound(snd_shotgun_shell,0,0);
+            playShell = false;
+        }
     break;
     
     case "ground":

@@ -3,6 +3,14 @@
 _player = argument[0];
 _type = argument[1]
 switch(_player) {
+    case 0:
+        if (_type == "Auto") {
+            key_shoot = keyboard_check(vk_space);
+        } else if (_type == "Semi") {
+            key_shoot = keyboard_check_pressed(vk_space);
+        }
+    break;
+
     case 1:
         if (_type == "Auto") {
             key_shoot = keyboard_check(ord("E"));
