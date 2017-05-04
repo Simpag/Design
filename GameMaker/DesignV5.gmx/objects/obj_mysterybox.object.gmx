@@ -53,7 +53,7 @@ position = vect2(x,y);
             <kind>1</kind>
             <string>///Variables
 range = 50;
-cost = 0;
+cost = 950;
 randomTime = 1; //How many secounds it takes to get a weapon
 boxBought = false;
 image_speed = 0;
@@ -90,6 +90,7 @@ depth = -y;
         _rndWp = instance_create(x,y,obj_mysterybox_weapon);
         _rndWp.playerBought = _near;
         boxBought = true;
+        global.playerMoney[_nearnum] -= cost;
     }
 }
 </string>

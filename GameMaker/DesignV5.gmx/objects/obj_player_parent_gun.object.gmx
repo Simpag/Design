@@ -30,6 +30,7 @@
 weapon = 0;
 canShoot = true;
 secondaryEmpty = true; 
+isReloading = false;
 
 //Particles
 scr_muzzleflash();
@@ -66,6 +67,8 @@ if (holdingWeapon[weapon,3] &gt;= holdingWeapon[weapon,0]) {
 holdingWeapon[weapon,3] -= holdingWeapon[weapon,2] ;
 
 canShoot = true;
+
+isReloading = false;
 </string>
           </argument>
         </arguments>
@@ -117,7 +120,7 @@ canShoot = true;
         scr_shoot(_bullet);
     }
     
-    if (key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0) {
+    if (key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0 &amp;&amp; !isReloading) {
         scr_reload();
     }
     

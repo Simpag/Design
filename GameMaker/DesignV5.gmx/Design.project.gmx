@@ -28,6 +28,7 @@
       <sprites name="Watergun">
         <sprite>sprites\spr_watergun_top</sprite>
         <sprite>sprites\spr_watergun_front</sprite>
+        <sprite>sprites\spr_watergun_bullet</sprite>
       </sprites>
       <sprites name="Mini uzi">
         <sprite>sprites\spr_miniuzi_top</sprite>

@@ -123,7 +123,7 @@ isAttacking = false;
           <argument>
             <kind>1</kind>
             <string>///Zombie Attack Delay
-if (distance_to_object(target) &lt; attackRange + 0.1) scr_player_damage(scr_player_to_number(target), damage);
+if (distance_to_object(target) &lt; attackRange) scr_player_damage(scr_player_to_number(target), damage);
 canAttack = true;
 </string>
           </argument>
@@ -150,7 +150,7 @@ canAttack = true;
             <string>///Enemy ai
 if (global.freezeGame == false) {
     if (hitBy == noone) {
-        target = scr_changeRange_player(); //If the other player gets to close it changes target. 
+        scr_changeRange_player(); //If the other player gets to close it changes target. 
     } else {
         target = hitBy;
     }
