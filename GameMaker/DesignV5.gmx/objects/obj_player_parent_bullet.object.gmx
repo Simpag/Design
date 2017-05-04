@@ -30,6 +30,7 @@ phy_bullet = true;
 startX = x;
 startY = y;
 range = global.weaponArray[gun.holdingWeapon[gun.weapon,4],13];
+bounce = 2;
 </string>
           </argument>
         </arguments>
@@ -55,6 +56,30 @@ range = global.weaponArray[gun.holdingWeapon[gun.weapon,4],13];
             <string>if (distance_to_point(startX, startY) &gt; range) {
     instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_collider_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (bounce &lt;= 0) instance_destroy();
+bounce--;
 </string>
           </argument>
         </arguments>
@@ -124,12 +149,12 @@ instance_destroy();
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectDensity>0.00100000004749745</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.00100000004749745</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
-  <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectLinearDamping>0.00100000004749745</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.00100000004749745</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.0020000000949949</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>

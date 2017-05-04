@@ -6,7 +6,7 @@ for (i = 0; i < 4; i++) {
 }
 
 // [0] Player one
-global.playerMoney[0] = 300;
+global.playerMoney[0] = 3000;
 
 // [1] Player two
 global.playerMoney[1] = 300;

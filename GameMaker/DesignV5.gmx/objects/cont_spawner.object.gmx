@@ -103,7 +103,7 @@ scr_wavespawner_spawn();
           <argument>
             <kind>1</kind>
             <string>if (global.freezeGame == false) {
-    if (global.enemiesLeft &lt;= 0 &amp;&amp; alarm[0] == -1 &amp;&amp; keyboard_check_pressed(ord("U"))) {
+    if (global.enemiesLeft &lt;= 0 &amp;&amp; alarm[0] == -1 /*&amp;&amp; keyboard_check_pressed(ord("U"))*/) {
         alarm[0] = respawnDelay * room_speed;
     }
 }
