@@ -17,7 +17,7 @@ var move_y_add = move_y_dir * move_acceleration;
 //Restitution
 /*
 move_x_sub = if our current x is less than move_x_restitution then subtract that so we don't go under 0
-then multiplay it by the direction we're moveing and if we're not pressing a button move_x_dir == 0 will be 
+then multiply it by the direction we're moving and if we're not pressing a button move_x_dir == 0 will be 
 equal to 1 but if we're pressing a button it will be equal to 0.
 */
 var move_x_sub = min(move_restitution, abs(move_x)) * sign(move_x) * (move_x_dir == 0);

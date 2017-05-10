@@ -42,8 +42,8 @@ spawnedT = 0;                       //Used for spawn blink
 //Movement variables
 move_x = 0;                         //Move var in x dir, used in movement script
 move_y = 0;                         //Move var in y dir, used in movement script    
-move_acceleration = 0.2;            //Acceleration factor
-move_restitution = 0.15;             //Slowdown factor
+move_acceleration = 0.6;            //Acceleration factor
+move_restitution = 0.2;             //Slowdown factor
 
 //Set active character
 sprite_index = global.characterArray[character,1];
