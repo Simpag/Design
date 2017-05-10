@@ -7,8 +7,8 @@ move = 0 + 1 = 1 or
 move = 0 + 0 = 0 or
 move = -1 + 1 = 0
 */
-var move_x_dir = key_right - key_left;
-var move_y_dir = key_down - key_up;
+move_x_dir = key_right - key_left;
+move_y_dir = key_down - key_up;
 
 //Acceleration
 var move_x_add = move_x_dir * move_acceleration;
