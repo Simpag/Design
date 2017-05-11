@@ -7,7 +7,7 @@
 [i,4] = Animation speed             5
 */
 numberOfCharacterInfo = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
-global.numberOfCharacters = 2; // !!!!! DONT FORGET TO INCREASE !!!!!!
+global.numberOfCharacters = 3; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
 for (i = 0; i < global.numberOfCharacters; i++) {
@@ -16,17 +16,24 @@ for (i = 0; i < global.numberOfCharacters; i++) {
     }
 }
 
-// [0] test character 0
+// [0] Affro Frank
 global.characterArray[0,0] = "Affro Frank";         //Name
-global.characterArray[0,1] = spr_affro_walk2;        //Sprite index
+global.characterArray[0,1] = spr_affro_walk2;       //Sprite index
 global.characterArray[0,2] = 0;                     //Character number
 global.characterArray[0,3] = 35;                    //Character hand 
 global.characterArray[0,4] = 13;                    //Animation speed 
 
-// [1] test character 1
-global.characterArray[1,0] = "Test Character 1";    //Name
-global.characterArray[1,1] = spr_testcharacter2;    //Sprite index
+// [1] Bob the builder
+global.characterArray[1,0] = "Bob The Builder";     //Name
+global.characterArray[1,1] = spr_builder_walk;      //Sprite index
 global.characterArray[1,2] = 1;                     //Character number
-global.characterArray[1,3] = 5;                     //Character hand
-global.characterArray[1,4] = 13;                    //Animation speed 
+global.characterArray[1,3] = 51;                    //Character hand
+global.characterArray[1,4] = 8;                     //Animation speed 
+
+// [2] Green guy
+global.characterArray[2,0] = "Green Guy";           //Name
+global.characterArray[2,1] = spr_greenguy_walk;     //Sprite index
+global.characterArray[2,2] = 2;                     //Character number
+global.characterArray[2,3] = 42;                    //Character hand
+global.characterArray[2,4] = 8;                     //Animation speed 
 

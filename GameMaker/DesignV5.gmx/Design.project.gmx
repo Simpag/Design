@@ -52,6 +52,12 @@
         <sprite>sprites\spr_affro_walk</sprite>
         <sprite>sprites\spr_affro_walk2</sprite>
       </sprites>
+      <sprites name="builder">
+        <sprite>sprites\spr_builder_walk</sprite>
+      </sprites>
+      <sprites name="greenguy">
+        <sprite>sprites\spr_greenguy_walk</sprite>
+      </sprites>
     </sprites>
     <sprites name="Static Objects">
       <sprite>sprites\spr_spawnPoint</sprite>
@@ -201,6 +207,10 @@
       <script>scripts\scr_menu_play.gml</script>
       <script>scripts\scr_menu_stats.gml</script>
       <script>scripts\scr_menu_settings.gml</script>
+      <script>scripts\scr_menu_join1.gml</script>
+      <script>scripts\scr_menu_join2.gml</script>
+      <script>scripts\scr_menu_join3.gml</script>
+      <script>scripts\scr_menu_join4.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
