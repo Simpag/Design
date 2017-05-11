@@ -30,7 +30,7 @@ phy_bullet = true;
 startX = x;
 startY = y;
 range = global.weaponArray[gun.holdingWeapon[gun.weapon,4],13];
-bounce = 2;
+bounce = 0;
 </string>
           </argument>
         </arguments>

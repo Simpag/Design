@@ -12,7 +12,9 @@
     <sound>sound\snd_dryfire</sound>
     <sound>sound\snd_shotgun_reload</sound>
     <sound>sound\snd_shotgun_shell</sound>
+    <sound>sound\snd_watergun_shot</sound>
     <sound>sound\snd_shotgun_shot</sound>
+    <sound>sound\snd_watergun_dryfire</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Gun">

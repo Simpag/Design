@@ -25,9 +25,10 @@
 [i,22] = Screen Shake Duration              23
 [i,23] = Weapon Shoot Sound                 24
 [i,24] = Weapon Reload Sound                25
+[i,25] = Weapon Dryfire Sound               26
 */
 
-numberOfWeaponInfo = 25; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfWeaponInfo = 26; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfWeapons = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -62,6 +63,7 @@ global.weaponArray[0,21] = 0.5; //Screen Shake Factor
 global.weaponArray[0,22] = 6; //Screen Shake Duration
 global.weaponArray[0,23] = snd_ak47_shot; //Weapon Shoot Sound 
 global.weaponArray[0,24] = snd_ak47_reload; //Weapon Reload Sound
+global.weaponArray[0,25] = snd_dryfire; //Weapon Dryfire Sound
 
 // [1] Mini-Uzi (2)
 global.weaponArray[1,0] = "MINI UZI"; //Name
@@ -88,12 +90,13 @@ global.weaponArray[1,21] = 0.5; //Screen Shake Factor
 global.weaponArray[1,22] = 6; //Screen Shake Duration
 global.weaponArray[1,23] = snd_M1911_shot; //Weapon Shoot Sound 
 global.weaponArray[1,24] = snd_M1911_reload; //Weapon Reload Sound
+global.weaponArray[1,25] = snd_dryfire; //Weapon Dryfire Sound
 
 // [2] Watergun (3)
 global.weaponArray[2,0] = "WATERGUN"; //Name
 global.weaponArray[2,1] = 500; //Ammo
 global.weaponArray[2,2] = 5; //Damage
-global.weaponArray[2,3] = 30; //Rate of fire
+global.weaponArray[2,3] = 50; //Rate of fire
 global.weaponArray[2,4] = 22; //Muzzle flash, bullet offset
 global.weaponArray[2,5] = 0; //Weapon animation speed 
 global.weaponArray[2,6] = 16; //Shell x Offset
@@ -112,8 +115,9 @@ global.weaponArray[2,18] = "Normal"; //Weapon Type
 global.weaponArray[2,20] = 3; //Bullet Spread
 global.weaponArray[2,21] = 0.1; //Screen Shake Factor
 global.weaponArray[2,22] = 6; //Screen Shake Duration
-global.weaponArray[2,23] = snd_M1911_shot; //Weapon Shoot Sound 
+global.weaponArray[2,23] = snd_watergun_shot; //Weapon Shoot Sound 
 global.weaponArray[2,24] = snd_ak47_reload; //Weapon Reload Sound
+global.weaponArray[2,25] = snd_watergun_dryfire; //Weapon Dryfire Sound
 
 // [3] M1911 (4)
 global.weaponArray[3,0] = "M1911"; //Name
@@ -140,6 +144,7 @@ global.weaponArray[3,21] = 0.2; //Screen Shake Factor
 global.weaponArray[3,22] = 6; //Screen Shake Duration
 global.weaponArray[3,23] = snd_M1911_shot; //Weapon Shoot Sound 
 global.weaponArray[3,24] = snd_M1911_reload; //Weapon Reload Sound
+global.weaponArray[3,25] = snd_dryfire; //Weapon Dryfire Sound
 
 // [4] Shotgun (5)
 global.weaponArray[4,0] = "Shotgun"; //Name
@@ -167,3 +172,4 @@ global.weaponArray[4,21] = 2; //Screen Shake Factor
 global.weaponArray[4,22] = 8; //Screen Shake Duration
 global.weaponArray[4,23] = snd_shotgun_shot; //Weapon Sound 
 global.weaponArray[4,24] = snd_shotgun_reload; //Weapon Reload Sound
+global.weaponArray[4,25] = snd_dryfire; //Weapon Dryfire Sound

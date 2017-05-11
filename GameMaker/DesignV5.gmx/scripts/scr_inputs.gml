@@ -10,6 +10,7 @@ switch(_player) {
         key_use = keyboard_check_pressed(ord("F"));
         key_reload = keyboard_check_pressed(ord("R"));
         key_switch = keyboard_check_pressed(ord("Q"))
+        key_strafe = keyboard_check(ord("X"));
     break;
         
     case 2:
@@ -19,6 +20,6 @@ switch(_player) {
         key_up = keyboard_check(vk_up);
         key_use = keyboard_check_pressed(vk_numpad1);
         key_reload = keyboard_check_pressed(vk_lcontrol);
-        key_switch = keyboard_check_pressed(ord("Ã–"))
+        key_switch = keyboard_check_pressed(ord("Ã"))
     break;
 }

@@ -10,7 +10,7 @@ if (holdingWeapon[weapon,2] > 0) { //Got ammo
     alarm[0] = room_speed/global.weaponArray[holdingWeapon[weapon,4],3];
     
     //Create the muzzle flash
-    scr_muzzleflash_play();
+    if (global.weaponArray[holdingWeapon[weapon,4],0] != "WATERGUN") scr_muzzleflash_play();
     
     //Shooting animation
     image_speed = global.weaponArray[holdingWeapon[weapon,4], 5]/room_speed;
@@ -57,11 +57,27 @@ if (holdingWeapon[weapon,2] > 0) { //Got ammo
     cont_ui.alarm[0] = global.weaponArray[holdingWeapon[weapon,4], 22]; //Turn off shake
         
     //Play sound
-    audio_play_sound(global.weaponArray[holdingWeapon[weapon,4],23], 0, false)
-} else {
+    if (global.weaponArray[holdingWeapon[weapon,4],0] == "WATERGUN") {
+        if (!soundPlayed) {
+            audio_play_sound(global.weaponArray[holdingWeapon[weapon,4],23], 0, true);
+            soundPlayed = true;
+        }
+    } else {
+        audio_play_sound(global.weaponArray[holdingWeapon[weapon,4],23], 0, false);
+    }
+    
+} else { //No ammo in clip
     //Rate of fire
     canShoot = false;
     alarm[0] = room_speed/global.weaponArray[holdingWeapon[weapon,4],3];
     
-    audio_play_sound(snd_dryfire,0,false);
+    //Play sound
+    if (global.weaponArray[holdingWeapon[weapon,4],0] == "WATERGUN") {
+        if (!dryfireSound) {
+            audio_play_sound(global.weaponArray[holdingWeapon[weapon,4],25], 0, true);
+            dryfireSound = true;
+        }
+    } else {
+        audio_play_sound(global.weaponArray[holdingWeapon[weapon,4],25], 0, false);
+    }
 }

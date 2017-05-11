@@ -31,6 +31,8 @@ weapon = 0;
 canShoot = true;
 secondaryEmpty = true; 
 isReloading = false;
+soundPlayed = false;
+dryfireSound = false;
 
 //Particles
 scr_muzzleflash();
@@ -118,6 +120,16 @@ canShoot = true;
             <string>if (global.freezeGame == false) {
     if (key_shoot &amp;&amp; canShoot) {
         scr_shoot(_bullet);
+    } 
+    
+    if ((((!key_shoot &amp;&amp; global.weaponArray[holdingWeapon[weapon,4],0] == "WATERGUN") || holdingWeapon[weapon,2] &lt; 1) &amp;&amp; soundPlayed == true) || key_switch) {
+        audio_stop_sound(snd_watergun_shot);
+        soundPlayed = false;
+    } 
+    
+    if (((!key_shoot &amp;&amp; global.weaponArray[holdingWeapon[weapon,4],0] == "WATERGUN") &amp;&amp; dryfireSound == true) || key_switch)  {
+        audio_stop_sound(snd_watergun_dryfire);
+        dryfireSound = false;
     }
     
     if (key_reload &amp;&amp; holdingWeapon[weapon,3] &gt; 0 &amp;&amp; !isReloading) {
@@ -126,7 +138,9 @@ canShoot = true;
     
     if (key_switch) {
         scr_switch();
+        audio_stop_all();
     }
+    
 }
 </string>
           </argument>
