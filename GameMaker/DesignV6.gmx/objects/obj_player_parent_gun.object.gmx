@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -138,9 +138,7 @@ canShoot = true;
     
     if (key_switch) {
         scr_switch();
-        audio_stop_all();
-    }
-    
+    } 
 }
 </string>
           </argument>
@@ -189,6 +187,7 @@ image_index = 0;
           <argument>
             <kind>1</kind>
             <string>sprite_index = global.weaponArray[holdingWeapon[weapon,4], 8];
+depth = -y*1.01;
 draw_self();
 </string>
           </argument>

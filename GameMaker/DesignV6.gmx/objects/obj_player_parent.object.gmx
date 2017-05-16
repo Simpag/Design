@@ -52,6 +52,11 @@ didMove = false;
 //Set active character
 sprite_index = global.characterArray[character,1];
 
+//Spawn arms
+playerArms = instance_create(x,y, obj_player_parent_arms);
+playerArms.parent = self;
+playerArms.sprite_index = global.characterArray[character,5];
+
 phy_fixed_rotation = true;
 </string>
           </argument>

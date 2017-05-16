@@ -51,6 +51,7 @@
         <sprite>sprites\spr_affro_melee</sprite>
         <sprite>sprites\spr_affro_walk</sprite>
         <sprite>sprites\spr_affro_walk2</sprite>
+        <sprite>sprites\spr_affro_arms</sprite>
       </sprites>
       <sprites name="builder">
         <sprite>sprites\spr_builder_walk</sprite>
@@ -257,6 +258,7 @@
           <object>objects\obj_player_parent_shell</object>
           <object>objects\obj_player_parent_bullet</object>
         </objects>
+        <object>objects\obj_player_parent_arms</object>
       </objects>
     </objects>
     <objects name="Static Objects">

@@ -28,6 +28,8 @@
             <string>///Enemy ai variables
 moveSpeed = 1.5;                    //How fast he moves
 turnSpeed = 0.7;                    //How fast he can turn
+alarm[0] = 5;
+alg = "path";
 </string>
           </argument>
         </arguments>
@@ -60,6 +62,29 @@ max_force = turnSpeed; // How fast it turns
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//if (distance_to_object(obj_collider_parent) &lt; 15) alg = "path"; else alg = "ster";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
@@ -82,18 +107,22 @@ if (global.freezeGame == false) {
     target = parent.target;
     state = parent.state;
     position = vect2(x,y); // will be used to update xy for steering
+    
+    //image_angle = direction;
+    
+    if (!alarm[1]) alarm[1] = 6;
 
     switch(state) {
         case basicStates.follow:
             //Decide which alg to use for ai
-            if ((distance_to_object(obj_collider_parent) &lt; 4)) {
+            if (alg != "ster") {
                 scr_enemy_pathfinding(target);
                 parent.aiAlg = "path";
             } else {
                 path_end();
                 scr_steering_behaviour_normal(target);
                 parent.aiAlg = "steering";
-                direction = -parent.phy_rotation;
+                //direction = -parent.phy_rotation;
             }
             break;
             

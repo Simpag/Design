@@ -12,4 +12,7 @@ if (secondaryEmpty == false) {
     }
     
     canShoot = true;
+    isReloading = false;
+    
+    audio_stop_all();
 }

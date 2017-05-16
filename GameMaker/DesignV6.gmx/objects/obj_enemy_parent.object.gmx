@@ -66,13 +66,20 @@ aiAlg = "steering";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch(aiAlg) {
+            <string>///Point direction
+switch(aiAlg) {
     case "steering":
+        
         phy_rotation = -point_direction(x,y,target.x,target.y);
     break;
     
     case "path":
-        phy_rotation = -aiCont.direction;
+        var _dirTo = (-aiCont.direction) - phy_rotation;
+        var _dirApply = _dirTo / 5;
+        phy_rotation += _dirApply;
+    
+        //phy_rotation = -aiCont.direction;
+        
     break;
 }
 </string>
@@ -150,11 +157,11 @@ canAttack = true;
             <kind>1</kind>
             <string>///Enemy ai
 if (global.freezeGame == false) {
-    if (hitBy == noone) {
-        scr_changeRange_player(); //If the other player gets to close it changes target. 
-    } else {
+    if (hitBy != noone) { 
         target = hitBy;
     }
+    
+    scr_changeRange_player(); //If the other player gets to close it changes target.
 
     switch(state) {
         case basicStates.follow:
@@ -176,8 +183,6 @@ if (global.freezeGame == false) {
     }    
     
     image_speed = animationSpeed/room_speed;
-} else {
-    path_end();
 }
 </string>
           </argument>

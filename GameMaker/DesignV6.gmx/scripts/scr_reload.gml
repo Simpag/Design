@@ -2,6 +2,7 @@
 //Insert reload animation here
 isReloading = true;
 canShoot = false;
+alarm[0] = -1;
 alarm[1] = global.weaponArray[holdingWeapon[weapon,4],14] * room_speed;
 
 //Play sound

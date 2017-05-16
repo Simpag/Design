@@ -58,6 +58,7 @@ randomTime = 1; //How many secounds it takes to get a weapon
 boxBought = false;
 canBuy = 5;         //Can be bought 5 times
 didBuy = canBuy;
+cooldown = 120;
 image_speed = 0;
 depth = -y;
 </string>
@@ -106,23 +107,22 @@ depth = -y;
           <argument>
             <kind>1</kind>
             <string>if (global.freezeGame == false) {
-    if (didBuy &gt; 0) { //Cooldown for amount of buys
-        didBuy--;
-    
         var _near = scr_nearest_player();
         var _nearnum = scr_nearest_player_number();
         var _rndWp //The weapon randomizer
         
         if (distance_to_object(_near) &lt; range &amp;&amp; (global.playerMoney[_nearnum] &gt;= cost) &amp;&amp; (_near.key_use) &amp;&amp; (boxBought == false)) {
-            image_speed = 14/room_speed;
-            _rndWp = instance_create(x,y,obj_mysterybox_weapon);
-            _rndWp.playerBought = _near;
-            boxBought = true;
-            global.playerMoney[_nearnum] -= cost;
+            if (didBuy &gt; 0) { //Cooldown for amount of buys
+                didBuy--;
+                image_speed = 14/room_speed;
+                _rndWp = instance_create(x,y,obj_mysterybox_weapon);
+                _rndWp.playerBought = _near;
+                boxBought = true;
+                global.playerMoney[_nearnum] -= cost;
+            } else {
+                if (!alarm[0]) alarm[0] = cooldown * room_speed;
+            }
         }
-    } else {
-        if (!alarm[0]) alarm[0] = cooldown * room_speed;
-    }
 }
 </string>
           </argument>

@@ -7,7 +7,14 @@ if (_wp == _wpPlayer.holdingWeapon[_wpPlayer.weapon, 4]) { //If the gun you're t
     _wpPlayer.holdingWeapon[_wpPlayer.weapon,2] = global.weaponArray[_wp,15]; //Current Clip
     _wpPlayer.holdingWeapon[_wpPlayer.weapon,3] = global.weaponArray[_wp,1];  //Current Ammo
 
-} else if ((_wp == _wpPlayer.holdingWeapon[1,4]) && (_wpPlayer.secondaryEmpty == false)) { //If the weapon is the same as secoundary and the secoundary is not empty the just fill up
+} else if ((_wp == _wpPlayer.holdingWeapon[0,4])) { //If the weapon is the same as primary
+
+    _wpPlayer.holdingWeapon[0,2] = global.weaponArray[_wp,15];                //Current Clip
+    _wpPlayer.holdingWeapon[0,3] = global.weaponArray[_wp,1];                 //Current Ammo
+    
+    with(_wpPlayer) scr_switch();                                               //Switch to the filled wp
+    
+} else if ((_wp == _wpPlayer.holdingWeapon[1,4])) { //If the weapon is the same as secoundary
 
     _wpPlayer.holdingWeapon[1,2] = global.weaponArray[_wp,15];                //Current Clip
     _wpPlayer.holdingWeapon[1,3] = global.weaponArray[_wp,1];                 //Current Ammo
@@ -15,7 +22,7 @@ if (_wp == _wpPlayer.holdingWeapon[_wpPlayer.weapon, 4]) { //If the gun you're t
     with(_wpPlayer) scr_switch();                                               //Switch to the filled wp
     
 } else {
-    if (_wpPlayer.secondaryEmpty == true) {
+    if (_wpPlayer.secondaryEmpty == true) { //If the player dsnt have an secoundary
         _wpPlayer.holdingWeapon[1,0] = global.weaponArray[_wp,15];                //Clip Size 
         _wpPlayer.holdingWeapon[1,1] = global.weaponArray[_wp,1];                 //Ammo
         _wpPlayer.holdingWeapon[1,2] = global.weaponArray[_wp,15];                //Current Clip

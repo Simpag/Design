@@ -5,8 +5,9 @@
 [i,2] = Character number            3
 [i,3] = Character hand              4
 [i,4] = Animation speed             5
+[i,5] = Character arms              6
 */
-numberOfCharacterInfo = 5; // !!!!! DONT FORGET TO INCREASE !!!!!!
+numberOfCharacterInfo = 6; // !!!!! DONT FORGET TO INCREASE !!!!!!
 global.numberOfCharacters = 3; // !!!!! DONT FORGET TO INCREASE !!!!!!
 
 //Fill array to prevent crash
@@ -22,6 +23,7 @@ global.characterArray[0,1] = spr_affro_walk2;       //Sprite index
 global.characterArray[0,2] = 0;                     //Character number
 global.characterArray[0,3] = 35;                    //Character hand 
 global.characterArray[0,4] = 13;                    //Animation speed 
+global.characterArray[0,5] = spr_affro_arms;        //Character arms
 
 // [1] Bob the builder
 global.characterArray[1,0] = "Bob The Builder";     //Name
