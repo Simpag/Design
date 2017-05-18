@@ -21,6 +21,22 @@ switch(_player) {
         
     case 2:
         if (_type == "Auto") {
+            key_shoot = keyboard_check(vk_rcontrol);
+        } else if (_type == "Semi") {
+            key_shoot = keyboard_check_pressed(vk_rcontrol);
+        }
+    break;
+    
+    case 3:
+        if (_type == "Auto") {
+            key_shoot = keyboard_check(ord("O"));
+        } else if (_type == "Semi") {
+            key_shoot = keyboard_check_pressed(ord("O"));
+        }
+    break;
+    
+    case 4:
+        if (_type == "Auto") {
             key_shoot = keyboard_check(vk_numpad0);
         } else if (_type == "Semi") {
             key_shoot = keyboard_check_pressed(vk_numpad0);

@@ -85,8 +85,7 @@ switch (c_type) {
     break; */
     
     default:
-        var _popup = instance_create(x + 50, y + 5, cont_popup);
-        _popup.state = "wrongCommand";
+        
     break;
 }
 

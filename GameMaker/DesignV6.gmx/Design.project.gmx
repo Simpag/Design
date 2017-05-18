@@ -44,8 +44,6 @@
       <sprite>sprites\spr_gun_shell</sprite>
     </sprites>
     <sprites name="Characters">
-      <sprite>sprites\spr_testcharacter1</sprite>
-      <sprite>sprites\spr_testcharacter2</sprite>
       <sprite>sprites\spr_player_collider</sprite>
       <sprites name="affro">
         <sprite>sprites\spr_affro_melee</sprite>
@@ -55,6 +53,8 @@
       </sprites>
       <sprites name="builder">
         <sprite>sprites\spr_builder_walk</sprite>
+        <sprite>sprites\spr_builder_arms</sprite>
+        <sprite>sprites\adsad</sprite>
       </sprites>
       <sprites name="greenguy">
         <sprite>sprites\spr_greenguy_walk</sprite>
@@ -251,14 +251,30 @@
           <object>objects\obj_player_two_bullet</object>
         </objects>
       </objects>
+      <objects name="Player Three">
+        <object>objects\obj_player_three</object>
+        <objects name="Gun Three">
+          <object>objects\obj_player_three_gun</object>
+          <object>objects\obj_player_three_shell</object>
+          <object>objects\obj_player_three_bullet</object>
+        </objects>
+      </objects>
+      <objects name="Player Four">
+        <object>objects\obj_player_four</object>
+        <objects name="Gun Four">
+          <object>objects\obj_player_four_gun</object>
+          <object>objects\obj_player_four_shell</object>
+          <object>objects\obj_player_four_bullet</object>
+        </objects>
+      </objects>
       <objects name="Player Parent">
+        <object>objects\obj_player_parent_arms</object>
         <object>objects\obj_player_parent</object>
         <objects name="Gun Parent">
           <object>objects\obj_player_parent_gun</object>
           <object>objects\obj_player_parent_shell</object>
           <object>objects\obj_player_parent_bullet</object>
         </objects>
-        <object>objects\obj_player_parent_arms</object>
       </objects>
     </objects>
     <objects name="Static Objects">

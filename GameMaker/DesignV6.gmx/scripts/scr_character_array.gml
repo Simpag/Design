@@ -31,6 +31,7 @@ global.characterArray[1,1] = spr_builder_walk;      //Sprite index
 global.characterArray[1,2] = 1;                     //Character number
 global.characterArray[1,3] = 51;                    //Character hand
 global.characterArray[1,4] = 8;                     //Animation speed 
+global.characterArray[1,5] = spr_builder_arms;      //Character arms
 
 // [2] Green guy
 global.characterArray[2,0] = "Green Guy";           //Name
@@ -38,4 +39,5 @@ global.characterArray[2,1] = spr_greenguy_walk;     //Sprite index
 global.characterArray[2,2] = 2;                     //Character number
 global.characterArray[2,3] = 42;                    //Character hand
 global.characterArray[2,4] = 8;                     //Animation speed 
+global.characterArray[2,5] = -1;                    //Character arms
 

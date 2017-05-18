@@ -44,6 +44,8 @@ move_x = 0;                         //Move var in x dir, used in movement script
 move_y = 0;                         //Move var in y dir, used in movement script    
 move_acceleration = 0.6;            //Acceleration factor
 move_restitution = 0.2;             //Slowdown factor
+move_x_facing = 0;
+move_y_facing = 0;
 
 stickyDiagonal = 0.3;               //To make the diagonal movement stick
 isMoving = false
@@ -240,14 +242,13 @@ if (global.freezeGame == false) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y;
+            <string>depth = -y*2;
 image_angle = facing;
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 
-draw_healthbar(x-30, y-30-20, x+30, y-50-20, global.playerHealth[0], c_black, c_red, c_lime, 0, true, true)
-draw_text(x, y-70, string(global.playerHealth[0]))
+draw_healthbar(x-30, y-30-20, x+30, y-50-20, global.playerHealth[playerIndex], c_black, c_red, c_lime, 0, true, true)
 draw_self();
 
 //Player spawn blink
@@ -256,8 +257,6 @@ if (spawned == true) {
     image_alpha = (((sin(spawnedT))/10) + 0.9); //Start blinking
     if (spawnedT &gt; 15 &amp;&amp; image_alpha = 1) spawned = false; //Stop blinking 
 }
-
-draw_text(x,y-100, string(isMoving) + " " + string(didMove))
 </string>
           </argument>
         </arguments>

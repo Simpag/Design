@@ -36,9 +36,8 @@ if !(move_x == 0 && move_y == 0) { //If the player is moving
     move_y = (move_y / dist) * mindist;
     
     //Facing direction of the player
-    //if (!key_strafe) {
-        scr_graphics();
-    //}
+    scr_graphics();
+
     
     //Collision checking
     //scr_collision(); <-- Old collision

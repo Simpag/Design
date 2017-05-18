@@ -10,11 +10,11 @@ switch(_pl) {
         return(2);
         break;
         
-    /*case obj_player_three:
+    case obj_player_three:
         return(3);
         break;
         
     case obj_player_four:
         return(4);
-        break;*/
+        break;
 }
