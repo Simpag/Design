@@ -127,6 +127,8 @@ bounce--;
           <argument>
             <kind>1</kind>
             <string>with(other) { //Inside the hit zombie
+    alarm[3] = -1; //make sure that the hitBy variable wont be removed
+
     hitBy = other.player; //Other in this case is the bullet
     hp -= global.weaponArray[other.gun.holdingWeapon[other.gun.weapon,4],2];
     global.playerMoney[scr_player_to_number(hitBy) - 1] += hitWorth;   //Give the player money for hit

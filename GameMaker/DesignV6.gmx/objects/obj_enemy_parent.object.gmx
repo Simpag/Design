@@ -28,8 +28,8 @@
             <string>///Enemy variables
 hp = 100;                           //His health
 damage = 15;                        //How much damage he does
-worth = 150;                        //How much money the player gets when he dies
-hitWorth = 15;                      //How much money the player gets when he hits the zombie
+worth = 50;                         //How much money the player gets when he dies
+hitWorth = 5;
 changeRange = 3;                    //How close the player has to get before it changes target
 target = scr_target_player();       //Select target 
 hitBy = noone;                      //To know who hit him
@@ -37,13 +37,36 @@ animationSpeed = 13;                //Animation speed
 attackRange = 0.5;                  //How far he can attack
 canAttack = true;                   //If he can attack
 isAttacking = false;                //If he is attacking
-
-//Set state
-state = basicStates.follow;
-phy_fixed_rotation = true;
+//phy_fixed_rotation = true;
 aiCont = instance_create(x,y,obj_enemy_parent_ai);
 aiCont.parent = self;
 aiAlg = "steering";
+
+//Set state
+state = basicStates.follow;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hitBy = noone;
 </string>
           </argument>
         </arguments>
@@ -66,20 +89,13 @@ aiAlg = "steering";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Point direction
-switch(aiAlg) {
+            <string>switch(aiAlg) {
     case "steering":
-        
         phy_rotation = -point_direction(x,y,target.x,target.y);
     break;
     
-    case "path":
-        var _dirTo = (-aiCont.direction) - phy_rotation;
-        var _dirApply = _dirTo / 5;
-        phy_rotation += _dirApply;
-    
-        //phy_rotation = -aiCont.direction;
-        
+    case "path":    
+        phy_rotation = -aiCont.direction;
     break;
 }
 </string>
@@ -157,11 +173,12 @@ canAttack = true;
             <kind>1</kind>
             <string>///Enemy ai
 if (global.freezeGame == false) {
-    if (hitBy != noone) { 
+    if (hitBy == noone) {
+        scr_changeRange_player(); //If the other player gets to close it changes target. 
+    } else {
         target = hitBy;
+        if (!alarm[3]) alarm[3] = room_speed; //Reset hitby after 1 sec
     }
-    
-    scr_changeRange_player(); //If the other player gets to close it changes target.
 
     switch(state) {
         case basicStates.follow:
@@ -183,6 +200,8 @@ if (global.freezeGame == false) {
     }    
     
     image_speed = animationSpeed/room_speed;
+} else {
+    path_end();
 }
 </string>
           </argument>
