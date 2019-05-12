@@ -1,0 +1,9 @@
+{
+  "Modalname": "TopDownShooterModal",
+  "ProjectName" : "Top-down shooter",
+  "ProjectTopic" : "Gamemaker Game",
+  "ProjectDescription" : "Dethär var slutprojektet i årskurs ett på Klara Gymnasium. Det är en top-down shooter där man ska döda zombies.
+  Zombies kommer i vågor och man får pengar när man dödar dem. Pengarna kan spenderas på nya vapen.",
+  "Date" : "01/04-2016",
+  "Image" : "https://i.ytimg.com/vi/iQHSJL_ZcfA/hqdefault.jpg"
+}
